@@ -1,0 +1,4321 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Promptor\n"
+"POT-Creation-Date: 2026-04-07 12:21+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: promptor.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/assets/js/promptor-admin.js:30 admin/assets/js/promptor-admin.js:41
+#, javascript-format
+msgid "%d items selected"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:114 admin/class-promptor-dashboard-page.php:460 public/class-promptor-public.php:305
+msgid "AI Assistant"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:115 public/class-promptor-public.php:306
+msgid "Typically replies in minutes"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:116 public/class-promptor-public.php:307
+msgid "Ask a question..."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:266
+msgid "Select Image"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:267
+msgid "Use This Image"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:293 admin/settings/class-promptor-settings-ui.php:641
+msgid "No file selected"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:319 admin/assets/js/promptor-admin.js:347 admin/assets/js/promptor-admin.js:501
+#: admin/assets/js/promptor-admin.js:1294 admin/assets/js/promptor-admin.js:1319
+#, javascript-format
+msgid "You are using Promptor Lite. You can select a maximum of %d content items. Please upgrade to Pro for unlimited selections."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:377
+msgid "Success!"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:377 public/assets/js/promptor-public.js:384
+msgid "An unknown error occurred."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:382
+msgid "An AJAX error occurred. Please try again."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:403
+msgid "Verifying…"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:416 admin/assets/js/promptor-admin.js:452 admin/assets/js/promptor-admin.js:480
+#: admin/assets/js/promptor-admin.js:548
+msgid "An unknown server error occurred."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:433
+msgid "Please enter a name for the knowledge base."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:447 admin/assets/js/promptor-admin.js:475
+msgid "Error: "
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:460
+msgid "Are you sure you want to delete this knowledge base?"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:543
+msgid "Saved."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:543 admin/assets/js/promptor-admin.js:1143
+msgid "Unknown error"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:576
+#, javascript-format
+msgid "Are you sure you want to clear the index for \"%s\"?"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:583
+msgid "Please select a knowledge base and provide a sitemap URL."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:585
+#, javascript-format
+msgid "Sitemap will be crawled for \"%s\". Continue?"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:591
+#, javascript-format
+msgid "Are you sure you want to sync manual content for \"%s\"?"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:600
+#, javascript-format
+msgid "Starting process for \"%s\"…"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:613
+#, javascript-format
+msgid "%d item found."
+msgid_plural "%d items found."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/assets/js/promptor-admin.js:621
+msgid "No new items to process. Knowledge base is up to date."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:628
+msgid "ERROR: "
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:629
+msgid "Operation failed."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:635 admin/assets/js/promptor-admin.js:715
+msgid "Server error."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:643
+msgid "All items processed!"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:648 admin/settings/class-promptor-settings-knowledge-base.php:111
+#: admin/settings/class-promptor-settings-knowledge-base.php:193
+msgid "Crawler"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:654
+#, javascript-format
+msgid "ID %d"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:657
+#, javascript-format
+msgid "Processing item %1$d/%2$d (%3$s): %4$s…"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:672
+msgid "OK"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:673
+msgid "ERROR:"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:677
+#, javascript-format
+msgid " -> SERVER ERROR: Could not process item %s."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:710 admin/assets/js/promptor-admin.js:740 admin/assets/js/promptor-admin.js:771
+#: admin/assets/js/promptor-admin.js:1100 admin/assets/js/promptor-admin.js:1142 admin/assets/js/promptor-admin.js:1260
+#, javascript-format
+msgid "Error: %s"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:711
+msgid "Unknown error."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:725
+msgid "Please enter an Order ID."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:745 admin/assets/js/promptor-admin.js:776
+msgid "Unknown server error."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:875 admin/class-promptor-dashboard-page.php:142 admin/class-promptor-list-table-pages.php:33
+msgid "Queries"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:883 admin/class-promptor-admin.php:300 admin/class-promptor-dashboard-page.php:144
+#: admin/class-promptor-submissions-table.php:46
+msgid "Submissions"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:891 admin/assets/js/promptor-admin.js:956 admin/class-promptor-dashboard-page.php:145
+msgid "Revenue"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:899 admin/class-promptor-dashboard-page.php:143
+msgid "Satisfaction (%)"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:936
+msgid "Leads"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:987
+msgid "Saving settings…"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:997
+#, javascript-format
+msgid "Error saving settings: %s"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1004
+msgid "Settings saved. Sending test…"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1010
+msgid "Server error during test."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1018
+msgid "Server error while saving settings."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1063
+msgid "Please choose a bulk action."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1073
+msgid "Please select at least one item to proceed."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1104 admin/assets/js/promptor-admin.js:1148 admin/assets/js/promptor-admin.js:1264
+#: admin/assets/js/promptor-admin.js:1451
+msgid "A server error occurred. Please try again."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1251
+msgid "✓ Questions generated successfully!"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1260
+msgid "Failed to generate questions"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1349
+#, javascript-format
+msgid "You have already selected the maximum of %d content items. Please upgrade to Pro for unlimited selections."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1359
+#, javascript-format
+msgid "You are using Promptor Lite. You can select a maximum of %d content items. Selecting %d more items to reach the limit."
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1375
+#, javascript-format
+msgid "You are about to select %1$d items. For performance reasons, we limit bulk selection to %2$d items. Do you want to select the first %2$d items?"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1392
+#, javascript-format
+msgid "%1$d items selected. Note: There are %2$d more items. Load them first to select all."
+msgstr ""
+
+#. translators: %d: Number of remaining items to load
+#: admin/assets/js/promptor-admin.js:1440 admin/settings/class-promptor-settings-knowledge-base.php:500
+#: admin/settings/class-promptor-settings-knowledge-base.php:529
+#, javascript-format, php-format
+msgid "Load More (%d remaining)"
+msgstr ""
+
+#: admin/assets/js/promptor-admin.js:1447
+msgid "Failed to load more content."
+msgstr ""
+
+#: admin/class-promptor-admin.php:52 admin/class-promptor-admin.php:97 admin/class-promptor-admin.php:288 admin/class-promptor-welcome-page.php:117
+msgid "Setup Wizard"
+msgstr ""
+
+#. translators: %d: number of pending submissions.
+#: admin/class-promptor-admin.php:256
+#, php-format
+msgid "%d pending submissions"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: admin/class-promptor-admin.php:273 admin/class-promptor-admin.php:274
+msgid "Promptor"
+msgstr ""
+
+#: admin/class-promptor-admin.php:282
+msgid "Welcome"
+msgstr ""
+
+#: admin/class-promptor-admin.php:297 admin/class-promptor-dashboard-page.php:41
+msgid "Dashboard"
+msgstr ""
+
+#: admin/class-promptor-admin.php:301 admin/class-promptor-list-table-pages.php:829
+msgid "AI Conversations"
+msgstr ""
+
+#: admin/class-promptor-admin.php:302 admin/class-promptor-settings-page.php:66
+msgid "Settings"
+msgstr ""
+
+#: admin/class-promptor-admin.php:305 admin/class-promptor-changelog-page.php:16 admin/class-promptor-welcome-page.php:349
+msgid "Changelog"
+msgstr ""
+
+#: admin/class-promptor-admin.php:398
+msgid "Are you sure you want to permanently delete all indexed data for this knowledge base?"
+msgstr ""
+
+#: admin/class-promptor-admin.php:399
+msgid "Are you sure you want to delete this knowledge base? This action cannot be undone."
+msgstr ""
+
+#: admin/class-promptor-admin.php:471
+msgid "Enjoying Promptor so far?"
+msgstr ""
+
+#: admin/class-promptor-admin.php:474
+msgid "We would love to hear your feedback! Your review helps us improve and helps other users discover Promptor."
+msgstr ""
+
+#: admin/class-promptor-admin.php:478
+msgid "Leave a Review"
+msgstr ""
+
+#: admin/class-promptor-admin.php:481
+msgid "Give Feedback"
+msgstr ""
+
+#: admin/class-promptor-admin.php:509 admin/class-promptor-admin.php:527
+msgid "Unauthorized"
+msgstr ""
+
+#: admin/class-promptor-changelog-page.php:17
+msgid "Track all updates, improvements, and new features added to Promptor."
+msgstr ""
+
+#: admin/class-promptor-changelog-page.php:20
+msgid "Back to Welcome"
+msgstr ""
+
+#: admin/class-promptor-changelog-page.php:34
+msgid "Changelog could not be loaded. Please check the readme.txt file."
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:31 admin/class-promptor-settings-page.php:39 admin/settings/class-promptor-settings-knowledge-base.php:30
+#: admin/settings/class-promptor-settings-knowledge-base.php:384 admin/settings/class-promptor-settings-notifications.php:73
+#: admin/settings/class-promptor-settings-telemetry.php:162 admin/settings/class-promptor-settings-ui.php:241
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#. translators: %s: Upgrade to Pro URL
+#: admin/class-promptor-dashboard-page.php:52
+#, php-format
+msgid ""
+"Advanced analytics and performance metrics are available in the Pro version. <a href=\"%s\" target=\"_blank\" rel=\"noopener "
+"noreferrer\"><strong>Upgrade to Pro</strong></a> to unlock the dashboard!"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:67 admin/class-promptor-list-table-pages.php:517 admin/class-promptor-submissions-table.php:451
+#: admin/settings/class-promptor-settings-knowledge-base.php:54 admin/settings/class-promptor-settings-telemetry.php:43
+#: admin/settings/class-promptor-settings-telemetry.php:92 admin/settings/class-promptor-settings-telemetry.php:130
+#: admin/settings/class-promptor-settings-ui.php:38 public/ajax-handlers/class-promptor-ajax-admin-handler.php:141
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:192 public/ajax-handlers/class-promptor-ajax-admin-handler.php:520
+msgid "Security check failed."
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:79
+msgid "Dashboard cache for the selected period has been cleared. Data is being regenerated."
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:114 admin/class-promptor-dashboard-page.php:487 admin/class-promptor-submissions-table.php:121
+#: admin/class-promptor-submissions-table.php:680 public/ajax-handlers/class-promptor-ajax-admin-handler.php:125
+msgid "Pending"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:115 admin/class-promptor-dashboard-page.php:488 admin/class-promptor-submissions-table.php:124
+#: admin/class-promptor-submissions-table.php:684 public/ajax-handlers/class-promptor-ajax-admin-handler.php:126
+msgid "Contacted"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:116 admin/class-promptor-dashboard-page.php:489 admin/class-promptor-submissions-table.php:127
+#: admin/class-promptor-submissions-table.php:688 public/ajax-handlers/class-promptor-ajax-admin-handler.php:127
+msgid "Converted"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:117 admin/class-promptor-dashboard-page.php:490 admin/class-promptor-submissions-table.php:130
+#: admin/class-promptor-submissions-table.php:692 public/ajax-handlers/class-promptor-ajax-admin-handler.php:128
+msgid "Rejected"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:165
+msgid "Performance Dashboard"
+msgstr ""
+
+#. translators: %s: current period label
+#: admin/class-promptor-dashboard-page.php:171
+#, php-format
+msgid "Showing data for: %s"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:177
+msgid "Refresh Data"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:184 admin/settings/class-promptor-settings-knowledge-base.php:341
+msgid "Daily"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:188 admin/settings/class-promptor-settings-knowledge-base.php:341
+msgid "Weekly"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:192
+msgid "Monthly"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:196
+msgid "Yearly"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:206
+msgid "Total AI Queries"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:213
+msgid "Total Leads"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:220
+msgid "Lead Conversion Rate"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:227
+msgid "Products Added to Cart"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:236
+msgid "AI-driven Revenue"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:245
+msgid "Satisfaction Rate"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:252
+msgid "Avg. Response Time"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:259
+msgid "Indexed Docs"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:266
+msgid "WooCommerce Products"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:277
+msgid "Daily Performance"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:290
+msgid "Lead Pipeline Distribution"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:306
+msgid "Top Converting Services (Manual Leads)"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:317
+msgid "conversions"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:323
+msgid "No service conversions recorded yet."
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:333
+msgid "Top Selling Products via AI"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:353
+msgid "sales"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:360
+msgid "No AI-driven sales recorded in this period yet."
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:370
+msgid "Recent Submissions"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:377 admin/settings/class-promptor-settings-knowledge-base.php:132
+msgid "Name"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:378 admin/class-promptor-submissions-table.php:388 admin/settings/class-promptor-settings-api.php:697
+msgid "Status"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:379 admin/class-promptor-dashboard-page.php:425 admin/class-promptor-list-table-pages.php:247
+#: admin/class-promptor-list-table-pages.php:1008 admin/class-promptor-submissions-table.php:389
+#: admin/settings/class-promptor-settings-knowledge-base.php:500 admin/settings/class-promptor-settings-knowledge-base.php:525
+msgid "Date"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:399 admin/class-promptor-list-table-pages.php:1014
+msgid "No submissions yet."
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:408
+msgid "View All Submissions"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:417
+msgid "Recent Queries"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:424 admin/class-promptor-list-table-pages.php:240
+msgid "User Query"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:440
+msgid "No queries yet."
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:449
+msgid "View All Queries"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:457
+msgid "System Status:"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:464 admin/class-promptor-welcome-page.php:235
+msgid "WooCommerce"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:468 admin/class-promptor-welcome-page.php:209
+msgid "Knowledge Base"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:472
+msgid "Analytics Live"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:513
+msgid "(Today)"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:517
+msgid "(Last 7 Days)"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:521
+msgid "(Last 30 Days)"
+msgstr ""
+
+#: admin/class-promptor-dashboard-page.php:525
+msgid "(Last Year)"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:32
+msgid "Query"
+msgstr ""
+
+#. translators: %d: number of items deleted
+#: admin/class-promptor-list-table-pages.php:64
+#, php-format
+msgid "%d query deleted successfully."
+msgid_plural "%d queries deleted successfully."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of items archived
+#: admin/class-promptor-list-table-pages.php:79
+#, php-format
+msgid "%d query archived successfully."
+msgid_plural "%d queries archived successfully."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of items unarchived
+#: admin/class-promptor-list-table-pages.php:94
+#, php-format
+msgid "%d query unarchived successfully."
+msgid_plural "%d queries unarchived successfully."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-promptor-list-table-pages.php:131
+msgid "All Feedback"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:132
+msgid "Positive Feedback"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:133
+msgid "Negative Feedback"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:134
+msgid "No Feedback"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:138
+msgid "All Suggestions"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:139
+msgid "With Suggestions"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:140
+msgid "Without Suggestions"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:143
+msgid "Filter"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:217 admin/settings/class-promptor-settings-api.php:675
+msgid "Active"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:224
+msgid "Archived"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:241
+msgid "Suggested Items"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:242
+msgid "Linked Order"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:243
+msgid "Feedback"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:244
+msgid "Response Time"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:245
+msgid "Tokens Used"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:246
+msgid "Cost"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:405 admin/class-promptor-list-table-pages.php:479
+msgid "Archive"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:419 admin/class-promptor-list-table-pages.php:473
+msgid "Unarchive"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:434 admin/class-promptor-list-table-pages.php:474 admin/class-promptor-list-table-pages.php:480
+msgid "Delete Permanently"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:499 admin/class-promptor-submissions-table.php:445
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:820
+msgid "Dashboard cache has been cleared."
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:831
+msgid "View and analyze all AI-powered conversations with your website visitors."
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:844
+#, php-format
+msgid "%s query has been deleted."
+msgid_plural "%s queries have been deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: queries used, 2: query limit
+#: admin/class-promptor-list-table-pages.php:875
+#, php-format
+msgid "Monthly Query Limit: %1$d / %2$d used"
+msgstr ""
+
+#. translators: 1: percentage, 2: upgrade URL
+#: admin/class-promptor-list-table-pages.php:896
+#, php-format
+msgid ""
+"You have used over %1$d%% of your monthly query limit. <a href=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Upgrade to Pro</"
+"strong></a> for unlimited queries and more features!"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:913
+msgid "Search Queries"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:940 admin/class-promptor-list-table-pages.php:984
+msgid "Lead Submissions"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:941 admin/class-promptor-list-table-pages.php:986
+msgid "Manage and track all lead form submissions generated through AI conversations."
+msgstr ""
+
+#. translators: %s: upgrade URL
+#: admin/class-promptor-list-table-pages.php:995
+#, php-format
+msgid ""
+"You are using Promptor Lite. You can see the last 5 submissions here with limited data. To unlock full lead management features, including status "
+"tracking, detailed query information, and unlimited history, please <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Upgrade to "
+"Next Level.</strong></a>"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:1005 admin/class-promptor-submissions-table.php:384
+msgid "Submitter"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:1006 admin/class-promptor-submissions-table.php:385
+msgid "Contact Details"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:1007 admin/class-promptor-submissions-table.php:387 public/assets/js/promptor-public.js:198
+#: public/class-promptor-public.php:369
+msgid "Selected Services"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:1026 admin/class-promptor-submissions-table.php:574
+msgid "Email hidden"
+msgstr ""
+
+#: admin/class-promptor-list-table-pages.php:1034
+msgid "No phone"
+msgstr ""
+
+#: admin/class-promptor-settings-page.php:68
+msgid "Configure your AI assistant, knowledge bases, and customize the chat experience."
+msgstr ""
+
+#: admin/class-promptor-settings-page.php:73
+msgid "Re-run Setup Wizard"
+msgstr ""
+
+#: admin/class-promptor-settings-page.php:81
+msgid "Knowledge Bases"
+msgstr ""
+
+#: admin/class-promptor-settings-page.php:86
+msgid "AI Behavior"
+msgstr ""
+
+#: admin/class-promptor-settings-page.php:91
+msgid "UI Settings"
+msgstr ""
+
+#: admin/class-promptor-settings-page.php:96
+msgid "AI Usage"
+msgstr ""
+
+#: admin/class-promptor-settings-page.php:102
+msgid "Notifications"
+msgstr ""
+
+#: admin/class-promptor-settings-page.php:108
+msgid "Telemetry"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:21 admin/class-promptor-welcome-page.php:22
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:63 admin/class-promptor-welcome-page.php:50
+msgid "Promptor Logo"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:65 admin/class-promptor-welcome-page.php:53
+msgid "Welcome to Promptor"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:66
+msgid "Set up your AI assistant in 3 easy steps"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:76
+msgid "Connect OpenAI"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:84
+msgid "Choose Content"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:92
+msgid "Embed Widget"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:101
+msgid "Step 1: Connect AI"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:102
+msgid "Choose how to power your AI assistant."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:115
+msgid "Try Promptor instantly"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:116
+msgid "No API key needed"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:117
+msgid "Get 10 free AI queries to test Promptor. No sign-up required."
+msgstr ""
+
+#. translators: %d: remaining queries
+#: admin/class-promptor-setup-wizard.php:127
+#, php-format
+msgid "Trial active! %d queries remaining."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:135 admin/class-promptor-welcome-page.php:435 admin/settings/class-promptor-settings-api.php:630
+msgid "Start Free Trial"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:148
+msgid "Use your OpenAI API key"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:149
+msgid "Unlimited queries with your own key from platform.openai.com"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:154 admin/settings/class-promptor-settings-api.php:571
+msgid "OpenAI API Key"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:158 admin/settings/class-promptor-settings-api.php:576
+msgid "Verify Key"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:166 admin/settings/class-promptor-settings-api.php:596
+msgid "GPT Model"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:168 admin/settings/class-promptor-settings-api.php:589
+msgid "GPT-4o (Recommended)"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:169 admin/settings/class-promptor-settings-api.php:590
+msgid "GPT-4 Turbo"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:170 admin/settings/class-promptor-settings-api.php:591
+msgid "GPT-3.5 Turbo"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:172 admin/settings/class-promptor-settings-api.php:603
+msgid "GPT-4o is recommended for its balance of cost, speed, and intelligence."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:180
+msgid "AI connection configured successfully!"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:189
+msgid "Step 2: Train Your AI"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:190
+msgid "Select pages to train your AI assistant. Your AI will use this content to answer visitor questions."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:195
+msgid "Free version: Select up to 3 items. Pro version: Unlimited."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:201
+msgid "Loading content..."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:210
+msgid "Training your AI on selected content..."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:221
+msgid "Try asking:"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:229
+msgid "Knowledge base configured successfully!"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:238
+msgid "Step 3: Embed the Widget"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:239
+msgid "Add the Promptor chat widget to your pages using the shortcode below."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:242
+msgid "Add this shortcode to any page or post:"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:247 public/assets/js/modules/ui.js:54
+msgid "Copy"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:250
+msgid "You can customize the widget appearance in Settings > UI Settings after completing setup."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:254
+msgid "How to add the widget:"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:256
+msgid "Edit any page or post in WordPress"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:257
+msgid "Add a Shortcode block (or paste directly in Classic Editor)"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:258
+msgid "Paste [promptor_search] and publish"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:259
+msgid "Visit your page to see the AI chat widget"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:267
+msgid "Test Your AI Assistant"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:269
+msgid "Ask a question about your synced content to verify your AI assistant is working correctly."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:272
+msgid "Ask a question about your content..."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:275 admin/settings/class-promptor-settings-ui.php:561
+msgid "Send"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:283
+msgid "Setup complete! Your AI assistant is ready."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:294
+msgid "Previous"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:299
+msgid "Skip wizard"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:304
+msgid "Next"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:310
+msgid "Complete Setup"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:941
+msgid "Trial active!"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:941
+msgid "queries remaining."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:945
+msgid "Help improve Promptor by sharing anonymous usage insights (optional, no personal data)"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:958 admin/settings/class-promptor-settings-api.php:648
+msgid "Activation failed."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:962 admin/class-promptor-setup-wizard.php:1010 admin/class-promptor-setup-wizard.php:1453
+msgid "Connection error. Please try again."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:980
+msgid "Please enter an API key."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1004
+msgid "Verification failed."
+msgstr ""
+
+#. translators: %d: max pages
+#: admin/class-promptor-setup-wizard.php:1026
+#, php-format
+msgid "Trial mode: Select up to %d pages to train your AI."
+msgstr ""
+
+#. translators: %d: max items
+#: admin/class-promptor-setup-wizard.php:1068
+#, php-format
+msgid "Trial allows up to %d pages. Add your API key for more."
+msgstr ""
+
+#. translators: %d: max items
+#: admin/class-promptor-setup-wizard.php:1070
+#, php-format
+msgid "Free version allows up to %d items. Please upgrade to Pro for unlimited selection."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1096
+msgid "Copied!"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1117
+msgid "An error occurred while saving. Please try again."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1218
+msgid "Saving..."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1223
+msgid "Training AI..."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1255
+msgid "Training failed."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1302
+msgid "Syncing..."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1309
+msgid "Indexing your content with AI..."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1362
+msgid "Indexing"
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1416
+msgid "Thinking..."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1442
+msgid "Sorry, could not get a response. Please check your API key and try again."
+msgstr ""
+
+#: admin/class-promptor-setup-wizard.php:1490
+msgid "Try asking your AI:"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:45
+msgid "Submission"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:111
+msgid "All"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:147
+msgid "Hot Leads"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:151
+msgid "Warm Leads"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:155
+msgid "Cold Leads"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:381
+msgid "Score"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:386
+msgid "Original Query"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:423
+msgid "Mark as Contacted"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:424
+msgid "Mark as Converted"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:425
+msgid "Mark as Rejected"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:426
+msgid "Mark as Pending"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:427 admin/settings/class-promptor-settings-knowledge-base.php:243
+msgid "Delete"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:579
+msgid "Notes"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:636
+msgid "View Details"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:648
+msgid "Search Submissions"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:653
+msgid "Submission Details"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:656
+msgid "User's Query"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:660
+msgid "Full AI Response"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:664
+msgid "Close"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:785
+msgid "High Confidence"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:787
+msgid "Medium Confidence"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:789
+msgid "Low Confidence"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:809
+msgid "Why?"
+msgstr ""
+
+#. translators: %1$d: Lead score value, %2$s: Temperature classification (Hot/Warm/Cold)
+#: admin/class-promptor-submissions-table.php:886
+#, php-format
+msgid "This lead scored %1$d/105 points (%2$s). The score is calculated from 4 factors and detected signals."
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:897
+msgid "Factor Totals"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:902
+msgid "Intent Strength"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:906
+msgid "Budget Indicators"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:910
+msgid "Timeline Urgency"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:914
+msgid "Service Match"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:937
+msgid "Signals Detected"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:942
+msgid "Clear Purchase Intent (hire, buy, etc.)"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:943
+msgid "Asked About Pricing"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:944
+msgid "Detailed Project Discussion"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:945
+msgid "Multi-Service Selection (2-3 services)"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:946
+msgid "Provided Phone Number"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:947
+msgid "Provided Email Address"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:948
+msgid "Mentioned Budget Range"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:949
+msgid "Mentioned Budget Exists"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:950
+msgid "Discussed Payment Terms"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:951
+msgid "Asked About Premium Options"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:952
+msgid "Budget Concerns (cheap, affordable)"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:953
+msgid "Timeline: ASAP (<2 weeks)"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:954
+msgid "Timeline: Soon (2-4 weeks)"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:955
+msgid "Timeline: 1-3 Months"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:956
+msgid "Specific Deadline Mentioned"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:957
+msgid "1 Service Selected (Clear Need)"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:958
+msgid "2-3 Services Selected (Related Needs)"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:959
+msgid "4+ Services Selected (Unclear Needs)"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:988
+msgid "Budget Range"
+msgstr ""
+
+#: admin/class-promptor-submissions-table.php:998
+msgid "No signals detected (minimal information provided)"
+msgstr ""
+
+#: admin/class-promptor-telemetry-notice.php:81
+msgid "Help Us Improve Promptor & Get 30% Off Pro!"
+msgstr ""
+
+#. translators: %s: link to settings page
+#: admin/class-promptor-telemetry-notice.php:87
+#, php-format
+msgid ""
+"Enable <strong>anonymous usage insights</strong> (no personal data) to help us prioritize features and bug fixes. As a thank you, you can use coupon "
+"code <strong>PRO30</strong> for 30%% off Promptor Pro!"
+msgstr ""
+
+#: admin/class-promptor-telemetry-notice.php:93 admin/settings/class-promptor-settings-telemetry.php:196
+msgid "What we collect:"
+msgstr ""
+
+#: admin/class-promptor-telemetry-notice.php:94
+msgid "Setup progress, KB counts, query/lead totals (numbers only). "
+msgstr ""
+
+#: admin/class-promptor-telemetry-notice.php:95
+msgid "What we DON'T collect:"
+msgstr ""
+
+#: admin/class-promptor-telemetry-notice.php:96
+msgid "Site URLs, IPs, emails, content, or any personal data."
+msgstr ""
+
+#: admin/class-promptor-telemetry-notice.php:100
+msgid "Enable Telemetry & Use PRO30 Coupon"
+msgstr ""
+
+#: admin/class-promptor-telemetry-notice.php:103
+msgid "No Thanks"
+msgstr ""
+
+#: admin/class-promptor-telemetry-notice.php:106
+msgid "Learn More"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:340
+msgid "Promptor Anonymous Telemetry"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:341
+msgid ""
+"Promptor includes an optional anonymous telemetry feature to help us understand how the plugin is used and improve it. This feature is OFF by "
+"default and requires your explicit opt-in."
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:342
+msgid "What We Collect (If You Opt-In)"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:343
+msgid "If you choose to enable anonymous telemetry, we collect only the following non-personal usage metrics:"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:344
+msgid "Setup completion status (which onboarding steps completed)"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:345 admin/settings/class-promptor-settings-telemetry.php:296
+msgid "Knowledge base count and total indexed items"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:346
+msgid "Total number of queries and leads (counts only, no content)"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:347
+msgid "Plugin version, WordPress version, and PHP version"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:348
+msgid "What We Do NOT Collect"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:349
+msgid "We explicitly do NOT collect:"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:350 admin/settings/class-promptor-settings-telemetry.php:303
+msgid "Site URLs or domain names"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:351 admin/settings/class-promptor-settings-telemetry.php:304
+msgid "IP addresses"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:352 admin/settings/class-promptor-settings-telemetry.php:305
+msgid "Admin emails or usernames"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:353
+msgid "Any content, message text, or queries"
+msgstr ""
+
+#: admin/class-promptor-telemetry.php:354 admin/settings/class-promptor-settings-telemetry.php:308
+msgid "Any personally identifiable information (PII)"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:54
+msgid "Your AI-powered command center for turning website content into intelligent conversations that capture leads."
+msgstr ""
+
+#. translators: %s: Freemius plan title
+#: admin/class-promptor-welcome-page.php:63
+#, php-format
+msgid "You are using the %s plan. Thank you!"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:65
+msgid "Pro"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:81
+msgid "Manage Account"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:87
+msgid "Promptor Lite"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:88
+msgid "Free version active"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:93 admin/class-promptor-welcome-page.php:261
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:106
+msgid "Setup Progress"
+msgstr ""
+
+#. translators: %1$d: completed steps count, %2$d: total steps count
+#: admin/class-promptor-welcome-page.php:110
+#, php-format
+msgid "%1$d / %2$d completed"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:122
+msgid "Dismiss"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:138
+msgid "Connect AI"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:139
+msgid "Enter your API key or start a free trial"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:141
+msgid "Configure"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:143 admin/class-promptor-welcome-page.php:161 admin/class-promptor-welcome-page.php:184
+msgid "Completed"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:156
+msgid "Choose Knowledge Base"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:157
+msgid "Select pages and posts to train your AI assistant"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:159
+msgid "Manage KB"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:174
+msgid "Embed the Widget"
+msgstr ""
+
+#. translators: %s: shortcode
+#: admin/class-promptor-welcome-page.php:178
+#, php-format
+msgid "Use %s shortcode to add chat to your pages"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:182
+msgid "View Options"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:192
+msgid "Setup Complete!"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:193
+msgid "Your AI assistant is ready to engage with visitors!"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:200
+msgid "Key Features"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:204
+msgid "Semantic AI Search"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:205
+msgid "Understands user intent and finds the most relevant content to provide accurate, human-like answers."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:210
+msgid "Tag any page or post as Service, Blog, or FAQ within each knowledge base for ultimate flexibility."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:214
+msgid "Lead Capture"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:215
+msgid "Capture inquiries from the chat and manage them with statuses like pending or converted."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:219
+msgid "Full UI Customization"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:220
+msgid "Match the chat widget to your brand with colors, texts, avatars, and position settings."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:224 admin/class-promptor-welcome-page.php:283
+msgid "AI Cost Guardrails"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:225
+msgid "Control API spending with daily & monthly limits, email alerts, and automatic model fallback."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:229
+msgid "Accessibility"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:230
+msgid "Full keyboard navigation, ARIA labels, focus trap in popup mode, and screen reader support."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:237 admin/class-promptor-welcome-page.php:247
+msgid "PRO"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:240
+msgid "Inventory-aware AI recommendations, product comparison tables, stock badges, and cart reminders."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:245
+msgid "Lead Scoring"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:250
+msgid "Automatic Hot/Warm/Cold classification with detailed scoring breakdown."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:259
+msgid "Ready to Unlock Pro Features?"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:260
+msgid "Upgrade to Promptor Pro to unlock webhooks, lead scoring, and unlimited knowledge base items."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:266
+msgid "You have access to all Pro features. Explore the settings to customize your experience."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:267
+msgid "Explore Features"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:272
+msgid "Complete Feature List"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:276
+msgid "Included in Free"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:278
+msgid "AI Chat Widget (customizable UI)"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:279
+msgid "Instant AI Trial (no API key required)"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:280
+msgid "Mini Knowledge Base (2 pages for testing)"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:281
+msgid "Suggested Questions for instant testing"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:282
+msgid "Lead Capture inside chat"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:284
+msgid "Dark Mode (Light / Dark / Auto)"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:285
+msgid "Accessibility support"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:291
+msgid "Pro Features"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:293
+msgid "Unlimited Knowledge Base"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:294
+msgid "AI Behavior Control (Persona + Tone)"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:295
+msgid "WooCommerce AI (recommendations, add-to-cart, inventory)"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:296
+msgid "Lead Scoring (Hot / Warm / Cold)"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:297
+msgid "Webhooks & integrations"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:298
+msgid "Analytics dashboard"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:299
+msgid "Email & Slack notifications"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:300
+msgid "Submissions archive & filters"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:309
+msgid "What's New"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:311
+msgid "v1.4.0 — No API Key Required"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:314
+msgid "Instant AI Trial"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:315
+msgid "Start using Promptor without an OpenAI API key. Test with your own content instantly."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:318
+msgid "Smart Trial Experience"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:319
+msgid "Select up to 2 pages and get real AI answers based on your site content."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:322
+msgid "AI Behavior System (Pro)"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:323
+msgid "Control how your AI communicates with persona and tone settings."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:326
+msgid "Faster Onboarding"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:327
+msgid "Go from install to first answer in minutes."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:331
+msgid "View Full Changelog"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:338
+msgid "Support & Resources"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:340
+msgid "Need Help?"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:341
+msgid "Visit our official website for documentation, support, and the latest updates."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:343
+msgid "Visit Documentation"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:345 admin/class-promptor-welcome-page.php:347
+msgid "Get Support"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:352
+msgid "Coming Soon"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:354
+msgid "Gutenberg block integration"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:355
+msgid "Zapier & Make integrations"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:356
+msgid "Advanced analytics & funnel insights"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:359
+msgid "Note: Roadmap items may change based on user feedback and priorities."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:389
+msgid "Failed to dismiss. Please try again."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:431
+msgid "Try Promptor without an API key"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:432
+msgid "Get 10 free AI queries to test the plugin. No sign-up required."
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:449
+msgid "Trial Active"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:450
+msgid "Trial Queries Used Up"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:451
+msgid "Trial Expired"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:452
+msgid "Using Own API Key"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:453
+msgid "Trial Revoked"
+msgstr ""
+
+#. translators: %d: remaining queries
+#: admin/class-promptor-welcome-page.php:467
+#, php-format
+msgid "%d queries remaining"
+msgstr ""
+
+#: admin/class-promptor-welcome-page.php:476
+msgid "Add API Key"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:53
+msgid "AI usage settings saved."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:73
+msgid "Today"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:84
+msgid "This Month"
+msgstr ""
+
+#. translators: %s: token explanation
+#: admin/settings/class-promptor-settings-ai-usage.php:97
+msgid ""
+"Tip: 1 conversation typically uses 500-1,000 tokens. Estimated cost is based on model pricing (GPT-4o: $5/$15 per 1M tokens, GPT-3.5: $0.50/$1.50 "
+"per 1M tokens)."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:109
+msgid "Spending Limits"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:112
+msgid "Set daily and monthly token limits to prevent surprise OpenAI bills. When a limit is reached, the action you choose below will be applied."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:117
+msgid "Daily Limit"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:121
+msgid "Enable daily token limit"
+msgstr ""
+
+#. translators: %s: estimated cost
+#: admin/settings/class-promptor-settings-ai-usage.php:129
+#, php-format
+msgid "Tokens per day. Default: 100,000 (~%s/day with GPT-4o)."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:139
+msgid "Monthly Limit"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:143
+msgid "Enable monthly token limit"
+msgstr ""
+
+#. translators: %s: estimated cost
+#: admin/settings/class-promptor-settings-ai-usage.php:151
+#, php-format
+msgid "Tokens per month. Default: 2,000,000 (~%s/month with GPT-4o)."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:161
+msgid "When Limit Reached"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:166
+msgid "Fallback to GPT-3.5-turbo (recommended — 10x cheaper, chat stays active)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:170
+msgid "Pause AI chat (visitors see a friendly \"temporarily unavailable\" message)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:174
+msgid "Warn only (log warning but continue using the configured model)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:187
+msgid "Email Alerts"
+msgstr ""
+
+#. translators: %s: admin email
+#: admin/settings/class-promptor-settings-ai-usage.php:194
+#, php-format
+msgid "When limits are enabled, warning emails are sent to %s at these thresholds:"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:202
+msgid "Threshold"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:203
+msgid "Action"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:209
+msgid "Warning email sent to admin"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:213
+msgid "Urgent warning email sent"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:217
+msgid "Limit reached — chosen action applied"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:224
+msgid "Save AI Usage Settings"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:232
+msgid "Usage Analytics"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:235
+msgid "Detailed usage charts, model breakdown, and cost trends are available on the Dashboard."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:237
+msgid "View Dashboard"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:270
+msgid "tokens"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:274
+msgid "limit"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:276
+msgid "No limit set"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ai-usage.php:289 admin/settings/class-promptor-settings-ai-usage.php:294
+msgid "estimated cost"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:20
+msgid "Core API Configuration"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:22
+msgid "Enter your OpenAI API credentials. This is the minimum required setup."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:33
+msgid "Model Behavior"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:35
+msgid "Control how the AI generates responses, its personality, creativity, and length."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:41
+msgid "Temperature"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:41
+msgid "Controls randomness. Lower values make responses more focused. Higher values make them more creative."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:42
+msgid "Maximum Tokens"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:42
+msgid "The maximum number of tokens for the AI response. Helps control costs."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:61
+msgid "Semantic Search Engine"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:63
+msgid "This is the core engine of your AI assistant. Configure how accurately the AI understands the user's intent."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:67
+msgid ""
+"Determines how semantically similar a content chunk must be to the user's query to be included in the AI's context. A higher value (e.g., 0.75) is "
+"stricter and more accurate, but may find fewer results. A lower value (e.g., 0.65) is more lenient and finds more results, but they might be less "
+"relevant."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:70
+msgid "Similarity Threshold"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:82
+msgid "Conversation Management"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:84
+msgid "Manage long conversations to optimize performance and cost."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:86
+msgid "Enable Conversation Summarization"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:86
+msgid "Automatically summarize long conversations to save tokens and stay within context limits."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:87
+msgid "Summarization Threshold"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:87
+msgid "Summarize the conversation after this many messages (user + AI)."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:88
+msgid "Summarization Prompt"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:88
+msgid "The system prompt used to ask the AI to create a summary."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:121 admin/settings/class-promptor-settings-api.php:273
+#: admin/settings/class-promptor-settings-api.php:356
+msgid "Persona"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:130
+msgid "The role your AI assistant adopts."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:137 admin/settings/class-promptor-settings-api.php:274
+#: admin/settings/class-promptor-settings-api.php:367
+msgid "Tone"
+msgstr ""
+
+#. translators: %s: tone label
+#: admin/settings/class-promptor-settings-api.php:147 admin/settings/class-promptor-settings-api.php:375
+#, php-format
+msgid "%s (Pro)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:159
+msgid "The communication style used in responses."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:216
+msgid "AI Behavior Preview"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:223 admin/settings/class-promptor-settings-api.php:276
+msgid "Manual system prompt is active"
+msgstr ""
+
+#. translators: %s: persona label
+#. translators: %s: persona name
+#: admin/settings/class-promptor-settings-api.php:230 admin/settings/class-promptor-settings-api.php:279
+#, php-format
+msgid "Persona: %s"
+msgstr ""
+
+#. translators: %s: tone label
+#. translators: %s: tone name
+#: admin/settings/class-promptor-settings-api.php:238 admin/settings/class-promptor-settings-api.php:283
+#, php-format
+msgid "Tone: %s"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:249 admin/settings/class-promptor-settings-api.php:287
+msgid "Behavior"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:258 admin/settings/class-promptor-settings-api.php:288
+msgid "Style"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:275 includes/class-promptor-behavior.php:543
+msgid "Manual system prompt is active. The AI will use your custom prompt instead of the generated behavior."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:285 admin/settings/class-promptor-settings-api.php:347
+msgid "Uses global settings"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:286 admin/settings/class-promptor-settings-api.php:345
+msgid "Custom behavior"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:317
+msgid "Knowledge Base Overrides"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:321
+msgid "Assign different persona and tone settings to individual knowledge bases."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:414
+msgid "Advanced: Manual System Prompt"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:418
+msgid "When enabled, this custom prompt fully overrides persona and tone settings."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:426
+msgid "Enable manual system prompt"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:434
+msgid "Write the full system prompt. Leave empty to fall back to automatic behavior."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:457
+msgid "API Key saved."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:465
+msgid "The API key format looks unusual. Your previous key has been kept."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:626
+msgid "Free Trial"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:628
+msgid "Try Promptor without an API key! Get 10 free AI queries to test the plugin."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:650
+msgid "Connection error."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:676
+msgid "Queries Used Up"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:677
+msgid "Expired"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:678
+msgid "Converted to API Key"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:679
+msgid "Revoked"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:693
+msgid "Free Trial Status"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:702
+msgid "Remaining Queries"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:708
+msgid "Expires"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:716
+msgid "Enter your OpenAI API key below to continue using Promptor."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-api.php:721
+msgid "You are using your own API key. Trial is no longer needed."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:107 admin/settings/class-promptor-settings-knowledge-base.php:213
+#: admin/settings/class-promptor-settings-knowledge-base.php:219
+msgid "Manage"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:125
+msgid "Manage Existing Knowledge Bases"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:128
+msgid "Manage all your created knowledge bases from here. You can edit their content, synchronize them, clear the index, and view their shortcodes."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:133
+msgid "Shortcode"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:134
+msgid "Content Source"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:135
+msgid "Indexed Docs / Chunks"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:136
+msgid "Actions"
+msgstr ""
+
+#. translators: %s: Key
+#: admin/settings/class-promptor-settings-knowledge-base.php:145
+#, php-format
+msgid "Corrupted (Key: %s)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:186
+msgid "Default"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:195
+msgid "Manual"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:211
+msgid "Select and manage content items for this knowledge base."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:217
+msgid "Content for this knowledge base is managed by the crawler."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:225
+msgid "Re-index all selected content for this knowledge base."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:227
+msgid "Sync"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:233
+msgid "Remove all indexed data for this knowledge base."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:234
+msgid "Clear Index"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:242
+msgid "Permanently delete this knowledge base and all its data."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:249
+msgid "No knowledge bases found. Create one to get started."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:263 admin/settings/class-promptor-settings-knowledge-base.php:270
+msgid "Create New Knowledge Base"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:263
+msgid "Create a new, independent knowledge base for different purposes (e.g., sales, support). Use a short, lowercase, and space-free key."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:263
+msgid "Short Name (Key):"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:263
+msgid "e.g., support, sales"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:263
+msgid "Use a short, lowercase name with no spaces."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:265
+msgid "Create"
+msgstr ""
+
+#. translators: %s: Upgrade to Pro URL
+#: admin/settings/class-promptor-settings-knowledge-base.php:281
+#, php-format
+msgid ""
+"You are using Promptor Lite and have reached the limit of 1 knowledge base. <a href=\"%s\" target=\"_blank\" rel=\"noopener "
+"noreferrer\"><strong>Upgrade to Pro</strong></a> to create unlimited knowledge bases!"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:297
+msgid "Crawler Initiation"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:299
+msgid "Select a knowledge base from the \"Manage\" tab, then provide your sitemap URL and start crawling."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:302
+msgid "Sitemap URL"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:305
+msgid "Enter the full URL of your sitemap. The crawler will find all pages from here."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:313
+msgid "Start Crawling and Indexing"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:323
+msgid "Crawler Configuration"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:325
+msgid "Configure how the website crawler will index your site. Set crawling limits, define content areas, and schedule automatic updates."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:330
+msgid "Crawl Depth"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:331
+msgid "How many levels deep the crawler should follow links from the start URL."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:334
+msgid "Max Pages to Crawl"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:335
+msgid "The maximum number of pages to crawl in a single operation."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:338
+msgid "Crawl Schedule"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:341
+msgid "Never (Manual Only)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:341
+msgid "Hourly"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:341
+msgid "Twice Daily"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:342
+msgid "How often the crawler should automatically run."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:350
+msgid "Content CSS Selector"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:351
+msgid "e.g., #main-article or .entry-content. If empty, it will try to find the main content automatically."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:354
+msgid "Allowed URL Patterns"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:355
+msgid "Only URLs matching these patterns will be crawled. One per line."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:358
+msgid "Disallowed URL Patterns"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:359
+msgid "URLs matching these patterns will be excluded. One per line."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:372
+msgid "Log"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:374
+msgid "Follow the real-time status and results of content synchronization or website crawling processes from this log area."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:375
+msgid "Ready. Click a \"Sync\" or \"Crawl\" button to start..."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:388 public/ajax-handlers/class-promptor-ajax-indexing-handler.php:819
+msgid "Knowledge base not found."
+msgstr ""
+
+#. translators: %s: Knowledge base name
+#: admin/settings/class-promptor-settings-knowledge-base.php:402
+#, php-format
+msgid "Managing Content for \"%s\" Knowledge Base"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:403
+msgid "Back to all Knowledge Bases"
+msgstr ""
+
+#. translators: 1: number of items, 2: Upgrade to Pro URL
+#: admin/settings/class-promptor-settings-knowledge-base.php:423
+#, php-format
+msgid ""
+"You are using Promptor Lite. You can select a maximum of %1$d content items (pages, posts, or files) in total. <a href=\"%2$s\" "
+"target=\"_blank\"><strong>Upgrade to Pro</strong></a> for unlimited content."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:464
+msgid "PDF Files"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:485 admin/settings/class-promptor-settings-knowledge-base.php:510
+msgid "Select bulk action"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:487 admin/settings/class-promptor-settings-knowledge-base.php:512
+msgid "Bulk actions"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:488 admin/settings/class-promptor-settings-knowledge-base.php:513
+msgid "Change role to: Service"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:489 admin/settings/class-promptor-settings-knowledge-base.php:514
+msgid "Change role to: Product"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:490 admin/settings/class-promptor-settings-knowledge-base.php:515
+msgid "Change role to: Blog Post"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:491 admin/settings/class-promptor-settings-knowledge-base.php:516
+msgid "Change role to: FAQ"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:493 admin/settings/class-promptor-settings-knowledge-base.php:518
+msgid "Apply"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:496 admin/settings/class-promptor-settings-knowledge-base.php:521
+msgid "items selected"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:497 admin/settings/class-promptor-settings-knowledge-base.php:522
+msgid "Select This Page"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:498 admin/settings/class-promptor-settings-knowledge-base.php:523
+msgid "Select All"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:499
+msgid "Search content..."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:500
+msgid "Title"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:500 admin/settings/class-promptor-settings-knowledge-base.php:525
+msgid "Content Role"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:500
+msgid "Word Count"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:500
+msgid "No content found for this post type."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:504
+msgid "Note:"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:505
+msgid ""
+"PDF Parser library is not installed. You can add PDFs to the knowledge base, but their content cannot be indexed. Only titles and metadata will be "
+"used for AI recommendations."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:524
+msgid "Search PDFs..."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:525
+msgid "File Name"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:528 admin/settings/class-promptor-settings-knowledge-base.php:610
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1217
+msgid "Service"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:528 admin/settings/class-promptor-settings-knowledge-base.php:611
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1218
+msgid "Product"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:528 admin/settings/class-promptor-settings-knowledge-base.php:612
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1219
+msgid "Blog Post"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:528 admin/settings/class-promptor-settings-knowledge-base.php:613
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1220
+msgid "FAQ"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:533 admin/settings/class-promptor-settings-knowledge-base.php:537
+msgid "Example Questions"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:539
+msgid "e.g. I want to build a corporate website."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:540
+msgid "Enter one example question per line. These will be shown to the user as suggestions."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:544
+msgid "Generate with AI"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:555
+msgid "Automation Settings (Pro)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:559
+msgid "Auto-Sync on Publish"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:565
+msgid "Automatically add and index newly published content to this knowledge base."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:568
+msgid "This is a Pro feature."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:579
+msgid "Save Changes"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:707
+msgid "Trial Mode: Using temporary AI context from your selected pages."
+msgstr ""
+
+#. translators: %s: comma-separated page titles
+#: admin/settings/class-promptor-settings-knowledge-base.php:714
+#, php-format
+msgid "Pages: %s"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-knowledge-base.php:721
+msgid "Temporary trial content is separate from your synced Knowledge Base. Add your OpenAI API key to sync and index your content permanently."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:24
+msgid "New Lead/Submission Received"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:30
+msgid "Lead Status is Changed to \"Converted\""
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:36
+msgid "Product Added to Cart via AI"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:42
+msgid "Good AI Feedback Received"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:48
+msgid "Bad AI Feedback Received"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:54
+msgid "AI Query Fails (API Error)"
+msgstr ""
+
+#. translators: %s: Upgrade to Pro URL
+#: admin/settings/class-promptor-settings-notifications.php:87
+#, php-format
+msgid ""
+"Custom Email and Slack notifications are a Pro feature. <a href=\"%s\" target=\"_blank\"><strong>Upgrade to Pro</strong></a> to automate your lead "
+"workflow!"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:136
+msgid "Triggers & General"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:137 admin/settings/class-promptor-settings-notifications.php:185
+msgid "Email"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:138 admin/settings/class-promptor-settings-notifications.php:186
+msgid "Slack"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:178
+msgid "Notification Triggers"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:180
+msgid "Choose which events will trigger notifications on which channels."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:184
+msgid "Event"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:208
+msgid "Admin Area Notifications"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:210
+msgid "Configure notifications that appear within the WordPress admin area"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:214
+msgid "Setting"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:215
+msgid "Enabled"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:220
+msgid "Show new lead counter in Admin Bar"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:229
+msgid "Play sound for new submissions"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:248
+msgid "Email Sender Settings"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:250
+msgid "Configure the \"From\" name and address for all notification emails sent from Promptor."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:259
+msgid "Recipient(s)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:263
+msgid "Send notifications to these email addresses. Separate multiple emails with a comma."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:269
+msgid "\"From\" Name"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:273
+msgid "The name that appears as the sender."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:279
+msgid "\"From\" Email"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:283
+msgid "The email address that appears as the sender."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:289
+msgid "Send Test Email"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:297
+msgid "Email Templates"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:299
+msgid "Customize the subject and content for each notification email. Click an event from the list to begin editing."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:328
+msgid "Subject"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:340
+msgid "Message Body"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:356
+msgid "Available shortcodes:"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:374
+msgid "Slack Configuration"
+msgstr ""
+
+#. translators: %s: Slack help URL
+#: admin/settings/class-promptor-settings-notifications.php:379
+#, php-format
+msgid "To get your Webhook URL, follow the instructions <a href=\"%s\" target=\"_blank\">here</a>."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:385
+msgid "Enable Slack Notifications"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:386
+msgid "Webhook URL"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:386
+msgid "Enter your Slack Incoming Webhook URL."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:387
+msgid "Channel (Optional)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:387
+msgid "The channel to post to. If empty, the webhook's default channel will be used."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:388
+msgid "Bot Name (Optional)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:388
+msgid "The name your bot will post as."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:389
+msgid "New Lead Message Template"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:389
+msgid "You can use Slack's `mrkdwn` formatting."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-notifications.php:392
+msgid "Send Test Slack Notification"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:37 admin/settings/class-promptor-settings-telemetry.php:86
+#: admin/settings/class-promptor-settings-telemetry.php:124 admin/settings/class-promptor-settings-ui.php:32
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:31 public/ajax-handlers/class-promptor-ajax-admin-handler.php:524
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1009 public/ajax-handlers/class-promptor-ajax-admin-handler.php:1152
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1267 public/ajax-handlers/class-promptor-ajax-admin-handler.php:1367
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1391 public/ajax-handlers/class-promptor-ajax-admin-handler.php:1452
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1479 public/ajax-handlers/class-promptor-ajax-admin-handler.php:1507
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1534 public/ajax-handlers/class-promptor-ajax-admin-handler.php:1616
+msgid "Permission denied."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:62
+msgid "Telemetry settings saved."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:100
+msgid "Telemetry ID reset successfully."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:138
+msgid "Telemetry queue cleared successfully."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:174 admin/settings/class-promptor-settings-telemetry.php:182
+msgid "Anonymous Usage Data"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:191
+msgid "Enable anonymous usage data collection"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:194
+msgid "This is optional and disabled by default. When enabled, anonymous usage data can be shared to help improve Promptor."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:197
+msgid "Setup progress, KB counts, query/lead totals (numbers only), plugin/WP/PHP versions."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:199
+msgid "What we do NOT collect:"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:200
+msgid "Site URLs, IPs, emails, usernames, content, queries, or any personally identifiable information."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:206
+msgid "Save Telemetry Settings"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:213
+msgid "Telemetry Information"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:217
+msgid "Anonymous ID"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:221
+msgid "This random UUID identifies your installation anonymously. No personal data is linked to it."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:227
+msgid "Are you sure you want to generate a new telemetry ID?"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:229
+msgid "Reset Telemetry ID"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:236
+msgid "Current Queue"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:239
+msgid "No telemetry data in queue."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:243
+msgid "View Queued Data"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:251
+msgid "Are you sure you want to clear the telemetry queue?"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:253
+msgid "Clear Telemetry Queue"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:261
+msgid "Sending Schedule"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:269
+msgid "Next scheduled send:"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:274
+msgid "No cron job scheduled."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:278
+msgid "Telemetry data is sent automatically twice daily via WP-Cron."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:288
+msgid "Privacy & Transparency"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:290
+msgid "Our Commitment"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:291
+msgid "Promptor respects your privacy. Telemetry is completely optional and OFF by default."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:293
+msgid "What Gets Collected (If Opted-In)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:295
+msgid "Setup completion status (which steps completed)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:297
+msgid "Total queries sent and leads captured (counts only)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:298
+msgid "Plugin version, WordPress version, PHP version"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:301
+msgid "What We NEVER Collect"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:306
+msgid "Content from your site"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:307
+msgid "Query text or message content"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:312
+msgid "You have full control:"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-telemetry.php:313
+msgid "Disable telemetry anytime, reset your ID, or clear the queue. No questions asked."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:219
+msgid "Settings saved successfully."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:289
+msgid "UI Customization Target"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:291
+msgid "Select which chat interface you want to customize."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:301
+msgid "Global Popup Settings"
+msgstr ""
+
+#. translators: %s: Knowledge base name
+#: admin/settings/class-promptor-settings-ui.php:311
+#, php-format
+msgid "Inline: %s Knowledge Base"
+msgstr ""
+
+#. translators: %s: Upgrade URL
+#: admin/settings/class-promptor-settings-ui.php:334
+#, php-format
+msgid ""
+"Advanced customization options are available in the Pro version. <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Upgrade to "
+"Next Level</strong></a> to unlock all features!"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:345
+msgid "Chat Widget Mode"
+msgstr ""
+
+#. translators: %s: Upgrade URL
+#: admin/settings/class-promptor-settings-ui.php:356
+#, php-format
+msgid ""
+"<strong>Floating popup widget is a Pro feature.</strong> <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Upgrade to unlock</a> site-"
+"wide chat popups with custom positioning."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:363
+msgid ""
+"Choose how the chat assistant will appear on your site. Use a shortcode to display it on a specific page, or set up a site-wide floating popup (Pro)."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:367
+msgid "Knowledge Base for Popup"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:382
+msgid "Select which knowledge base the floating popup chat will use."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:390
+msgid "Chat Position"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:395
+msgid "Inline (via Shortcode)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:396
+msgid "Popup - Bottom Right (Pro)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:397
+msgid "Popup - Bottom Left (Pro)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:399
+msgid "Choose how the chat widget appears. Popup mode is a Pro feature."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:405
+msgid "Hide Header (Inline only)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:409
+msgid "Hide the header for a more compact view."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:419
+msgid "General Appearance"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:421
+msgid "Adjust general appearance settings like font size and corner radius to match your sites design."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:423
+msgid "Font Size"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:424
+msgid "Border Radius"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:429
+msgid "Avatars"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:431
+msgid "Customize the avatars to give your AI assistant more personality."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:433 admin/settings/class-promptor-settings-ui.php:547 public/class-promptor-public.php:555
+msgid "Bot Avatar"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:440
+msgid "Colors"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:442
+msgid "Set the chat widgets color palette to perfectly match your brand identity."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:446
+msgid "Primary Color"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:446
+msgid "Header, Ask button."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:447
+msgid "User Message Bubble"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:448
+msgid "User Message Text"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:453
+msgid "Widget Background"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:454
+msgid "AI Message Bubble"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:455
+msgid "AI Message Text"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:456
+msgid "Input Focus Border"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:464
+msgid "Content & Language"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:466
+msgid "Edit the default text that appears in sections of the chat widget, such as the header and input placeholder."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:468
+msgid "Header Title"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:469
+msgid "Header Subtitle"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:470
+msgid "Input Placeholder"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:474
+msgid "Popup Animation"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:479
+msgid "None"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:480
+msgid "Fade"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:481
+msgid "Slide Up"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:483
+msgid "Popup window open/close animation style."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:492
+msgid "Conversation Settings"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:494
+msgid "Configure how the AI handles conversation context and memory."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:497
+msgid "Conversation Memory"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:501
+msgid "Enable conversation memory - AI remembers previous messages in the conversation."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:504
+msgid "When enabled, the AI will use the last 15 messages as context for better responses. Note: This increases API token usage."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:512
+msgid "Admin Dark Mode"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:514
+msgid "Choose the color scheme for the Promptor admin panel."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:522
+msgid "Light"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:527
+msgid "Dark"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:532
+msgid "Auto (System)"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:535
+msgid "Auto mode follows your operating system preference."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:542
+msgid "Live Preview"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:554
+msgid "Hello! How can I help you today?"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:556
+msgid "I have a question about your services."
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:645
+msgid "Upload"
+msgstr ""
+
+#: admin/settings/class-promptor-settings-ui.php:649
+msgid "Remove"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:23
+msgid "Sales Assistant"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:25
+msgid "Identifies user intent and connects to relevant offerings"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:26
+msgid "Highlights value and benefits naturally"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:27
+msgid "Ends with a clear, actionable next step"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:28
+msgid "Persuades through relevance, not pressure"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:72
+msgid "Consultant"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:74
+msgid "Asks clarifying questions before recommending"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:75
+msgid "Analyzes the user's specific situation"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:76
+msgid "Shows reasoning and trade-offs"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:77
+msgid "Diagnoses before prescribing solutions"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:122
+msgid "Support Agent"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:124
+msgid "Answers directly in 1-2 sentences"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:125
+msgid "Uses bullet points (max 4)"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:126
+msgid "Keeps responses short and actionable"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:127
+msgid "Focuses on quick problem resolution"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:171
+msgid "Guide"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:173
+msgid "Explains topics step by step"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:174
+msgid "Uses structured sections and headings"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:175
+msgid "Includes examples when helpful"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:176
+msgid "Prioritizes clarity and comprehension"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:222
+msgid "Neutral Assistant"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:224
+msgid "Provides clear, neutral, and factual responses"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:225
+msgid "Stays objective without steering or recommending"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:226
+msgid "Presents options side by side without bias"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:227
+msgid "Lets users draw their own conclusions"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:290
+msgid "Professional"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:304
+msgid "Friendly"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:326
+msgid "Persuasive"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:347
+msgid "Short & Clear"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:369
+msgid "Consultative"
+msgstr ""
+
+#. translators: %1$s: persona label, %2$s: tone label
+#: includes/class-promptor-behavior.php:561
+#, php-format
+msgid "Persona: %1$s | Tone: %2$s"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:579
+msgid "Clear, structured, and confident communication"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:580
+msgid "Trustworthy and reliable tone"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:581
+msgid "No slang or casual filler"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:584
+msgid "Warm, approachable, and conversational"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:585
+msgid "Uses natural phrasing and contractions"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:586
+msgid "Engaging without losing clarity"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:589
+msgid "Highlights value and positive outcomes"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:590
+msgid "Encourages action when relevant"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:591
+msgid "Benefit-driven without being aggressive"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:594
+msgid "Responses as short as possible"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:595
+msgid "Prefers bullet points over paragraphs"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:596
+msgid "Removes unnecessary explanation"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:599
+msgid "Explains reasoning and trade-offs"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:600
+msgid "Asks clarifying questions when needed"
+msgstr ""
+
+#: includes/class-promptor-behavior.php:601
+msgid "Structured: problem, analysis, recommendation"
+msgstr ""
+
+#. translators: 1: threshold percentage, 2: period (daily/monthly), 3: site name
+#: includes/class-promptor-cost-guard.php:441
+#, php-format
+msgid "[Promptor] %1$d%% of %2$s AI token limit reached on %3$s"
+msgstr ""
+
+#: includes/class-promptor-cost-guard.php:450
+#, php-format
+msgid ""
+"Hello,\n"
+"\n"
+"Your Promptor AI assistant has used %1$d%% of its %2$s token limit.\n"
+"\n"
+"Usage: %3$s / %4$s tokens\n"
+"\n"
+"You can adjust your limits in Promptor > Settings > AI Usage.\n"
+"\n"
+"Regards,\n"
+"Promptor"
+msgstr ""
+
+#. translators: 1: site name, 2: current year
+#: includes/class-promptor-email-template.php:93
+#, php-format
+msgid "%1$s &copy; %2$s — Powered by Promptor"
+msgstr ""
+
+#: includes/class-promptor-email-template.php:100
+msgid "This is an automated notification. Please do not reply directly to this email."
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:151
+msgid "You already have an API key configured. No trial needed."
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:161
+msgid "Trial is already active."
+msgstr ""
+
+#. translators: %s: technical error detail
+#: includes/class-promptor-trial-client.php:196
+#, php-format
+msgid "Could not connect to trial service: %s"
+msgstr ""
+
+#. translators: 1: HTTP status code, 2: error detail
+#: includes/class-promptor-trial-client.php:212
+#, php-format
+msgid "Trial activation failed (HTTP %1$d): %2$s"
+msgstr ""
+
+#. translators: %s: raw response excerpt
+#: includes/class-promptor-trial-client.php:227
+#, php-format
+msgid "Invalid response from trial service (no token). Body: %s"
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:252
+msgid "Trial activated successfully!"
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:268
+msgid "No trial active."
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:310
+msgid "Could not check trial status."
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:352
+msgid "No active trial. Please activate a trial or enter your OpenAI API key."
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:416
+msgid "Failed to connect to AI service. Please try again."
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:436 public/ajax-handlers/class-promptor-ajax-chat-handler.php:1017
+msgid "Your free trial queries have been used up. Please enter your OpenAI API key to continue using Promptor."
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:448 public/ajax-handlers/class-promptor-ajax-chat-handler.php:1018
+msgid "Your free trial has expired. Please enter your OpenAI API key to continue using Promptor."
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:460 public/ajax-handlers/class-promptor-ajax-chat-handler.php:1019
+msgid "Your trial access has been revoked. Please enter your OpenAI API key."
+msgstr ""
+
+#. translators: 1: HTTP status code, 2: error detail
+#: includes/class-promptor-trial-client.php:469
+#, php-format
+msgid "AI service error (HTTP %1$d): %2$s"
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:536
+msgid "No trial to convert."
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:559
+msgid "Trial converted. You are now using your own API key."
+msgstr ""
+
+#. translators: %s: site name
+#: includes/class-promptor-trial-client.php:703
+#, php-format
+msgid "What does %s do?"
+msgstr ""
+
+#. translators: %s: site name
+#: includes/class-promptor-trial-client.php:709
+#, php-format
+msgid "How can I contact %s?"
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:713
+msgid "What services do you offer?"
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:715
+msgid "What are your prices?"
+msgstr ""
+
+#: includes/class-promptor-trial-client.php:717
+msgid "What are your frequently asked questions?"
+msgstr ""
+
+#. translators: %s: page title
+#: includes/class-promptor-trial-client.php:722
+#, php-format
+msgid "Tell me about %s"
+msgstr ""
+
+#. translators: %s: site name
+#: includes/class-promptor-trial-client.php:736
+#, php-format
+msgid "What can you tell me about %s?"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:39 public/ajax-handlers/class-promptor-ajax-chat-handler.php:344
+msgid "Invalid data provided."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:145 public/ajax-handlers/class-promptor-ajax-admin-handler.php:196
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:228 public/ajax-handlers/class-promptor-ajax-admin-handler.php:268
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:325 public/ajax-handlers/class-promptor-ajax-admin-handler.php:364
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:406 public/ajax-handlers/class-promptor-ajax-admin-handler.php:589
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:641 public/ajax-handlers/class-promptor-ajax-admin-handler.php:713
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:756 public/ajax-handlers/class-promptor-ajax-admin-handler.php:809
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:226 public/ajax-handlers/class-promptor-ajax-indexing-handler.php:326
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:535 public/ajax-handlers/class-promptor-ajax-indexing-handler.php:808
+msgid "Permission Denied."
+msgstr ""
+
+#. translators: %s: Recipient email address(es)
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:171
+#, php-format
+msgid "Test email sent successfully to %s"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:177
+msgid "Failed to send test email."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:205
+msgid "Slack notifications are disabled or Webhook URL is invalid."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:213
+msgid "Test notification sent successfully to Slack!"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:232
+msgid "No settings data received."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:241
+msgid "Invalid settings payload."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:252
+msgid "Settings could not be sanitized."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:256
+msgid "Settings saved."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:273
+msgid "API Key cannot be empty."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:290 public/ajax-handlers/class-promptor-ajax-admin-handler.php:987
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1110
+msgid "Connection Error: "
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:302
+msgid "Success! Your API Key is valid."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:304
+msgid "Error: Invalid API Key. Please check your key and try again."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:310
+msgid "An error occurred: "
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:332
+msgid "Knowledge base name cannot be empty."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:336
+msgid "Knowledge base with this name already exists."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:352
+msgid "New knowledge base created successfully."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:372
+msgid "Cannot delete the default knowledge base."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:376
+msgid "Knowledge base does not exist."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:394
+msgid "Knowledge base deleted successfully."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:411 public/ajax-handlers/class-promptor-ajax-admin-handler.php:1015
+msgid "Context key is missing."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:416 public/ajax-handlers/class-promptor-ajax-admin-handler.php:769
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:822 public/ajax-handlers/class-promptor-ajax-admin-handler.php:1020
+msgid "Context not found."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:427
+msgid "Invalid content data format."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:487
+msgid "Content settings saved successfully!"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:549
+msgid "Query not found."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:569
+msgid "Query Details"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:571
+msgid "User's Query:"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:573
+msgid "Full AI Response:"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:645 public/ajax-handlers/class-promptor-ajax-form-handler.php:208
+msgid "WooCommerce is not active."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:652 public/ajax-handlers/class-promptor-ajax-admin-handler.php:718
+msgid "Invalid data."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:657
+msgid "Order not found."
+msgstr ""
+
+#. translators: %s: Order number with link
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:698
+#, php-format
+msgid "Linked to Order %s"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:700
+msgid "Unlink"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:740
+msgid "Order ID"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:741
+msgid "Link"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:764
+msgid "Incomplete data sent."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:789
+#, php-format
+msgid "%d content role successfully updated."
+msgid_plural "%d content roles successfully updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:817
+msgid "Missing data."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:836
+msgid "Role updated successfully."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:974
+msgid "Invalid Slack Webhook URL."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:997
+msgid "Slack API returned an error: "
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1041
+msgid "No indexed content found. Please sync some content first."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1058
+msgid "OpenAI API key not configured."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1118
+msgid "Failed to generate questions."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1138
+msgid "Questions generated successfully!"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1160
+msgid "Invalid parameters."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1313
+msgid "Page"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1313
+msgid "Post"
+msgstr ""
+
+#. translators: 1: post type label, 2: word count, 3: date
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1326
+#, php-format
+msgid "%1$s • %2$d words • %3$s"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1340
+msgid "No published pages or posts found. Please create some content first."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1379
+msgid "API settings saved."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1440
+msgid "Content saved successfully."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1463
+msgid "Setup complete!"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1483 public/ajax-handlers/class-promptor-ajax-admin-handler.php:1511
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1538
+msgid "Trial system not available."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1542
+msgid "No active trial."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1550
+msgid "Please select at least one page."
+msgstr ""
+
+#. translators: %d: post ID
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1570
+#, php-format
+msgid "Could not extract content from post #%d."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1578
+msgid "Could not extract content from any selected page. Please select pages with published content."
+msgstr ""
+
+#. translators: %d: number of pages indexed
+#: public/ajax-handlers/class-promptor-ajax-admin-handler.php:1598
+#, php-format
+msgid "Successfully trained on %d page(s)!"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:148
+msgid "Invalid parameters for embedding."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:176
+msgid "Failed to connect to embedding service."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:183
+msgid "Embedding service returned an error."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:190
+msgid "Invalid response from embedding API."
+msgstr ""
+
+#. translators: %d: seconds to wait
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:309
+#, php-format
+msgid "Too many requests. Please wait %d seconds and try again."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:335
+msgid "Permission denied (invalid nonce)."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:353
+msgid "Thank you, we already received your feedback."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:364 public/assets/js/promptor-public.js:561
+msgid "Could not save feedback."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:374
+msgid "Feedback saved successfully."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:556
+msgid "Monthly limit reached (100 queries). Upgrade to Pro for unlimited queries and advanced features!"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:580 public/ajax-handlers/class-promptor-ajax-chat-handler.php:617
+msgid "Please type your question above and press Send to get started!"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:596
+msgid "Please enter your OpenAI API key to continue using Promptor."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:598 public/ajax-handlers/class-promptor-ajax-chat-handler.php:644
+msgid "Please set up your OpenAI API key or start a free trial in the plugin settings."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:602
+msgid "API configuration needed. Please contact the site administrator to set up the OpenAI API key."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:634
+msgid "Connection issue. Please check your internet connection and try again."
+msgstr ""
+
+#. translators: %s: original error message
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:637
+#, php-format
+msgid "AI service error: %s. Please try again or contact support if this persists."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:640
+msgid "Unable to process your query. Please check your connection and try again."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:641
+msgid "Your free trial queries have been used up. Add your OpenAI API key in settings to continue."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:642
+msgid "Your free trial has expired. Add your OpenAI API key in settings to continue."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:643
+msgid "Your trial access is no longer available. Please add your OpenAI API key."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:645
+msgid "Connection issue. Please try again."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:704 public/ajax-handlers/class-promptor-ajax-chat-handler.php:710
+msgid "Invalid history format."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:762
+msgid "API Key is not set."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:924
+msgid "Our AI assistant is temporarily unavailable due to high usage. Please try again later or contact us directly."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:1021
+msgid "Trial is no longer available. Please enter your OpenAI API key."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-chat-handler.php:1387
+msgid "Failed to connect to AI service."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:43 public/ajax-handlers/class-promptor-ajax-form-handler.php:203
+msgid "Security verification failed. Please refresh the page and try again."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:58
+msgid "Too many attempts. Please try again later."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:74
+msgid "Please provide a valid phone number (7-30 chars; digits, spaces, (), . and - allowed)."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:81
+msgid "Please provide a valid phone number (7-30 characters)."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:101
+msgid "Name and email are required fields."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:107
+msgid "Please provide a valid email address."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:116
+msgid "Name is too long. Maximum 100 characters allowed."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:120
+msgid "Notes are too long. Maximum 5000 characters allowed."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:141
+msgid "Could not save your submission. Please try again later."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:189
+msgid "Your request has been sent successfully! We will contact you soon."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:224 public/assets/js/promptor-public.js:580
+msgid "Invalid product."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:230
+msgid "This product cannot be purchased."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:243
+msgid "Failed to add product to cart. Please try again."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-form-handler.php:294
+msgid "Product added to cart!"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:177
+msgid "Embeddings table does not exist."
+msgstr ""
+
+#. translators: %s: Database error message.
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:189
+#, php-format
+msgid "Database error: %s"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:236
+msgid "Knowledge base not found. Please refresh the page."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:260
+msgid "No content selected. The index for this knowledge base has been cleared."
+msgstr ""
+
+#. translators: %d: Number of items removed.
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:296
+#, php-format
+msgid "%d items removed from knowledge base. Sync completed."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:301
+msgid "Knowledge base is already up to date. Nothing to sync."
+msgstr ""
+
+#. translators: %d: Number of items removed.
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:307
+#, php-format
+msgid "%d items removed from knowledge base. "
+msgstr ""
+
+#. translators: %d: Number of items to be added.
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:315
+#, php-format
+msgid "%d items will be added."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:330
+msgid "Website Crawler is a Pro feature. Please upgrade your license."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:338
+msgid "Sitemap URL is required."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:346 public/ajax-handlers/class-promptor-ajax-indexing-handler.php:578
+msgid "Only the current site domain is allowed for crawling."
+msgstr ""
+
+#. translators: %s: Error message.
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:363
+#, php-format
+msgid "Could not fetch sitemap. Error: %s"
+msgstr ""
+
+#. translators: %d: HTTP status code.
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:367
+#, php-format
+msgid "Could not fetch sitemap. The server returned status code: %d"
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:378
+msgid "The provided URL does not contain valid XML. Could not parse sitemap."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:447
+msgid "No URLs found in the sitemap after applying filters. Check your sitemap and filter settings."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:544
+msgid "Invalid URL provided."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:549
+msgid "Invalid Item ID provided."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:558
+msgid "OpenAI API Key is not set in Settings > API Settings."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:569
+msgid "Crawler is a Pro feature."
+msgstr ""
+
+#. translators: 1: URL, 2: error message.
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:597
+#, php-format
+msgid "Failed to fetch content for URL: %1$s. Reason: %2$s"
+msgstr ""
+
+#. translators: %d: Post ID.
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:604
+#, php-format
+msgid "Post with ID %d not found."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:612
+msgid "WooCommerce product indexing is a Pro feature."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:626
+msgid "PDF indexing is a Pro feature."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:634
+msgid "PDF file path is invalid or file does not exist."
+msgstr ""
+
+#. translators: 1: number of chunks, 2: post title
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:798
+#, php-format
+msgid "%1$d chunks created for %2$s."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:814
+msgid "No knowledge base was specified to be cleared."
+msgstr ""
+
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:826
+msgid "Database error occurred while clearing the index."
+msgstr ""
+
+#. translators: 1: Knowledge base key, 2: number of removed records.
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:831
+#, php-format
+msgid "Knowledge base \"%1$s\" has been cleared successfully. %2$d records removed."
+msgstr ""
+
+#. translators: %s: Error message.
+#: public/ajax-handlers/class-promptor-ajax-indexing-handler.php:840
+#, php-format
+msgid "Error clearing index: %s"
+msgstr ""
+
+#: public/assets/js/modules/services.js:91
+msgid "Product Comparison"
+msgstr ""
+
+#: public/assets/js/modules/services.js:120
+msgid "Add All to Cart"
+msgstr ""
+
+#: public/assets/js/modules/services.js:133 public/class-promptor-public.php:371
+msgid "Recommended Products"
+msgstr ""
+
+#: public/assets/js/modules/services.js:148 public/class-promptor-public.php:374
+msgid "OFF"
+msgstr ""
+
+#: public/assets/js/modules/services.js:157 public/class-promptor-public.php:342
+msgid "Add to Cart"
+msgstr ""
+
+#: public/assets/js/modules/services.js:162 public/assets/js/modules/services.js:165
+msgid "Out of Stock"
+msgstr ""
+
+#: public/assets/js/modules/services.js:167
+msgid "Only"
+msgstr ""
+
+#: public/assets/js/modules/services.js:167
+msgid "left"
+msgstr ""
+
+#: public/assets/js/modules/services.js:177 public/class-promptor-public.php:375
+msgid "Price"
+msgstr ""
+
+#: public/assets/js/modules/services.js:187 public/class-promptor-public.php:372
+msgid "Related Articles"
+msgstr ""
+
+#: public/assets/js/modules/services.js:210 public/class-promptor-public.php:373
+msgid "Download"
+msgstr ""
+
+#: public/assets/js/modules/services.js:225
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: public/assets/js/modules/services.js:226
+msgid "Read more…"
+msgstr ""
+
+#: public/assets/js/modules/services.js:247
+msgid "Recommended Services"
+msgstr ""
+
+#: public/assets/js/modules/services.js:248
+msgid "Make an Inquiry for Selected Services"
+msgstr ""
+
+#: public/assets/js/modules/services.js:249 public/assets/js/modules/ui.js:197 public/class-promptor-public.php:362
+msgid "Your Name"
+msgstr ""
+
+#: public/assets/js/modules/services.js:250 public/assets/js/modules/ui.js:198 public/class-promptor-public.php:363
+msgid "Your Email"
+msgstr ""
+
+#: public/assets/js/modules/services.js:251 public/assets/js/modules/ui.js:199 public/class-promptor-public.php:364
+msgid "Your Phone"
+msgstr ""
+
+#: public/assets/js/modules/services.js:252 public/assets/js/modules/ui.js:200 public/class-promptor-public.php:365
+msgid "Anything else you would like to add?"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:54
+msgid "Copy message"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:73 public/class-promptor-public.php:343
+msgid "Is this conversation helpful so far?"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:74 public/class-promptor-public.php:344
+msgid "Good response"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:75 public/class-promptor-public.php:345
+msgid "Bad response"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:76
+msgid "Thank you!"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:102 public/class-promptor-public.php:408
+msgid "Promptor is thinking"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:133 public/class-promptor-public.php:403 tests/frontend/chat/format-message.test.js:262
+#: tests/frontend/chat/format-message.test.js:269
+msgid "Here are some ideas to get you started:"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:151 public/class-promptor-public.php:349
+msgid "Based on our conversation, here is the recommended service:"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:152 public/class-promptor-public.php:350
+msgid "Based on our conversation so far, you need the following services:"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:155 public/class-promptor-public.php:351
+msgid "These services are typically handled together."
+msgstr ""
+
+#: public/assets/js/modules/ui.js:169 public/assets/js/promptor-public.js:275 public/class-promptor-public.php:355
+msgid "Select a service to request a quote"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:171 public/assets/js/promptor-public.js:201 public/assets/js/promptor-public.js:278
+#: public/class-promptor-public.php:356
+msgid "Request Quote"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:173 public/assets/js/promptor-public.js:281 public/class-promptor-public.php:357
+msgid "Request Quote for All"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:180 public/class-promptor-public.php:352
+msgid "Click on a service to see details and select:"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:201 public/class-promptor-public.php:366
+msgid "Submit Inquiry"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:208 public/class-promptor-public.php:358
+msgid "Request a Quote"
+msgstr ""
+
+#: public/assets/js/modules/ui.js:209 public/class-promptor-public.php:359
+msgid "Services you are interested in:"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:48 public/class-promptor-public.php:378
+msgid "Chat could not be loaded. (Context Error)"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:78 public/class-promptor-public.php:379
+msgid "Security validation failed. Please refresh the page."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:92 public/class-promptor-public.php:380
+msgid "Configuration error. Please contact administrator."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:110
+msgid "Type your message"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:111
+msgid "Send message"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:199 public/class-promptor-public.php:370
+msgid "Toggle drawer"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:298 public/class-promptor-public.php:381
+msgid "Your message is too long. Please shorten it and try again."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:360
+msgid "item"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:360
+msgid "items"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:364
+msgid "You have items in your cart"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:368
+msgid "Complete Purchase"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:392 public/class-promptor-public.php:382
+msgid "Network error. Please check your connection."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:400 public/class-promptor-public.php:383
+msgid "Sorry, an error occurred. Please try again."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:473 public/assets/js/promptor-public.js:666 public/class-promptor-public.php:390
+msgid "Please select at least one service."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:496
+msgid "Expand drawer"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:503
+msgid "Collapse drawer"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:511 public/assets/js/promptor-public.js:721
+msgid "No services selected."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:519 public/class-promptor-public.php:400
+msgid "Are you sure you want to start a new conversation? This will clear your chat history and selected services."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:529
+msgid "Chat history cleared. You can start a fresh conversation!"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:567 public/class-promptor-public.php:384
+msgid "An error occurred while saving feedback."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:589 public/class-promptor-public.php:385
+msgid "Added"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:594 public/class-promptor-public.php:386
+msgid "An error occurred."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:599 public/class-promptor-public.php:387
+msgid "A network error occurred."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:635
+msgid "All Added"
+msgstr ""
+
+#: public/assets/js/promptor-public.js:674 public/assets/js/promptor-public.js:729 public/class-promptor-public.php:391
+msgid "Please fill in your name and email."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:680 public/assets/js/promptor-public.js:735 public/class-promptor-public.php:392
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:684 public/assets/js/promptor-public.js:739 public/class-promptor-public.php:393
+msgid "Sending..."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:696 public/assets/js/promptor-public.js:751 public/class-promptor-public.php:394
+msgid "Thank you! We received your inquiry."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:701 public/assets/js/promptor-public.js:756 public/class-promptor-public.php:395
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:706 public/assets/js/promptor-public.js:761 public/class-promptor-public.php:396
+msgid "A network error occurred. Please try again."
+msgstr ""
+
+#: public/assets/js/promptor-public.js:824 public/class-promptor-public.php:397
+msgid "Failed to initialize chat. Please refresh the page."
+msgstr ""
+
+#: public/class-promptor-public.php:346
+msgid "Thank you for your feedback!"
+msgstr ""
+
+#: public/class-promptor-public.php:404
+msgid "just now"
+msgstr ""
+
+#: public/class-promptor-public.php:405
+msgid " min ago"
+msgstr ""
+
+#: public/class-promptor-public.php:406
+msgid " hr ago"
+msgstr ""
+
+#: public/class-promptor-public.php:407
+msgid " d ago"
+msgstr ""
+
+#: public/class-promptor-public.php:519
+msgid "Toggle Chat Window"
+msgstr ""
+
+#: public/class-promptor-public.php:563
+msgid "Start New Conversation"
+msgstr ""
+
+#: public/class-promptor-public.php:564
+msgid "Clear chat history and start over"
+msgstr ""
+
+#: public/class-promptor-public.php:576
+msgid "Ask a question"
+msgstr ""
+
+#: public/class-promptor-public.php:586
+msgid "Ask"
+msgstr ""
+
+#: public/class-promptor-public.php:596
+msgid "Powered by Promptor"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://promptorai.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Advanced AI-powered search, recommendation, and lead generation system for WordPress. Turn your website content into an intelligent sales assistant "
+"with Promptor. Engage visitors with AI-powered chat, recommend products & services, and generate leads effortlessly."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Corrplus"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://corrplus.net"
+msgstr ""

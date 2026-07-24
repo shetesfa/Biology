@@ -1,0 +1,3579 @@
+/* === 0. DESIGN TOKENS (CSS Custom Properties) === */
+:root {
+  /* Brand */
+  --promptor-primary: #15b6ff;
+  --promptor-primary-dark: #0a8fd4;
+
+  /* Semantic Status */
+  --promptor-success: #00a32a;
+  --promptor-success-light: #e8f5e9;
+  --promptor-warning: #dba617;
+  --promptor-warning-light: #fff8e1;
+  --promptor-danger: #d63638;
+  --promptor-danger-light: #ffebee;
+  --promptor-info: #2271b1;
+  --promptor-info-light: #f0f6fc;
+
+  /* Neutral (Gray Scale) */
+  --promptor-gray-50: #f8fafc;
+  --promptor-gray-100: #f1f5f9;
+  --promptor-gray-200: #e2e8f0;
+  --promptor-gray-300: #cbd5e1;
+  --promptor-gray-400: #94a3b8;
+  --promptor-gray-500: #64748b;
+  --promptor-gray-600: #475569;
+  --promptor-gray-700: #334155;
+  --promptor-gray-800: #1e293b;
+  --promptor-gray-900: #0f172a;
+
+  /* Surfaces */
+  --promptor-bg: #ffffff;
+  --promptor-bg-secondary: #f8fafc;
+  --promptor-bg-tertiary: #f0f0f1;
+  --promptor-border: #c3c4c7;
+  --promptor-border-light: #e2e8f0;
+  --promptor-text: #1d2327;
+  --promptor-text-muted: #646970;
+  --promptor-text-light: #787c82;
+  --promptor-shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --promptor-shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+  --promptor-shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+
+  /* Typography Scale */
+  --promptor-font-xs: 11px;
+  --promptor-font-sm: 13px;
+  --promptor-font-base: 14px;
+  --promptor-font-md: 15px;
+  --promptor-font-lg: 18px;
+  --promptor-font-xl: 24px;
+  --promptor-font-2xl: 28px;
+  --promptor-font-3xl: 32px;
+
+  /* Spacing (8px base) */
+  --promptor-space-1: 4px;
+  --promptor-space-2: 8px;
+  --promptor-space-3: 12px;
+  --promptor-space-4: 16px;
+  --promptor-space-5: 20px;
+  --promptor-space-6: 24px;
+  --promptor-space-8: 32px;
+  --promptor-space-10: 40px;
+
+  /* Border Radius */
+  --promptor-radius-sm: 4px;
+  --promptor-radius-md: 8px;
+  --promptor-radius-lg: 12px;
+  --promptor-radius-full: 9999px;
+
+  /* Interactive */
+  --promptor-link: #2271b1;
+  --promptor-link-hover: #135e96;
+  --promptor-focus-ring: rgba(21, 182, 255, 0.35);
+  --promptor-hover-bg: rgba(0, 0, 0, 0.02);
+
+  /* Transitions */
+  --promptor-transition-fast: 0.1s ease;
+  --promptor-transition-normal: 0.15s ease;
+  --promptor-transition-slow: 0.25s ease;
+
+  /* Gradients */
+  --promptor-gradient-primary: linear-gradient(135deg, #15b6ff 0%, #0a8fd4 100%);
+  --promptor-gradient-blue: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  --promptor-gradient-green: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  --promptor-gradient-orange: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  --promptor-gradient-purple: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  --promptor-gradient-pink: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);
+  --promptor-gradient-indigo: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+  --promptor-gradient-teal: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%);
+  --promptor-gradient-changelog: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* === 1. GENEL YAPI VE POSTBOX === */
+.promptor-settings-wrap .postbox,
+.promptor-knowledge-base-manager .postbox,
+.promptor-dashboard-wrap .postbox,
+.promptor-welcome-wrap .postbox,
+.promptor-changelog-wrap .postbox,
+.promptor-queries-wrap .postbox,
+.promptor-submissions-wrap .postbox {
+    margin-top: 0;
+    margin-bottom: 20px;
+    border: 1px solid var(--promptor-border);
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+.postbox .hndle { font-size: var(--promptor-font-base); padding: 8px 12px; margin: 0; line-height: 1.4; display: flex; align-items: center; gap: 8px; }
+.postbox .inside { padding: 12px; margin: 0; }
+.postbox .inside.no-padding { padding: 0; }
+.promptor-grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* === 1.5. PREMIUM PAGE HEADERS === */
+.promptor-page-header {
+    background: var(--promptor-gradient-primary);
+    padding: 30px 40px;
+    margin: 0 0 30px -20px;
+    margin-right: -20px;
+    border-radius: 0;
+}
+
+.promptor-page-header .header-content h1 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.promptor-page-header .header-content h1 .dashicons {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+}
+
+.promptor-page-header .page-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--promptor-font-md);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Settings page specific */
+.promptor-settings-wrap .promptor-page-header {
+    background: var(--promptor-gradient-primary);
+}
+
+/* Changelog page specific */
+.promptor-changelog-wrap .promptor-page-header {
+    background: var(--promptor-gradient-changelog);
+}
+
+/* AI Conversations (Queries) page specific */
+.promptor-queries-wrap .promptor-page-header {
+    background: var(--promptor-gradient-blue);
+}
+
+/* Submissions page specific */
+.promptor-submissions-wrap .promptor-page-header {
+    background: var(--promptor-gradient-green);
+}
+
+/* Webhooks page specific */
+.promptor-webhooks-wrap .promptor-page-header {
+    background: var(--promptor-gradient-orange);
+}
+
+/* === 2. WELCOME SAYFASI === */
+.promptor-welcome-wrap { max-width: 1200px; margin: 20px 20px 20px 0; }
+.promptor-welcome-header { background: var(--promptor-bg); padding: 2em; margin-bottom: 2em; display: flex; align-items: center; gap: 25px; border: 1px solid #ddd; border-radius: 4px;}
+.promptor-welcome-header .header-logo img { max-width: 200px; height: auto; }
+.promptor-welcome-header .header-content h1 { font-size: 2em; font-weight: 600; line-height: 1.2; margin: 0 0 5px; color: var(--promptor-text); }
+.promptor-welcome-header .about-text { font-size: 1.1em; color: #50575e; margin: 0; }
+.promptor-welcome-banner { background: #007bff; color: #fff; padding: 2em; border-radius: 4px; text-align: center; margin-bottom: 2em; }
+.promptor-welcome-banner h2 { font-size: 1.8em; font-weight: 600; color: #fff; margin: 0 0 10px; }
+.promptor-welcome-banner p { font-size: 1.1em; color: #f0f6fc; margin: 0 0 20px; }
+.quick-start .hndle { text-align: center; display: block; }
+.quick-start .steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding: 10px 0; }
+.quick-start .step { text-align: center; }
+.quick-start .step-number { width: 40px; height: 40px; line-height: 40px; border-radius: 50%; background-color: var(--promptor-bg-tertiary); color: #007cba; font-weight: 600; font-size: 1.2em; margin: 0 auto 15px auto; border: 1px solid #ddd; }
+.promptor-section-header { text-align: center; margin: 2em 0; }
+.promptor-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 2em; }
+.promptor-feature-card { background: var(--promptor-bg); padding: 20px; border: 1px solid #ddd; border-radius: 4px; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+.promptor-feature-card:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+.promptor-feature-card h3 { margin: 15px 0 5px; font-size: 1.1em; }
+.promptor-feature-card p { color: #50575e; margin: 0; font-size: var(--promptor-font-base); }
+.feature-icon-wrapper { width: 50px; height: 50px; margin: 0 auto; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; }
+.feature-icon-wrapper .dashicons { font-size: 22px; }
+.feature-icon-wrapper.f-brain { background-color: #6D28D9; } /* Yeni */
+.feature-icon-wrapper.f-kb { background-color: #3B82F6; }
+.feature-icon-wrapper.f-crawler { background-color: #10B981; }
+.feature-icon-wrapper.f-woo { background-color: #8B5CF6; }
+.feature-icon-wrapper.f-analytics { background-color: #F59E0B; }
+.feature-icon-wrapper.f-leads { background-color: #EF4444; }
+.feature-icon-wrapper.f-ui { background-color: #EC4899; }
+.feature-icon-wrapper.f-notify { background-color: #6366F1; }
+.feature-icon-wrapper.f-dev { background-color: #4B5563; }
+.feature-icon-wrapper.f-ai-settings { background-color: #5c6bc0; }
+
+.promptor-features-table th, .promptor-features-table td { padding: 12px; vertical-align: middle; }
+.promptor-welcome-bottom-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+.promptor-sidebar-column .postbox .inside ul { margin: 0 0 0 1.5em; list-style-type: disc; }
+.promptor-status-box { padding: 10px 15px; border-radius: 4px; margin: 0 0 10px 0; font-weight: 500; }
+.promptor-status-box.status-pro { background-color: var(--promptor-success-light); border-left: 4px solid var(--promptor-success); color: #1b5e20; }
+.promptor-status-box.status-lite { background-color: var(--promptor-warning-light); border-left: 4px solid var(--promptor-warning); color: #6d4c02; }
+
+/* === 3. DASHBOARD SAYFASI === */
+.promptor-dashboard-wrap .promptor-dashboard-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+.promptor-dashboard-wrap h1 { font-weight: 600; margin: 0; font-size: var(--promptor-font-2xl); color: var(--promptor-gray-800); }
+.promptor-dashboard-wrap .subtitle { font-size: var(--promptor-font-base); color: var(--promptor-gray-500); margin-top: 4px; font-weight: 400; }
+
+/* KPI Cards */
+.promptor-kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 20px; }
+.promptor-kpi-card { background: var(--promptor-bg); border: 1px solid var(--promptor-border-light); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px; transition: all .2s ease-in-out; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+.promptor-kpi-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+.promptor-kpi-card .kpi-icon { flex-shrink: 0; width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+.promptor-kpi-card .kpi-icon .dashicons { font-size: 26px; color: #fff; width: 26px; height: 26px; }
+.promptor-kpi-card .kpi-content { display: flex; flex-direction: column; }
+.promptor-kpi-card .kpi-value { font-size: var(--promptor-font-2xl); font-weight: 700; color: var(--promptor-gray-800); line-height: 1.2; }
+.promptor-kpi-card .kpi-label { margin-top: 4px; color: var(--promptor-gray-500); font-size: var(--promptor-font-sm); font-weight: 500; }
+
+/* KPI Kart Renkleri - Modern Palette */
+.promptor-kpi-card.kpi-queries .kpi-icon { background: var(--promptor-gradient-blue); }
+.promptor-kpi-card.kpi-leads .kpi-icon { background: var(--promptor-gradient-purple); }
+.promptor-kpi-card.kpi-conversion .kpi-icon { background: var(--promptor-gradient-pink); }
+.promptor-kpi-card.kpi-revenue .kpi-icon { background: var(--promptor-gradient-green); }
+.promptor-kpi-card.kpi-satisfaction .kpi-icon { background: var(--promptor-gradient-orange); }
+.promptor-kpi-card.kpi-response .kpi-icon { background: var(--promptor-gradient-indigo); }
+
+/* Dashboard Charts & Lists */
+.promptor-dashboard-charts-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 20px;}
+.promptor-dashboard-lists-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.promptor-chart-container { position: relative; height: 300px; max-width: 100%; }
+
+/* Modern Postbox Styling for Dashboard */
+.promptor-dashboard-wrap .postbox {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    overflow: hidden;
+}
+
+.promptor-dashboard-wrap .postbox .hndle {
+    margin: 0;
+    padding: 16px 20px;
+    background: var(--promptor-gradient-blue);
+    color: #fff;
+    font-size: var(--promptor-font-md);
+    font-weight: 600;
+    border: none;
+}
+
+.promptor-dashboard-wrap .postbox .hndle .dashicons {
+    color: #fff;
+    font-size: 20px;
+}
+
+/* Specific gradient colors for different sections */
+.promptor-dashboard-wrap .postbox.chart-box:first-child .hndle {
+    background: var(--promptor-gradient-blue); /* Daily Performance - Blue */
+}
+
+.promptor-dashboard-wrap .postbox.chart-box:last-child .hndle {
+    background: var(--promptor-gradient-purple); /* Lead Pipeline - Purple */
+}
+
+.promptor-dashboard-wrap .postbox.section-services .hndle {
+    background: var(--promptor-gradient-green); /* Services - Green */
+}
+
+.promptor-dashboard-wrap .postbox.section-products .hndle {
+    background: var(--promptor-gradient-orange); /* Products - Orange */
+}
+
+.promptor-dashboard-wrap .postbox.section-submissions .hndle {
+    background: var(--promptor-gradient-indigo); /* Submissions - Indigo */
+}
+
+.promptor-dashboard-wrap .postbox.section-queries .hndle {
+    background: var(--promptor-gradient-pink); /* Queries - Pink */
+}
+
+.promptor-dashboard-wrap .postbox.section-questions .hndle {
+    background: var(--promptor-gradient-teal); /* Questions - Teal */
+}
+
+.promptor-dashboard-wrap .inside {
+    padding: 20px;
+}
+
+.performing-list-title { font-size: var(--promptor-font-base); font-weight: 600; border-bottom: 1px solid var(--promptor-border-light); padding-bottom: 8px; margin: 0 0 10px; color: var(--promptor-gray-800); }
+.performing-list { margin: 0; padding: 0; list-style-position: inside; }
+.performing-list li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--promptor-gray-100); font-size: var(--promptor-font-base); color: var(--promptor-gray-600); }
+.performing-list li:last-child { border-bottom: none; }
+.performing-list li span { color: var(--promptor-gray-500); background-color: var(--promptor-gray-100); padding: 4px 10px; border-radius: 6px; font-size: var(--promptor-font-xs); font-weight: 600; }
+.view-all-link { padding: 16px; text-align: center; border-top: 1px solid var(--promptor-border-light); background: var(--promptor-bg-secondary); }
+.view-all-link .button { font-weight: 500; }
+
+/* === 4. AYARLAR & SEKMELER === */
+.promptor-settings-wrap .nav-tab-wrapper:not(.promptor-content-tabs) { margin-bottom: 20px; }
+.promptor-sub-tabs.nav-tab-wrapper, .promptor-content-tabs.nav-tab-wrapper { border-bottom: 1px solid var(--promptor-border); padding: 0 10px; margin-bottom: 20px; }
+.promptor-sub-tabs .nav-tab, .promptor-content-tabs .nav-tab { background: var(--promptor-bg-tertiary); border: 1px solid #ccc; margin-right: 5px;}
+.promptor-sub-tabs .nav-tab-active, .promptor-content-tabs .nav-tab-active { background: var(--promptor-bg); border-bottom-color: #fff; }
+.promptor-settings-wrap form > .postbox .form-table th { padding-left: 0; width: 200px; }
+.promptor-tab-content { display: none; }
+.promptor-tab-content.active { display: block; }
+.promptor-tab-toolbar { padding: 10px; background: var(--promptor-bg-tertiary); border: 1px solid #ddd; border-bottom: none; }
+.promptor-tab-toolbar .search-box { margin: 0; }
+.promptor-global-setting { display: table-row; }
+.promptor-inline-setting { display: none; }
+
+/* === 5. BAŞVURULAR TABLOSU (SUBMISSIONS) === */
+.promptor-status-selector { position: relative; display: inline-flex; align-items: center; border: 1px solid #dcdcde; border-radius: 4px; padding: 4px 10px; cursor: pointer; background: var(--promptor-bg-tertiary); min-width: 120px; justify-content: flex-start; color: #2c3338; transition: border-color .1s,background-color .1s; user-select: none; }
+.promptor-status-selector:hover { border-color: #007cba; }
+.promptor-status-selector .dashicons { margin-right: 6px; line-height: inherit; font-size: 18px; }
+.promptor-status-selector .spinner { display: none; margin-left: 8px; vertical-align: middle; }
+.promptor-status-selector .status-dropdown { display: none; position: absolute; top: 100%; left: 0; background: var(--promptor-bg); border: 1px solid var(--promptor-border); border-radius: 4px; box-shadow: 0 1px 1px rgba(0,0,0,.04); z-index: 10; min-width: 100%; padding: 4px 0; }
+.promptor-status-selector.open .status-dropdown { display: block; }
+.status-dropdown a.status-option { display: flex; align-items: center; padding: 6px 10px; text-decoration: none; color: var(--promptor-info); }
+.status-dropdown a.status-option:hover { background: var(--promptor-bg-tertiary); }
+.promptor-status-badge, .status-is-pending, .status-is-contacted, .status-is-converted, .status-is-rejected { display: inline-block; padding: 4px 8px; font-size: 11px; font-weight: 600; line-height: 1.5; text-transform: uppercase; border-radius: 3px; border: 1px solid; }
+.status-is-pending { background-color: var(--promptor-warning-light); border-color: #ffc107; color: #6d4c02; }
+.status-is-contacted { background-color: #e0f2fe; border-color: #0288d1; color: #01579b; }
+.status-is-converted { background-color: var(--promptor-success-light); border-color: #4caf50; color: #1b5e20; }
+.status-is-rejected { background-color: var(--promptor-danger-light); border-color: #f44336; color: #c62828; }
+
+/* === 6. SUBMISSIONS TABLOSU İÇİN EK STİLLER === */
+.order-link-wrapper .spinner { visibility: hidden; float: none; vertical-align: middle; margin-left: 5px; }
+.order-link-form { display: flex; gap: 5px; align-items: center; }
+.linked-order-info { font-size: var(--promptor-font-sm); color: #3c434a; }
+.linked-order-info a { font-weight: 600; }
+.linked-order-info .promptor-unlink-order-btn { vertical-align: middle; margin-left: 5px; color: var(--promptor-danger); }
+.linked-order-info .promptor-unlink-order-btn:hover { color: #a02725; }
+
+/* === 7. LOG === */
+#promptor-indexing-log { background: var(--promptor-gray-900); color: #d4d4d4; padding: 15px; border-radius: 4px; max-height: 400px; overflow-y: auto; white-space: pre-wrap; word-wrap: break-word; font-family: monospace; }
+
+/* === 8. SYSTEM STATUS BAR === */
+.promptor-system-status-bar { background: var(--promptor-bg); border: 1px solid #e2e4e7; padding: 10px 20px; border-radius: 4px; margin-top: 20px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.promptor-system-status-bar .status-bar-title { margin-right: 10px; font-size: var(--promptor-font-base); font-weight: 600; color: #3c434a; }
+.promptor-system-status-bar .status-item { display: inline-flex; align-items: center; gap: 5px; font-size: var(--promptor-font-sm); padding: 4px 10px; border-radius: 20px; font-weight: 500; }
+.promptor-system-status-bar .status-item .dashicons { font-size: 16px; }
+.promptor-system-status-bar .status-item.active { background-color: var(--promptor-success-light); color: #1b5e20; }
+.promptor-system-status-bar .status-item.inactive { background-color: var(--promptor-danger-light); color: #c62828; }
+
+/* === 9. UI SETTINGS & LIVE PREVIEW === */
+.promptor-ui-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 20px; align-items: flex-start; }
+.promptor-ui-preview-column .postbox { position: sticky; top: 40px; }
+.promptor-ui-preview-column .inside { background: #f0f2f5; padding: 20px; display: flex; align-items: center; justify-content: center; min-height: 550px; }
+#promptor-preview-widget { width: 320px; height: 500px; border: 1px solid #d1d1d1; display: flex; flex-direction: column; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: all 0.2s ease-in-out; background-color: var(--promptor-bg); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+#promptor-preview-header { padding: 12px 15px; color: white; display: flex; align-items: center; gap: 12px; flex-shrink: 0; transition: background-color .2s; }
+#promptor-preview-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: white; padding: 2px; }
+#promptor-preview-title { font-weight: 600; font-size: 16px; }
+#promptor-preview-subtitle { font-size: var(--promptor-font-xs); opacity: 0.9; }
+#promptor-preview-body { flex-grow: 1; padding: 15px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+.promptor-preview-message { padding: 8px 12px; max-width: 80%; line-height: 1.4; font-size: var(--promptor-font-base); display: flex; align-items: flex-start; gap: 8px; }
+.promptor-preview-message.ai { background: var(--promptor-gray-100); color: #0f172a; align-self: flex-start; }
+.promptor-preview-message.user { background: #15b6ff; color: white; align-self: flex-end; flex-direction: row-reverse; }
+.promptor-preview-user-avatar { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; background-color: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; }
+.promptor-preview-user-avatar .dashicons { font-size: 20px; color: #fff; }
+.promptor-preview-user-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+#promptor-preview-footer { padding: 10px; background: rgba(0,0,0,0.02); border-top: 1px solid rgba(0,0,0,0.05); display: flex; gap: 10px; flex-shrink: 0; }
+#promptor-preview-footer input { flex-grow: 1; border: 1px solid #cbd5e1; padding: 8px 12px; font-size: var(--promptor-font-base); outline: none; transition: all 0.2s; }
+#promptor-preview-footer button { border: none; color: white; font-size: 18px; width: 40px; height: 40px; cursor: default; display: flex; align-items: center; justify-content: center; }
+.promptor-image-uploader { display: flex; align-items: center; gap: 10px; }
+.hidden-row { display: none; }
+.api-key-wrapper { display: flex; align-items: center; gap: 10px; } 
+.api-key-wrapper .spinner { visibility: hidden; float:none; margin:0; }
+
+/* === 10. RESPONSIVE === */
+@media screen and (max-width: 1600px) {
+    .promptor-dashboard-lists-grid { grid-template-columns: 1fr 1fr; }
+}
+@media screen and (max-width: 1400px) {
+    .promptor-dashboard-charts-grid { grid-template-columns: 1fr; }
+}
+@media screen and (max-width: 1200px) {
+    .promptor-ui-layout { grid-template-columns: 1fr; }
+    .promptor-ui-preview-column .postbox { position: static; margin-top: 20px; }
+}
+@media screen and (max-width: 960px) {
+    .promptor-welcome-bottom-grid { grid-template-columns: 1fr; }
+     .promptor-dashboard-lists-grid { grid-template-columns: 1fr; }
+}
+@media screen and (max-width: 1024px) {
+  .promptor-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .promptor-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* === 11. E-POSTA ŞABLONLARI AYAR SAYFASI === */
+.promptor-email-templates-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.promptor-email-templates-list {
+    flex: 0 0 250px; /* Sabit genişlik */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid var(--promptor-border);
+    background: var(--promptor-bg-tertiary);
+    border-radius: 4px;
+}
+
+.promptor-email-templates-list li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--promptor-info);
+    border-bottom: 1px solid var(--promptor-border);
+    transition: background-color 0.1s ease-in-out;
+}
+
+.promptor-email-templates-list li:last-child a {
+    border-bottom: none;
+}
+
+.promptor-email-templates-list li a:hover {
+    background-color: #eef5fa;
+}
+
+.promptor-email-templates-list li a.active {
+    background-color: var(--promptor-bg);
+    font-weight: 600;
+    color: var(--promptor-text);
+    position: relative;
+    right: -1px; /* Seçili öğenin sağ kenarlığını editör alanıyla birleştirir */
+}
+
+.promptor-email-template-editor {
+    flex-grow: 1;
+    border: 1px solid var(--promptor-border);
+    padding: 0 16px;
+    background: var(--promptor-bg);
+}
+
+.promptor-email-template-editor .form-table th {
+    width: 120px;
+}
+
+.promptor-shortcode-list {
+    user-select: all; /* Kopyalamayı kolaylaştırır */
+    background: var(--promptor-bg-tertiary);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: var(--promptor-font-xs);
+}
+.promptor-table-center {
+    text-align: center;
+    vertical-align: middle;
+}
+tr.saving {
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in-out;
+}
+tr.save-success {
+    background-color: #dff0d8 !important;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* === 12. AYAR SAYFASI ELEMANLARI === */
+.api-key-wrapper { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+.api-key-wrapper .spinner { 
+    visibility: hidden; 
+    float:none; 
+    margin:0; 
+}
+.promptor-slider-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+.promptor-slider-input { 
+    flex-grow: 1; 
+    max-width: 300px; 
+}
+.promptor-slider-value { 
+    font-weight: bold; 
+    background: var(--promptor-bg-tertiary); 
+    padding: 2px 8px; 
+    border-radius: 4px; 
+    min-width: 45px; 
+    text-align: center;
+}
+
+/* === 13. SORGULAR SAYFASI - YENİ LİST TABLE RENK SINIFLARI === */
+
+/* ====================================
+   Feedback Icons
+   ==================================== */
+.promptor-feedback-positive {
+	color: var(--promptor-success);
+}
+
+.promptor-feedback-negative {
+	color: var(--promptor-danger);
+}
+
+/* ====================================
+   Response Time Colors
+   ==================================== */
+.promptor-time-normal {
+	color: var(--promptor-success);
+	font-weight: 500;
+}
+
+.promptor-time-warning {
+	color: var(--promptor-warning);
+	font-weight: 500;
+}
+
+.promptor-time-slow {
+	color: var(--promptor-danger);
+	font-weight: 600;
+}
+
+/* ====================================
+   Cost Colors
+   ==================================== */
+.promptor-cost-normal {
+	color: inherit;
+}
+
+.promptor-cost-warning {
+	color: var(--promptor-warning);
+	font-weight: 500;
+}
+
+.promptor-cost-high {
+	color: var(--promptor-danger);
+	font-weight: 600;
+}
+
+/* ====================================
+   Query Counter Bar - UPDATED
+   ==================================== */
+.promptor-query-counter-bar {
+	background: var(--promptor-bg);
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+	padding: 15px;
+	margin: 20px 0;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.promptor-query-counter-bar span {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: 500;
+	color: var(--promptor-text);
+}
+
+/* ====================================
+   Progress Track - UPDATED
+   ==================================== */
+.promptor-progress-track {
+	width: 100%;
+	height: 20px;
+	background: var(--promptor-bg-tertiary);
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+.promptor-progress-fill {
+	height: 100%;
+	border-radius: 10px;
+	transition: width 0.3s ease, background-color 0.3s ease;
+	position: relative;
+}
+
+.promptor-progress-fill::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(
+		90deg,
+		rgba(255,255,255,0) 0%,
+		rgba(255,255,255,0.3) 50%,
+		rgba(255,255,255,0) 100%
+	);
+	animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+/* ====================================
+   List Table Column Widths
+   ==================================== */
+.wp-list-table .column-feedback {
+	text-align: center;
+	width: 80px;
+}
+
+.wp-list-table .column-response_time_ms {
+	width: 120px;
+}
+
+.wp-list-table .column-tokens_used {
+	width: 100px;
+}
+
+.wp-list-table .column-query_cost {
+	width: 100px;
+}
+
+.wp-list-table .column-query_timestamp {
+	width: 150px;
+}
+
+.wp-list-table .column-linked_order {
+	width: 120px;
+}
+
+/* === 14. TALEPLER (SUBMISSIONS) SAYFASI MODAL === */
+#promptor-details-modal {
+    position: fixed;
+    left: 0; 
+    top: 0; 
+    right: 0; 
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 100000;
+    display: none; 
+    align-items: center; 
+    justify-content: center;
+}
+.promptor-modal-content {
+    background: var(--promptor-bg);
+    border-radius: 4px;
+    padding: 20px 25px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.promptor-modal-content h2 { 
+    margin-top: 0; 
+}
+.promptor-details-table th { 
+    text-align: left; 
+    vertical-align: top; 
+    width: 140px; 
+}
+.promptor-details-table td { 
+    vertical-align: top; 
+}
+.modal-close { 
+    margin-top: 20px; 
+    float: right; 
+}
+
+/* === 15. RESPONSIVE DESIGN - QUERIES === */
+@media screen and (max-width: 782px) {
+	.promptor-query-counter-bar {
+		padding: 10px;
+	}
+	
+	.promptor-query-counter-bar span {
+		font-size: var(--promptor-font-sm);
+	}
+	
+	.promptor-progress-track {
+		height: 15px;
+	}
+}
+
+/* === 16. NOTICE ENHANCEMENTS === */
+.notice.notice-info.notice-large {
+	border-left-width: 4px;
+}
+
+.notice.notice-info.notice-large p {
+	line-height: 1.6;
+}
+
+/* === 17. DARK MODE SUPPORT (WordPress 5.7+) === */
+/* Dark mode variables mixin — shared between forced dark & auto (media query) */
+body.promptor-dark {
+    --promptor-bg: #1e1e2e;
+    --promptor-bg-secondary: #252535;
+    --promptor-bg-tertiary: #2d2d3d;
+    --promptor-border: #444466;
+    --promptor-border-light: #3a3a55;
+    --promptor-text: #e0e0f0;
+    --promptor-text-muted: #a0a0b8;
+    --promptor-text-light: #8888a0;
+    --promptor-gray-50: #252535;
+    --promptor-gray-100: #2d2d3d;
+    --promptor-gray-200: #3a3a55;
+    --promptor-gray-300: #555577;
+    --promptor-gray-400: #7777aa;
+    --promptor-gray-500: #9999bb;
+    --promptor-gray-600: #bbbbdd;
+    --promptor-gray-700: #ccccee;
+    --promptor-gray-800: #ddddff;
+    --promptor-gray-900: #f0f0ff;
+    --promptor-success-light: #1a3a2a;
+    --promptor-warning-light: #3a3520;
+    --promptor-danger-light: #3a1a1a;
+    --promptor-info-light: #1a2a3a;
+    --promptor-shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+    --promptor-shadow-md: 0 4px 8px rgba(0,0,0,0.4);
+    --promptor-shadow-lg: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+    body:not(.promptor-light) {
+        --promptor-bg: #1e1e2e;
+        --promptor-bg-secondary: #252535;
+        --promptor-bg-tertiary: #2d2d3d;
+        --promptor-border: #444466;
+        --promptor-border-light: #3a3a55;
+        --promptor-text: #e0e0f0;
+        --promptor-text-muted: #a0a0b8;
+        --promptor-text-light: #8888a0;
+        --promptor-gray-50: #252535;
+        --promptor-gray-100: #2d2d3d;
+        --promptor-gray-200: #3a3a55;
+        --promptor-gray-300: #555577;
+        --promptor-gray-400: #7777aa;
+        --promptor-gray-500: #9999bb;
+        --promptor-gray-600: #bbbbdd;
+        --promptor-gray-700: #ccccee;
+        --promptor-gray-800: #ddddff;
+        --promptor-gray-900: #f0f0ff;
+        --promptor-success-light: #1a3a2a;
+        --promptor-warning-light: #3a3520;
+        --promptor-danger-light: #3a1a1a;
+        --promptor-info-light: #1a2a3a;
+        --promptor-shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+        --promptor-shadow-md: 0 4px 8px rgba(0,0,0,0.4);
+        --promptor-shadow-lg: 0 10px 20px rgba(0,0,0,0.5);
+    }
+}
+
+/* Dark mode component overrides — forced dark class */
+body.promptor-dark .postbox,
+body.promptor-dark .promptor-card,
+body.promptor-dark .promptor-feature-card,
+body.promptor-dark .promptor-kpi-card,
+body.promptor-dark .promptor-info-box,
+body.promptor-dark .promptor-score-breakdown-content,
+body.promptor-dark .promptor-modal-content,
+body.promptor-dark .promptor-query-counter-bar {
+    background: var(--promptor-bg);
+    border-color: var(--promptor-border);
+    color: var(--promptor-text);
+}
+
+/* Dark mode component overrides — auto via media query */
+@media (prefers-color-scheme: dark) {
+    body:not(.promptor-light) .postbox,
+    body:not(.promptor-light) .promptor-card,
+    body:not(.promptor-light) .promptor-feature-card,
+    body:not(.promptor-light) .promptor-kpi-card,
+    body:not(.promptor-light) .promptor-info-box,
+    body:not(.promptor-light) .promptor-score-breakdown-content,
+    body:not(.promptor-light) .promptor-modal-content,
+    body:not(.promptor-light) .promptor-query-counter-bar {
+        background: var(--promptor-bg);
+        border-color: var(--promptor-border);
+        color: var(--promptor-text);
+    }
+}
+
+/* Dark mode shared styles — applies to both forced dark and auto dark */
+
+/* WordPress admin wrapper backgrounds — eliminates white gaps */
+body.promptor-dark {
+    background-color: var(--promptor-bg-secondary) !important;
+}
+body.promptor-dark #wpcontent,
+body.promptor-dark #wpbody,
+body.promptor-dark #wpbody-content {
+    background-color: var(--promptor-bg-secondary);
+}
+
+body.promptor-dark .wrap,
+body.promptor-dark .promptor-settings-wrap,
+body.promptor-dark .promptor-diagnostics-wrap,
+body.promptor-dark .promptor-dashboard-wrap,
+body.promptor-dark .promptor-welcome-wrap,
+body.promptor-dark .promptor-changelog-wrap,
+body.promptor-dark .promptor-queries-wrap,
+body.promptor-dark .promptor-submissions-wrap {
+    color: var(--promptor-text);
+}
+
+body.promptor-dark .postbox .hndle,
+body.promptor-dark h1, body.promptor-dark h2, body.promptor-dark h3,
+body.promptor-dark .form-table th,
+body.promptor-dark label,
+body.promptor-dark strong {
+    color: var(--promptor-text);
+}
+
+body.promptor-dark p,
+body.promptor-dark li,
+body.promptor-dark span {
+    color: var(--promptor-text);
+}
+
+body.promptor-dark .description,
+body.promptor-dark .form-table td {
+    color: var(--promptor-text-muted);
+}
+
+body.promptor-dark input[type="text"],
+body.promptor-dark input[type="number"],
+body.promptor-dark input[type="password"],
+body.promptor-dark input[type="email"],
+body.promptor-dark input[type="url"],
+body.promptor-dark input[type="search"],
+body.promptor-dark select,
+body.promptor-dark textarea {
+    background: var(--promptor-bg-secondary);
+    border-color: var(--promptor-border);
+    color: var(--promptor-text);
+}
+
+body.promptor-dark input[type="checkbox"],
+body.promptor-dark input[type="radio"] {
+    border-color: var(--promptor-border);
+    background: var(--promptor-bg-secondary);
+}
+
+body.promptor-dark .form-table {
+    border-collapse: collapse;
+}
+
+body.promptor-dark .form-table tr {
+    border-bottom: 1px solid var(--promptor-border-light);
+}
+
+body.promptor-dark .postbox .inside {
+    background: var(--promptor-bg);
+}
+
+body.promptor-dark .postbox .hndle {
+    background: var(--promptor-bg);
+    border-bottom: 1px solid var(--promptor-border-light);
+}
+
+body.promptor-dark a {
+    color: var(--promptor-primary);
+}
+
+body.promptor-dark a:hover {
+    color: var(--promptor-primary-dark);
+}
+
+body.promptor-dark .promptor-page-header a,
+body.promptor-dark .promptor-page-header span,
+body.promptor-dark .promptor-page-header p {
+    color: inherit;
+}
+
+body.promptor-dark fieldset label {
+    color: var(--promptor-text-muted);
+}
+
+body.promptor-dark details {
+    background: var(--promptor-bg-tertiary);
+}
+
+body.promptor-dark details pre {
+    background: var(--promptor-bg-secondary);
+    color: var(--promptor-text);
+}
+
+body.promptor-dark .promptor-welcome-banner {
+    background: var(--promptor-primary);
+}
+
+body.promptor-dark .wp-picker-container .wp-color-result {
+    border-color: var(--promptor-border);
+}
+
+body.promptor-dark .wp-picker-container input[type="text"].wp-color-picker {
+    background: var(--promptor-bg-secondary);
+    border-color: var(--promptor-border);
+    color: var(--promptor-text);
+}
+
+body.promptor-dark .wp-list-table,
+body.promptor-dark .widefat {
+    border-color: var(--promptor-border);
+}
+
+body.promptor-dark .wp-list-table thead th,
+body.promptor-dark .widefat thead th {
+    background: var(--promptor-bg-secondary);
+    color: var(--promptor-gray-500);
+    border-bottom-color: var(--promptor-border);
+}
+
+body.promptor-dark .wp-list-table tbody td,
+body.promptor-dark .widefat tbody td {
+    color: var(--promptor-text-muted);
+    border-bottom-color: var(--promptor-border-light);
+}
+
+body.promptor-dark .wp-list-table tbody tr:hover,
+body.promptor-dark .widefat tbody tr:hover {
+    background: var(--promptor-bg-secondary);
+}
+
+body.promptor-dark .striped > tbody > :nth-child(odd) {
+    background: var(--promptor-bg-secondary);
+}
+
+body.promptor-dark .nav-tab-wrapper,
+body.promptor-dark .promptor-sub-tabs.nav-tab-wrapper,
+body.promptor-dark .promptor-content-tabs.nav-tab-wrapper {
+    border-bottom-color: var(--promptor-border);
+}
+
+body.promptor-dark .nav-tab {
+    background: var(--promptor-bg-tertiary);
+    border-color: var(--promptor-border);
+    color: var(--promptor-text-muted);
+}
+
+body.promptor-dark .nav-tab-active {
+    background: var(--promptor-bg);
+    border-bottom-color: var(--promptor-bg);
+    color: var(--promptor-text);
+}
+
+body.promptor-dark .button {
+    background: var(--promptor-bg-tertiary);
+    border-color: var(--promptor-border);
+    color: var(--promptor-text);
+}
+
+body.promptor-dark .button:hover {
+    background: var(--promptor-bg-secondary);
+    border-color: var(--promptor-gray-400);
+    color: var(--promptor-text);
+}
+
+body.promptor-dark .button-primary {
+    background: var(--promptor-primary);
+    border-color: var(--promptor-primary-dark);
+    color: #fff;
+}
+
+body.promptor-dark code {
+    background: var(--promptor-bg-tertiary);
+    color: var(--promptor-text);
+}
+
+body.promptor-dark .notice {
+    background: var(--promptor-bg-secondary);
+    border-color: var(--promptor-border);
+    color: var(--promptor-text);
+}
+
+body.promptor-dark .promptor-welcome-header {
+    background: var(--promptor-bg);
+    border-color: var(--promptor-border);
+}
+
+body.promptor-dark .promptor-status-card {
+    background: var(--promptor-info-light);
+    border-color: var(--promptor-border);
+}
+
+body.promptor-dark .promptor-email-templates-list {
+    background: var(--promptor-bg-secondary);
+    border-color: var(--promptor-border);
+}
+
+body.promptor-dark .promptor-email-template-editor {
+    background: var(--promptor-bg);
+    border-color: var(--promptor-border);
+}
+
+body.promptor-dark .promptor-email-templates-list li a {
+    color: var(--promptor-gray-500);
+    border-bottom-color: var(--promptor-border);
+}
+
+body.promptor-dark .promptor-email-templates-list li a:hover {
+    background: var(--promptor-bg-tertiary);
+}
+
+body.promptor-dark .promptor-email-templates-list li a.active {
+    background: var(--promptor-bg);
+    color: var(--promptor-text);
+}
+
+/* Usage meter / progress bar dark mode */
+body.promptor-dark .promptor-usage-progress-bg,
+body.promptor-dark .promptor-usage-progress-bg-tall {
+    background: var(--promptor-bg-tertiary);
+}
+
+body.promptor-dark .promptor-usage-meter span,
+body.promptor-dark .promptor-usage-meter em {
+    color: var(--promptor-text-muted);
+}
+
+/* Welcome page elements */
+body.promptor-dark .promptor-feature-card {
+    background: var(--promptor-bg);
+    border-color: var(--promptor-border);
+}
+
+body.promptor-dark .promptor-feature-card h3,
+body.promptor-dark .promptor-feature-card p {
+    color: var(--promptor-text);
+}
+
+body.promptor-dark .quick-start .step-number {
+    background-color: var(--promptor-bg-tertiary);
+    border-color: var(--promptor-border);
+    color: var(--promptor-primary);
+}
+
+body.promptor-dark .about-text {
+    color: var(--promptor-text-muted) !important;
+}
+
+/* Pro badge in feature card */
+body.promptor-dark .promptor-feature-card.feature-pro {
+    opacity: 0.7;
+}
+
+/* Submission detail view */
+body.promptor-dark .promptor-log-viewer {
+    background-color: var(--promptor-bg-tertiary);
+    color: var(--promptor-text);
+}
+
+/* Misc admin elements */
+body.promptor-dark hr {
+    border-color: var(--promptor-border-light);
+}
+
+body.promptor-dark .promptor-pro-feature {
+    opacity: 0.6;
+}
+
+/* Status badges dark mode text */
+body.promptor-dark .status-is-pending { color: #ffc107; background-color: var(--promptor-warning-light); }
+body.promptor-dark .status-is-contacted { color: #4fc3f7; background-color: var(--promptor-info-light); }
+body.promptor-dark .status-is-converted { color: #66bb6a; background-color: var(--promptor-success-light); }
+body.promptor-dark .status-is-rejected { color: #ef5350; background-color: var(--promptor-danger-light); }
+
+/* Auto dark mode — same overrides via media query */
+@media (prefers-color-scheme: dark) {
+    body:not(.promptor-light) {
+        background-color: var(--promptor-bg-secondary) !important;
+    }
+    body:not(.promptor-light) #wpcontent,
+    body:not(.promptor-light) #wpbody,
+    body:not(.promptor-light) #wpbody-content {
+        background-color: var(--promptor-bg-secondary);
+    }
+
+    body:not(.promptor-light) .wrap,
+    body:not(.promptor-light) .promptor-settings-wrap,
+    body:not(.promptor-light) .promptor-diagnostics-wrap,
+    body:not(.promptor-light) .promptor-dashboard-wrap,
+    body:not(.promptor-light) .promptor-welcome-wrap,
+    body:not(.promptor-light) .promptor-changelog-wrap,
+    body:not(.promptor-light) .promptor-queries-wrap,
+    body:not(.promptor-light) .promptor-submissions-wrap {
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) .postbox .hndle,
+    body:not(.promptor-light) h1, body:not(.promptor-light) h2, body:not(.promptor-light) h3,
+    body:not(.promptor-light) .form-table th,
+    body:not(.promptor-light) label,
+    body:not(.promptor-light) strong {
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) p,
+    body:not(.promptor-light) li,
+    body:not(.promptor-light) span {
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) .description,
+    body:not(.promptor-light) .form-table td {
+        color: var(--promptor-text-muted);
+    }
+
+    body:not(.promptor-light) input[type="text"],
+    body:not(.promptor-light) input[type="number"],
+    body:not(.promptor-light) input[type="password"],
+    body:not(.promptor-light) input[type="email"],
+    body:not(.promptor-light) input[type="url"],
+    body:not(.promptor-light) input[type="search"],
+    body:not(.promptor-light) select,
+    body:not(.promptor-light) textarea {
+        background: var(--promptor-bg-secondary);
+        border-color: var(--promptor-border);
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) input[type="checkbox"],
+    body:not(.promptor-light) input[type="radio"] {
+        border-color: var(--promptor-border);
+        background: var(--promptor-bg-secondary);
+    }
+
+    body:not(.promptor-light) .form-table {
+        border-collapse: collapse;
+    }
+    body:not(.promptor-light) .form-table tr {
+        border-bottom: 1px solid var(--promptor-border-light);
+    }
+
+    body:not(.promptor-light) .postbox .inside {
+        background: var(--promptor-bg);
+    }
+    body:not(.promptor-light) .postbox .hndle {
+        background: var(--promptor-bg);
+        border-bottom: 1px solid var(--promptor-border-light);
+    }
+
+    body:not(.promptor-light) a {
+        color: var(--promptor-primary);
+    }
+    body:not(.promptor-light) a:hover {
+        color: var(--promptor-primary-dark);
+    }
+    body:not(.promptor-light) .promptor-page-header a,
+    body:not(.promptor-light) .promptor-page-header span,
+    body:not(.promptor-light) .promptor-page-header p {
+        color: inherit;
+    }
+
+    body:not(.promptor-light) fieldset label {
+        color: var(--promptor-text-muted);
+    }
+
+    body:not(.promptor-light) details {
+        background: var(--promptor-bg-tertiary);
+    }
+    body:not(.promptor-light) details pre {
+        background: var(--promptor-bg-secondary);
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) .promptor-welcome-banner {
+        background: var(--promptor-primary);
+    }
+
+    body:not(.promptor-light) .wp-picker-container .wp-color-result {
+        border-color: var(--promptor-border);
+    }
+    body:not(.promptor-light) .wp-picker-container input[type="text"].wp-color-picker {
+        background: var(--promptor-bg-secondary);
+        border-color: var(--promptor-border);
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) .wp-list-table,
+    body:not(.promptor-light) .widefat {
+        border-color: var(--promptor-border);
+    }
+
+    body:not(.promptor-light) .wp-list-table thead th,
+    body:not(.promptor-light) .widefat thead th {
+        background: var(--promptor-bg-secondary);
+        color: var(--promptor-gray-500);
+        border-bottom-color: var(--promptor-border);
+    }
+
+    body:not(.promptor-light) .wp-list-table tbody td,
+    body:not(.promptor-light) .widefat tbody td {
+        color: var(--promptor-text-muted);
+        border-bottom-color: var(--promptor-border-light);
+    }
+
+    body:not(.promptor-light) .wp-list-table tbody tr:hover,
+    body:not(.promptor-light) .widefat tbody tr:hover {
+        background: var(--promptor-bg-secondary);
+    }
+
+    body:not(.promptor-light) .striped > tbody > :nth-child(odd) {
+        background: var(--promptor-bg-secondary);
+    }
+
+    body:not(.promptor-light) .nav-tab-wrapper,
+    body:not(.promptor-light) .promptor-sub-tabs.nav-tab-wrapper,
+    body:not(.promptor-light) .promptor-content-tabs.nav-tab-wrapper {
+        border-bottom-color: var(--promptor-border);
+    }
+
+    body:not(.promptor-light) .nav-tab {
+        background: var(--promptor-bg-tertiary);
+        border-color: var(--promptor-border);
+        color: var(--promptor-text-muted);
+    }
+
+    body:not(.promptor-light) .nav-tab-active {
+        background: var(--promptor-bg);
+        border-bottom-color: var(--promptor-bg);
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) .button {
+        background: var(--promptor-bg-tertiary);
+        border-color: var(--promptor-border);
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) .button:hover {
+        background: var(--promptor-bg-secondary);
+        border-color: var(--promptor-gray-400);
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) .button-primary {
+        background: var(--promptor-primary);
+        border-color: var(--promptor-primary-dark);
+        color: #fff;
+    }
+
+    body:not(.promptor-light) code {
+        background: var(--promptor-bg-tertiary);
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) .notice {
+        background: var(--promptor-bg-secondary);
+        border-color: var(--promptor-border);
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) .promptor-welcome-header {
+        background: var(--promptor-bg);
+        border-color: var(--promptor-border);
+    }
+
+    body:not(.promptor-light) .promptor-status-card {
+        background: var(--promptor-info-light);
+        border-color: var(--promptor-border);
+    }
+
+    body:not(.promptor-light) .promptor-email-templates-list {
+        background: var(--promptor-bg-secondary);
+        border-color: var(--promptor-border);
+    }
+
+    body:not(.promptor-light) .promptor-email-template-editor {
+        background: var(--promptor-bg);
+        border-color: var(--promptor-border);
+    }
+
+    body:not(.promptor-light) .promptor-email-templates-list li a {
+        color: var(--promptor-gray-500);
+        border-bottom-color: var(--promptor-border);
+    }
+
+    body:not(.promptor-light) .promptor-email-templates-list li a:hover {
+        background: var(--promptor-bg-tertiary);
+    }
+
+    body:not(.promptor-light) .promptor-email-templates-list li a.active {
+        background: var(--promptor-bg);
+        color: var(--promptor-text);
+    }
+
+    body:not(.promptor-light) .status-is-pending { color: #ffc107; background-color: var(--promptor-warning-light); }
+    body:not(.promptor-light) .status-is-contacted { color: #4fc3f7; background-color: var(--promptor-info-light); }
+    body:not(.promptor-light) .status-is-converted { color: #66bb6a; background-color: var(--promptor-success-light); }
+    body:not(.promptor-light) .status-is-rejected { color: #ef5350; background-color: var(--promptor-danger-light); }
+
+    /* Usage meter / progress bar */
+    body:not(.promptor-light) .promptor-usage-progress-bg,
+    body:not(.promptor-light) .promptor-usage-progress-bg-tall {
+        background: var(--promptor-bg-tertiary);
+    }
+    body:not(.promptor-light) .promptor-usage-meter span,
+    body:not(.promptor-light) .promptor-usage-meter em {
+        color: var(--promptor-text-muted);
+    }
+
+    /* Welcome page elements */
+    body:not(.promptor-light) .promptor-feature-card {
+        background: var(--promptor-bg);
+        border-color: var(--promptor-border);
+    }
+    body:not(.promptor-light) .promptor-feature-card h3,
+    body:not(.promptor-light) .promptor-feature-card p {
+        color: var(--promptor-text);
+    }
+    body:not(.promptor-light) .quick-start .step-number {
+        background-color: var(--promptor-bg-tertiary);
+        border-color: var(--promptor-border);
+        color: var(--promptor-primary);
+    }
+    body:not(.promptor-light) .about-text {
+        color: var(--promptor-text-muted) !important;
+    }
+    body:not(.promptor-light) .promptor-feature-card.feature-pro {
+        opacity: 0.7;
+    }
+    body:not(.promptor-light) .promptor-log-viewer {
+        background-color: var(--promptor-bg-tertiary);
+        color: var(--promptor-text);
+    }
+    body:not(.promptor-light) hr {
+        border-color: var(--promptor-border-light);
+    }
+    body:not(.promptor-light) .promptor-pro-feature {
+        opacity: 0.6;
+    }
+}
+/* Pro Badge */
+.pro-badge {
+    display: inline-block;
+    background: var(--promptor-gradient-primary);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.promptor-feature-card.feature-pro {
+    position: relative;
+    opacity: 0.85;
+}
+
+
+/* === 18. MODERN TABLE STYLING === */
+.promptor-dashboard-wrap .wp-list-table {
+    border: none;
+    box-shadow: none;
+}
+
+.promptor-dashboard-wrap .postbox .badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--promptor-gradient-blue);
+    color: #fff;
+    border-radius: 16px;
+    font-size: var(--promptor-font-sm);
+    font-weight: 600;
+    min-width: 30px;
+    text-align: center;
+}
+
+.promptor-dashboard-wrap .wp-list-table th,
+.promptor-dashboard-wrap .wp-list-table td {
+    padding: 14px 12px;
+    vertical-align: middle;
+}
+
+.promptor-dashboard-wrap .wp-list-table thead th {
+    background: var(--promptor-bg-secondary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--promptor-border-light);
+    color: var(--promptor-gray-600);
+    font-size: var(--promptor-font-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.promptor-dashboard-wrap .wp-list-table tbody tr {
+    border-bottom: 1px solid var(--promptor-gray-100);
+}
+
+.promptor-dashboard-wrap .wp-list-table tbody tr:hover {
+    background: var(--promptor-bg-secondary);
+}
+
+.promptor-dashboard-wrap .wp-list-table tbody td {
+    font-size: var(--promptor-font-base);
+    color: var(--promptor-gray-600);
+}
+
+/* Satisfaction score colors */
+.promptor-dashboard-wrap .wp-list-table td[style*="text-align: center"] {
+    font-weight: 600;
+}
+
+/* === 19. SECONDARY METRICS INFO BOXES === */
+.promptor-secondary-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.promptor-info-box {
+    background: var(--promptor-bg);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.promptor-info-box h3 {
+    margin: 0;
+    padding: 8px 12px;
+    background: var(--promptor-bg);
+    color: var(--promptor-text);
+    font-size: var(--promptor-font-base);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+    border-bottom: 1px solid var(--promptor-border-light);
+}
+
+.promptor-info-box.kb-status h3 {
+    background: var(--promptor-bg);
+}
+
+.promptor-info-box h3 .dashicons {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: var(--promptor-primary);
+}
+
+.promptor-info-box h3 small {
+    color: var(--promptor-text-light);
+    font-weight: normal;
+    font-size: var(--promptor-font-xs);
+    margin-left: auto;
+}
+
+.promptor-info-box .info-box-content {
+    padding: 24px 20px;
+}
+
+.promptor-info-box .metric-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.promptor-info-box .metric-item {
+    text-align: center;
+}
+
+.promptor-info-box .metric-label {
+    font-size: var(--promptor-font-xs);
+    color: var(--promptor-gray-500);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.promptor-info-box .metric-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--promptor-gray-800);
+}
+
+/* Responsive for secondary metrics */
+@media screen and (max-width: 1200px) {
+    .promptor-secondary-metrics {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .promptor-info-box .metric-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .promptor-info-box .metric-value {
+        font-size: 20px;
+    }
+}
+
+/* === 20. LEAD SCORING BREAKDOWN === */
+.promptor-score-breakdown-row {
+    display: none;
+    background: #f9f9f9;
+}
+
+.promptor-score-breakdown-row.visible {
+    display: table-row;
+}
+
+.promptor-score-breakdown-cell {
+    padding: 15px 20px !important;
+    border-top: 1px solid #c3c4c7;
+}
+
+.promptor-score-breakdown-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--promptor-bg);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.promptor-score-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+
+.promptor-score-toggle[aria-expanded="true"] .dashicons-arrow-down {
+    display: none;
+}
+
+.promptor-score-toggle[aria-expanded="false"] .dashicons-arrow-up {
+    display: none;
+}
+
+/* === Breakdown HTML Styles === */
+.promptor-breakdown-wrapper {
+    font-size: var(--promptor-font-sm);
+    line-height: 1.6;
+}
+
+.promptor-breakdown-info {
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background: var(--promptor-info-light);
+    border-left: 3px solid var(--promptor-info);
+    border-radius: 3px;
+}
+
+.promptor-breakdown-info .dashicons {
+    color: var(--promptor-info);
+    font-size: var(--promptor-font-base);
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.promptor-breakdown-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.promptor-breakdown-section-title {
+    margin-bottom: 8px;
+}
+
+.promptor-breakdown-section-title .dashicons {
+    color: var(--promptor-info);
+    font-size: var(--promptor-font-base);
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.promptor-breakdown-section-title strong {
+    font-size: var(--promptor-font-sm);
+}
+
+.promptor-breakdown-factors-box {
+    background: var(--promptor-bg-tertiary);
+    padding: 12px;
+    border-radius: 3px;
+    border-left: 3px solid var(--promptor-info);
+}
+
+.promptor-breakdown-factor-item {
+    padding: 4px 0;
+}
+
+.promptor-breakdown-factor-item .dashicons {
+    font-size: var(--promptor-font-base);
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    color: #0a7d0a;
+    margin-right: 3px;
+}
+
+.promptor-breakdown-factor-item strong {
+    color: #0a7d0a;
+}
+
+.promptor-breakdown-signals-box {
+    background: var(--promptor-bg);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.promptor-breakdown-signal-item {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--promptor-bg-tertiary);
+}
+
+.promptor-breakdown-signal-item .dashicons {
+    font-size: var(--promptor-font-base);
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.promptor-breakdown-signal-item.positive .dashicons,
+.promptor-breakdown-signal-item.positive span {
+    color: #0a7d0a;
+}
+
+.promptor-breakdown-signal-item.negative .dashicons,
+.promptor-breakdown-signal-item.negative span {
+    color: var(--promptor-danger);
+}
+
+.promptor-breakdown-budget {
+    padding: 4px 0 8px 25px;
+    font-size: var(--promptor-font-xs);
+    color: #666;
+}
+
+.promptor-breakdown-budget .dashicons {
+    font-size: var(--promptor-font-xs);
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.promptor-breakdown-empty {
+    background: var(--promptor-bg-tertiary);
+    padding: 12px;
+    border-radius: 3px;
+    color: #666;
+    text-align: center;
+}
+
+.promptor-breakdown-empty .dashicons {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Responsive 2-column grid for breakdown */
+@media screen and (max-width: 768px) {
+    .promptor-breakdown-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === 21. WELCOME PAGE COMMAND CENTER === */
+/* Get Started Cards Grid */
+.promptor-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.promptor-card {
+    background: var(--promptor-bg);
+    border: 1px solid var(--promptor-border);
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.promptor-card-icon {
+    width: 50px;
+    height: 50px;
+    background: #2271b1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.promptor-card-icon .dashicons {
+    color: #fff;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.promptor-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.promptor-card p {
+    margin: 0 0 15px 0;
+    color: var(--promptor-text-muted);
+    line-height: 1.5;
+}
+
+.promptor-card-actions {
+    margin: 15px 0 0 0 !important;
+}
+
+/* Core Features Columns */
+.promptor-features-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.promptor-features-column {
+    background: var(--promptor-bg);
+    border: 1px solid var(--promptor-border);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.promptor-features-column h3 {
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--promptor-info);
+    font-size: 16px;
+}
+
+.promptor-features-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.promptor-features-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--promptor-bg-tertiary);
+    display: flex;
+    align-items: flex-start;
+}
+
+.promptor-features-list li:last-child {
+    border-bottom: none;
+}
+
+.promptor-features-list .dashicons {
+    margin-right: 8px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.promptor-features-list .dashicons-yes-alt {
+    color: var(--promptor-success);
+}
+
+.promptor-features-list .dashicons-star-filled {
+    color: var(--promptor-danger);
+}
+
+/* What's New & Coming Soon Grid */
+.promptor-news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.promptor-news-column h2 {
+    margin-top: 0;
+}
+
+.promptor-news-column .promptor-card {
+    min-height: 300px;
+}
+
+.promptor-news-column h4 {
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--promptor-border);
+}
+
+/* What's New List */
+.promptor-whats-new-list {
+    list-style: none;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.promptor-whats-new-list li {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--promptor-bg-tertiary);
+}
+
+.promptor-whats-new-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.promptor-whats-new-list strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--promptor-info);
+}
+
+.promptor-whats-new-list span {
+    color: var(--promptor-text-muted);
+    font-size: var(--promptor-font-sm);
+    line-height: 1.5;
+}
+
+/* Roadmap List */
+.promptor-roadmap-list {
+    list-style: none;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.promptor-roadmap-list li {
+    padding: 8px 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.promptor-roadmap-list .dashicons {
+    color: var(--promptor-info);
+    margin-right: 8px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.promptor-roadmap-note {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--promptor-border);
+    font-size: var(--promptor-font-xs);
+    color: var(--promptor-text-muted);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 782px) {
+    .promptor-features-columns,
+    .promptor-news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .promptor-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === Welcome Page – Fixes & Restored Blocks === */
+/* Welcome Header with Logo */
+.promptor-welcome-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: var(--promptor-bg);
+    border: 1px solid var(--promptor-border);
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.promptor-welcome-header .header-logo {
+    flex-shrink: 0;
+}
+
+.promptor-welcome-header .header-logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.promptor-welcome-header .header-content {
+    flex-grow: 1;
+}
+
+.promptor-welcome-header h1 {
+    margin: 0 0 8px 0;
+    font-size: 26px;
+}
+
+.promptor-welcome-header .about-text {
+    margin: 0;
+    font-size: var(--promptor-font-base);
+    color: var(--promptor-text-muted);
+}
+
+/* License Status Card */
+.promptor-status-card {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 20px;
+    background: var(--promptor-info-light);
+    border: 1px solid var(--promptor-info);
+    border-radius: 4px;
+}
+
+.promptor-status-card .status-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.promptor-status-card .dashicons {
+    color: var(--promptor-info);
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.promptor-status-card .status-text strong {
+    font-size: var(--promptor-font-base);
+}
+
+.promptor-status-card .status-text span {
+    color: var(--promptor-text-muted);
+    font-size: var(--promptor-font-sm);
+}
+
+.promptor-status-card .status-actions {
+    flex-shrink: 0;
+}
+
+/* Upgrade CTA Section */
+.promptor-upgrade-cta {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--promptor-bg);
+    border: 2px solid var(--promptor-info);
+    border-radius: 4px;
+    margin: 30px 0;
+}
+
+.promptor-upgrade-cta p {
+    font-size: 16px;
+    margin: 0 0 20px 0;
+    color: var(--promptor-text);
+}
+
+.promptor-upgrade-cta .button-hero {
+    font-size: 16px;
+}
+
+/* Feature Highlights Grid */
+.promptor-feature-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.promptor-feature-highlights .promptor-feature-card {
+    background: var(--promptor-bg);
+    border: 1px solid var(--promptor-border);
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.promptor-feature-highlights .feature-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background: var(--promptor-info-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.promptor-feature-highlights .feature-icon-wrapper .dashicons {
+    color: var(--promptor-info);
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.promptor-feature-highlights .promptor-feature-card h3 {
+    margin: 0 0 10px 0;
+    font-size: var(--promptor-font-md);
+}
+
+.promptor-feature-highlights .promptor-feature-card p {
+    margin: 0;
+    color: var(--promptor-text-muted);
+    font-size: var(--promptor-font-sm);
+    line-height: 1.5;
+}
+
+.promptor-feature-highlights .pro-badge {
+    display: inline-block;
+    background: #d63638;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* Support Buttons */
+.promptor-support-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.promptor-support-buttons .button {
+    text-align: center;
+}
+
+/* Responsive for Welcome Header */
+@media screen and (max-width: 782px) {
+    .promptor-welcome-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .promptor-status-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .promptor-status-card .status-actions {
+        width: 100%;
+    }
+
+    .promptor-status-card .status-actions .button {
+        width: 100%;
+    }
+
+    .promptor-feature-highlights {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === 22. ONBOARDING PROGRESS (v1.2.2) === */
+/* Onboarding Progress Styles */
+.promptor-onboarding-section { margin: 30px 0; }
+.promptor-progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.promptor-progress-header-left { display: flex; flex-direction: column; gap: 4px; }
+.promptor-progress-header-right { display: flex; align-items: center; gap: 12px; }
+.promptor-progress-indicator { font-size: var(--promptor-font-base); font-weight: 600; color: var(--promptor-info); }
+.promptor-dismiss-setup-progress { display: flex; align-items: center; color: var(--promptor-text-light); text-decoration: none; }
+.promptor-dismiss-setup-progress:hover { color: var(--promptor-danger); }
+.promptor-onboarding-steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.promptor-step-card { padding: 24px; background: var(--promptor-bg); border: 1px solid var(--promptor-border); border-radius: 6px; text-align: center; }
+.promptor-step-card.completed { border-color: var(--promptor-success); background: var(--promptor-info-light); }
+.promptor-step-card-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--promptor-bg-tertiary); border-radius: 50%; margin: 0 auto 12px; font-size: 20px; }
+.promptor-step-card.completed .promptor-step-card-icon { background: #00a32a; color: #fff; }
+.promptor-step-card h3 { margin: 0 0 8px; font-size: var(--promptor-font-base); }
+.promptor-step-card p { margin: 0 0 12px; color: var(--promptor-text-light); font-size: var(--promptor-font-sm); }
+.promptor-step-number { font-weight: 700; color: var(--promptor-info); }
+.promptor-step-complete-badge { display: inline-block; color: var(--promptor-success); font-weight: 500; font-size: var(--promptor-font-sm); }
+.promptor-step-content { flex: 1; }
+.promptor-step-success { color: var(--promptor-success); font-weight: 500; }
+.promptor-test-chat-cta { margin: 20px 0; }
+.promptor-test-chat-box { padding: 20px; background: #fffbf0; border: 2px solid var(--promptor-warning); border-radius: 4px; }
+.promptor-setup-complete-message { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 20px; background: var(--promptor-info-light); border: 2px solid var(--promptor-success); border-radius: 4px; margin-top: 20px; }
+.promptor-setup-complete-message .dashicons { color: var(--promptor-success); }
+@media (max-width: 782px) {
+	.promptor-onboarding-steps-grid { grid-template-columns: 1fr; }
+	.promptor-progress-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+.promptor-upgrade-cta-strong { margin: 30px 0; padding: 30px; background: var(--promptor-info-light); border: 2px solid var(--promptor-info); border-radius: 4px; text-align: center; }
+
+/* === 23. TOAST NOTIFICATIONS === */
+.promptor-toast-container {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 100001;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 380px;
+    pointer-events: none;
+}
+
+.promptor-toast {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--promptor-bg);
+    border-radius: var(--promptor-radius-md);
+    box-shadow: var(--promptor-shadow-lg);
+    border-left: 4px solid var(--promptor-info);
+    animation: promptor-toast-in 0.3s ease-out;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: auto;
+}
+
+.promptor-toast.toast-success {
+    border-left-color: var(--promptor-success);
+}
+
+.promptor-toast.toast-warning {
+    border-left-color: var(--promptor-warning);
+}
+
+.promptor-toast.toast-error {
+    border-left-color: var(--promptor-danger);
+}
+
+.promptor-toast .toast-icon {
+    flex-shrink: 0;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 1;
+}
+
+.promptor-toast.toast-success .toast-icon { color: var(--promptor-success); }
+.promptor-toast.toast-warning .toast-icon { color: var(--promptor-warning); }
+.promptor-toast.toast-error .toast-icon { color: var(--promptor-danger); }
+.promptor-toast.toast-info .toast-icon { color: var(--promptor-info); }
+
+.promptor-toast .toast-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.promptor-toast .toast-title {
+    font-weight: 600;
+    font-size: var(--promptor-font-base);
+    color: var(--promptor-text);
+    margin-bottom: 2px;
+}
+
+.promptor-toast .toast-message {
+    font-size: var(--promptor-font-sm);
+    color: var(--promptor-text-muted);
+    line-height: 1.4;
+}
+
+.promptor-toast .toast-close {
+    cursor: pointer;
+    color: var(--promptor-text-light);
+    font-size: 18px;
+    line-height: 1;
+    padding: 0;
+    background: none;
+    border: none;
+    flex-shrink: 0;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.promptor-toast .toast-close:hover {
+    opacity: 1;
+    color: var(--promptor-text);
+}
+
+.promptor-toast.toast-out {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+@keyframes promptor-toast-in {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* === 24. TOOLTIPS & HELP TIPS === */
+.promptor-help-tip {
+    display: inline-block;
+    position: relative;
+    cursor: help;
+    color: var(--promptor-text-light);
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.promptor-help-tip .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.promptor-help-tip::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--promptor-gray-800);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: var(--promptor-radius-sm);
+    font-size: var(--promptor-font-xs);
+    max-width: 250px;
+    white-space: normal;
+    line-height: 1.4;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow: var(--promptor-shadow-md);
+}
+
+.promptor-help-tip::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--promptor-gray-800);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    z-index: 100;
+}
+
+.promptor-help-tip:hover::after,
+.promptor-help-tip:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* === 25. UNIFIED BADGE SYSTEM === */
+.promptor-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    font-size: var(--promptor-font-xs);
+    font-weight: 600;
+    line-height: 1.5;
+    border-radius: var(--promptor-radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.promptor-badge-success {
+    background-color: var(--promptor-success-light);
+    color: #1b5e20;
+}
+
+.promptor-badge-warning {
+    background-color: var(--promptor-warning-light);
+    color: #6d4c02;
+}
+
+.promptor-badge-danger {
+    background-color: var(--promptor-danger-light);
+    color: #c62828;
+}
+
+.promptor-badge-info {
+    background-color: var(--promptor-info-light);
+    color: #0a4b78;
+}
+
+.promptor-badge-pro {
+    background: var(--promptor-gradient-primary);
+    color: #fff;
+}
+
+.promptor-badge-neutral {
+    background-color: var(--promptor-gray-100);
+    color: var(--promptor-gray-600);
+}
+
+.promptor-badge-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 8px;
+    background: var(--promptor-gradient-blue);
+    color: #fff;
+    border-radius: var(--promptor-radius-full);
+    font-size: var(--promptor-font-sm);
+    font-weight: 600;
+}
+
+/* === 26. CRITICAL MOBILE FIXES === */
+@media screen and (max-width: 782px) {
+    /* Fix settings tab overflow */
+    .promptor-settings-wrap .nav-tab-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .promptor-settings-wrap .nav-tab-wrapper .nav-tab {
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: var(--promptor-font-xs);
+    }
+
+    /* KPI cards 2-column on tablet */
+    .promptor-kpi-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Touch-friendly targets (44px min) */
+    .promptor-status-selector,
+    .status-dropdown a.status-option {
+        min-height: 44px;
+        padding: 10px 14px;
+    }
+
+    /* Page header compact */
+    .promptor-page-header {
+        padding: 20px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .promptor-page-header .header-content h1 {
+        font-size: var(--promptor-font-xl);
+    }
+
+    .promptor-page-header .header-content h1 .dashicons {
+        font-size: 28px;
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Toast positioning */
+    .promptor-toast-container {
+        left: 10px;
+        right: 10px;
+        max-width: none;
+    }
+
+    /* Grid fallbacks */
+    .promptor-grid-2-col {
+        grid-template-columns: 1fr;
+    }
+
+    .promptor-secondary-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    /* Email template layout stack */
+    .promptor-email-templates-layout {
+        flex-direction: column;
+    }
+
+    .promptor-email-templates-list {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* KPI single column on small phones */
+    .promptor-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Metric row single column */
+    .promptor-info-box .metric-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    /* Page header minimal */
+    .promptor-page-header {
+        padding: 16px 12px;
+    }
+
+    .promptor-page-header .header-content h1 {
+        font-size: var(--promptor-font-lg);
+        gap: 8px;
+    }
+}
+
+/* === 27. COMPONENT UTILITY CLASSES (Phase 2 — inline style cleanup) === */
+
+/* Dashboard AI Usage Widget */
+.promptor-usage-widget-value {
+    font-size: 22px;
+}
+
+.promptor-usage-no-limit {
+    font-size: var(--promptor-font-base);
+    color: var(--promptor-gray-500);
+}
+
+.promptor-usage-progress-wrap {
+    margin-top: 12px;
+    padding: 0 4px;
+}
+
+.promptor-usage-progress-bg {
+    background: #e0e0e0;
+    border-radius: var(--promptor-radius-sm);
+    height: 8px;
+    overflow: hidden;
+}
+
+.promptor-usage-progress-bg-tall {
+    background: #e0e0e0;
+    border-radius: var(--promptor-radius-sm);
+    height: 20px;
+    overflow: hidden;
+}
+
+.promptor-usage-progress-fill {
+    height: 100%;
+    border-radius: var(--promptor-radius-sm);
+    transition: width 0.3s;
+}
+
+.promptor-usage-widget-footer {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.promptor-usage-widget-meta {
+    font-size: var(--promptor-font-xs);
+    color: var(--promptor-gray-500);
+}
+
+.promptor-usage-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.promptor-usage-bar-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.promptor-section-subtitle small,
+.promptor-info-box h3 small {
+    font-weight: normal;
+    font-size: var(--promptor-font-xs);
+    opacity: 0.85;
+    margin-left: 6px;
+}
+
+/* Inline refresh link */
+.promptor-refresh-link {
+    font-size: var(--promptor-font-xs);
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* Table column widths */
+.promptor-col-100 { width: 100px; text-align: center; }
+.promptor-col-120 { width: 120px; text-align: center; }
+
+/* Common spacing utilities */
+.promptor-mt-20 { margin-top: 20px; }
+.promptor-mb-20 { margin-bottom: 20px; }
+.promptor-text-muted { color: var(--promptor-text-light); }
+
+/* Diagnostic status colors */
+.promptor-status-ok { color: var(--promptor-success); }
+.promptor-status-error { color: var(--promptor-danger); }
+.promptor-status-warn { color: var(--promptor-warning); }
+.promptor-status-info-color { color: var(--promptor-info); }
+
+/* AI Usage settings bar */
+.promptor-usage-bar-wrap {
+    margin: 8px 0;
+}
+
+/* Notification settings */
+.promptor-col-action { width: 100px; text-align: center; }
+.promptor-tab-panel { /* replaces inline display toggles — JS controls visibility */ }
+
+/* Telemetry notice */
+.promptor-telemetry-notice {
+    border-left-color: #0073aa;
+    padding: 15px;
+}
+.promptor-telemetry-notice h3 { margin-top: 0; }
+.promptor-telemetry-notice .notice-actions { margin: 15px 0 5px; }
+
+/* Admin deactivation feedback */
+.promptor-deactivate-feedback {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+.promptor-deactivate-feedback .feedback-icon {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+.promptor-deactivate-feedback .feedback-content {
+    flex-grow: 1;
+}
+.promptor-deactivate-feedback .feedback-content h3 {
+    margin: 0 0 8px 0;
+}
+.promptor-deactivate-feedback .feedback-content p {
+    margin: 0 0 12px 0;
+}
+.promptor-deactivate-feedback .feedback-actions {
+    margin: 0;
+}
+
+/* Submission log viewer */
+.promptor-log-viewer {
+    white-space: pre-wrap;
+    background-color: var(--promptor-gray-100);
+    padding: 10px;
+    border-radius: var(--promptor-radius-sm);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Knowledge Base action bar */
+.promptor-kb-action-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.promptor-kb-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 15px;
+}
+
+.promptor-kb-progress p { margin: 0; }
+
+/* Handle icon spacing */
+.hndle .promptor-hndle-icon {
+    margin-right: 6px;
+    color: var(--promptor-primary, #15b6ff);
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.hndle .promptor-hndle-icon.dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+/* KB Actions cell — keep buttons on a single line */
+.promptor-kb-actions-cell {
+    white-space: nowrap;
+}
+
+.promptor-kb-actions-cell .button {
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+/* Avatar filename display */
+.promptor-image-uploader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.promptor-avatar-filename {
+    display: inline-block;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+    color: var(--promptor-text-muted, #646970);
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+/* Bot Avatar table label — prevent wrapping */
+.promptor-grid-2-col .postbox .form-table th {
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+/* Crawler button */
+.promptor-crawler-btn {
+    font-size: 16px;
+    padding: 8px 20px;
+}
+
+/* ============================================================
+   28. GLOBAL DESIGN SYSTEM
+   Unified typography, form controls, buttons, tables, notices,
+   empty states, and layout primitives for all admin pages.
+   ============================================================ */
+
+/* --- 28.1 Typography Foundation --- */
+.promptor-settings-wrap,
+.promptor-dashboard-wrap,
+.promptor-welcome-wrap,
+.promptor-changelog-wrap,
+.promptor-queries-wrap,
+.promptor-submissions-wrap,
+.promptor-webhooks-wrap,
+.promptor-diagnostics-wrap {
+    color: var(--promptor-text);
+    font-size: var(--promptor-font-base);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.promptor-settings-wrap h1,
+.promptor-dashboard-wrap h1,
+.promptor-welcome-wrap h1,
+.promptor-queries-wrap h1,
+.promptor-submissions-wrap h1,
+.promptor-webhooks-wrap h1,
+.promptor-diagnostics-wrap h1 {
+    font-size: var(--promptor-font-xl);
+    font-weight: 600;
+    color: var(--promptor-text);
+    line-height: 1.3;
+    margin: 0 0 var(--promptor-space-2) 0;
+}
+
+.promptor-settings-wrap .postbox .hndle,
+.promptor-welcome-wrap .postbox .hndle,
+.promptor-queries-wrap .postbox .hndle,
+.promptor-submissions-wrap .postbox .hndle,
+.promptor-webhooks-wrap .postbox .hndle,
+.promptor-diagnostics-wrap .postbox .hndle {
+    font-size: var(--promptor-font-md);
+    font-weight: 600;
+    color: var(--promptor-text);
+    background: var(--promptor-bg-secondary);
+    border-bottom: 1px solid var(--promptor-border-light);
+    padding: 12px 16px;
+}
+
+.promptor-settings-wrap h3,
+.promptor-queries-wrap h3,
+.promptor-submissions-wrap h3,
+.promptor-webhooks-wrap h3,
+.promptor-diagnostics-wrap h3 {
+    font-size: var(--promptor-font-base);
+    font-weight: 600;
+    color: var(--promptor-text);
+    margin: 0 0 var(--promptor-space-2) 0;
+}
+
+.promptor-text-sm { font-size: var(--promptor-font-sm); }
+.promptor-text-xs { font-size: var(--promptor-font-xs); }
+.promptor-text-lg { font-size: var(--promptor-font-lg); }
+.promptor-font-semibold { font-weight: 600; }
+.promptor-font-bold { font-weight: 700; }
+
+/* --- 28.2 Form Controls (Unified) --- */
+.promptor-settings-wrap input[type="text"],
+.promptor-settings-wrap input[type="url"],
+.promptor-settings-wrap input[type="email"],
+.promptor-settings-wrap input[type="number"],
+.promptor-settings-wrap input[type="password"],
+.promptor-settings-wrap input[type="search"],
+.promptor-settings-wrap select,
+.promptor-settings-wrap textarea,
+.promptor-webhooks-wrap input[type="text"],
+.promptor-webhooks-wrap input[type="url"],
+.promptor-webhooks-wrap select,
+.promptor-webhooks-wrap textarea,
+.promptor-diagnostics-wrap select {
+    border: 1px solid var(--promptor-border);
+    border-radius: var(--promptor-radius-sm);
+    padding: 6px 10px;
+    font-size: var(--promptor-font-base);
+    color: var(--promptor-text);
+    background: var(--promptor-bg);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    min-height: 36px;
+    line-height: 1.4;
+}
+
+.promptor-settings-wrap input[type="text"]:focus,
+.promptor-settings-wrap input[type="url"]:focus,
+.promptor-settings-wrap input[type="email"]:focus,
+.promptor-settings-wrap input[type="number"]:focus,
+.promptor-settings-wrap input[type="password"]:focus,
+.promptor-settings-wrap input[type="search"]:focus,
+.promptor-settings-wrap select:focus,
+.promptor-settings-wrap textarea:focus,
+.promptor-webhooks-wrap input[type="text"]:focus,
+.promptor-webhooks-wrap input[type="url"]:focus,
+.promptor-webhooks-wrap select:focus,
+.promptor-webhooks-wrap textarea:focus {
+    border-color: var(--promptor-primary);
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.15);
+    outline: none;
+}
+
+.promptor-settings-wrap input:disabled,
+.promptor-settings-wrap select:disabled,
+.promptor-settings-wrap textarea:disabled {
+    background: var(--promptor-bg-tertiary);
+    color: var(--promptor-text-light);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Custom Select Dropdown Appearance */
+.promptor-settings-wrap select,
+.promptor-webhooks-wrap select,
+.promptor-diagnostics-wrap select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 34px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555d66' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.763L10.825 4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+.promptor-settings-wrap select:hover,
+.promptor-webhooks-wrap select:hover,
+.promptor-diagnostics-wrap select:hover {
+    border-color: var(--promptor-primary-light, #8fa3ec);
+}
+
+/* --- 28.3 Button Enhancements --- */
+.promptor-settings-wrap .button,
+.promptor-dashboard-wrap .button,
+.promptor-welcome-wrap .button,
+.promptor-queries-wrap .button,
+.promptor-submissions-wrap .button,
+.promptor-webhooks-wrap .button,
+.promptor-diagnostics-wrap .button {
+    border-radius: var(--promptor-radius-sm);
+    transition: all 0.15s ease;
+    font-weight: 500;
+    min-height: 36px;
+    line-height: 1.4;
+    padding: 4px 14px;
+}
+
+.promptor-settings-wrap .button-primary,
+.promptor-dashboard-wrap .button-primary,
+.promptor-welcome-wrap .button-primary,
+.promptor-webhooks-wrap .button-primary {
+    background: var(--promptor-primary);
+    border-color: var(--promptor-primary);
+    color: #fff;
+}
+
+.promptor-settings-wrap .button-primary:hover,
+.promptor-dashboard-wrap .button-primary:hover,
+.promptor-welcome-wrap .button-primary:hover,
+.promptor-webhooks-wrap .button-primary:hover {
+    background: #5a6fd6;
+    border-color: #4e63ca;
+}
+
+.promptor-settings-wrap .button-primary:focus,
+.promptor-dashboard-wrap .button-primary:focus,
+.promptor-welcome-wrap .button-primary:focus,
+.promptor-webhooks-wrap .button-primary:focus {
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.35);
+}
+
+.promptor-settings-wrap .button:not(.button-primary):hover,
+.promptor-dashboard-wrap .button:not(.button-primary):hover,
+.promptor-submissions-wrap .button:not(.button-primary):hover {
+    border-color: var(--promptor-primary);
+    color: var(--promptor-primary);
+}
+
+/* Danger button variant */
+.promptor-btn-danger {
+    color: var(--promptor-danger) !important;
+    border-color: var(--promptor-danger) !important;
+}
+.promptor-btn-danger:hover {
+    background: var(--promptor-danger-light) !important;
+}
+
+/* --- 28.4 Unified Table Styling --- */
+.promptor-settings-wrap .widefat,
+.promptor-queries-wrap .widefat,
+.promptor-submissions-wrap .widefat,
+.promptor-webhooks-wrap .widefat {
+    border: 1px solid var(--promptor-border-light);
+    border-radius: var(--promptor-radius-sm);
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.promptor-settings-wrap .widefat thead th,
+.promptor-queries-wrap .widefat thead th,
+.promptor-submissions-wrap .widefat thead th,
+.promptor-webhooks-wrap .widefat thead th {
+    background: var(--promptor-bg-secondary);
+    font-weight: 600;
+    color: var(--promptor-gray-600);
+    font-size: var(--promptor-font-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 12px 14px;
+    border-bottom: 2px solid var(--promptor-border-light);
+}
+
+.promptor-settings-wrap .widefat tbody tr,
+.promptor-queries-wrap .widefat tbody tr,
+.promptor-submissions-wrap .widefat tbody tr,
+.promptor-webhooks-wrap .widefat tbody tr {
+    transition: background-color 0.1s ease;
+}
+
+.promptor-settings-wrap .widefat tbody tr:hover,
+.promptor-queries-wrap .widefat tbody tr:hover,
+.promptor-submissions-wrap .widefat tbody tr:hover,
+.promptor-webhooks-wrap .widefat tbody tr:hover {
+    background: var(--promptor-bg-secondary);
+}
+
+.promptor-settings-wrap .widefat td,
+.promptor-queries-wrap .widefat td,
+.promptor-submissions-wrap .widefat td,
+.promptor-webhooks-wrap .widefat td {
+    padding: 12px 14px;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--promptor-gray-100);
+}
+
+.promptor-settings-wrap .widefat tbody tr:last-child td,
+.promptor-queries-wrap .widefat tbody tr:last-child td,
+.promptor-submissions-wrap .widefat tbody tr:last-child td,
+.promptor-webhooks-wrap .widefat tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* form-table consistency */
+.promptor-settings-wrap .form-table th {
+    padding: 16px 12px 16px 0;
+    width: 220px;
+    font-weight: 500;
+    color: var(--promptor-gray-700);
+    vertical-align: top;
+    line-height: 1.4;
+}
+
+.promptor-settings-wrap .form-table td {
+    padding: 12px 0;
+    vertical-align: top;
+}
+
+.promptor-settings-wrap .form-table td .description {
+    color: var(--promptor-text-light);
+    font-size: var(--promptor-font-sm);
+    margin-top: 6px;
+}
+
+/* --- 28.5 Section Spacing --- */
+.promptor-settings-wrap > form > .postbox,
+.promptor-dashboard-wrap > .postbox,
+.promptor-webhooks-wrap .postbox,
+.promptor-diagnostics-wrap .postbox {
+    margin-bottom: var(--promptor-space-6);
+    border-radius: var(--promptor-radius-sm);
+    overflow: hidden;
+}
+
+.promptor-settings-wrap > form > .postbox:last-child,
+.promptor-dashboard-wrap > .postbox:last-child {
+    margin-bottom: 0;
+}
+
+/* --- 28.6 Empty State Component --- */
+.promptor-empty-state {
+    text-align: center;
+    padding: var(--promptor-space-10) var(--promptor-space-6);
+    color: var(--promptor-text-light);
+}
+
+.promptor-empty-state .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: var(--promptor-gray-300);
+    margin-bottom: var(--promptor-space-4);
+    display: block;
+}
+
+.promptor-empty-state .empty-title {
+    font-size: var(--promptor-font-lg);
+    font-weight: 600;
+    color: var(--promptor-gray-600);
+    margin: 0 0 var(--promptor-space-2) 0;
+}
+
+.promptor-empty-state .empty-message {
+    font-size: var(--promptor-font-base);
+    color: var(--promptor-text-light);
+    margin: 0 0 var(--promptor-space-5) 0;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.promptor-empty-state .button {
+    margin-top: var(--promptor-space-2);
+}
+
+/* --- 28.7 Loading State Component --- */
+.promptor-loading-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--promptor-space-3);
+    padding: var(--promptor-space-8) var(--promptor-space-4);
+    color: var(--promptor-text-light);
+    font-size: var(--promptor-font-base);
+}
+
+.promptor-loading-state .spinner {
+    float: none;
+    visibility: visible;
+    margin: 0;
+}
+
+/* --- 28.8 Inline Notice Component --- */
+.promptor-inline-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--promptor-space-3);
+    padding: var(--promptor-space-4) var(--promptor-space-5);
+    border-radius: var(--promptor-radius-sm);
+    border-left: 4px solid;
+    margin: var(--promptor-space-4) 0;
+    font-size: var(--promptor-font-sm);
+    line-height: 1.5;
+}
+
+.promptor-inline-notice .dashicons {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.promptor-inline-notice.notice-info {
+    background: var(--promptor-info-light);
+    border-color: var(--promptor-info);
+    color: #1a4971;
+}
+.promptor-inline-notice.notice-info .dashicons { color: var(--promptor-info); }
+
+.promptor-inline-notice.notice-success {
+    background: var(--promptor-success-light);
+    border-color: var(--promptor-success);
+    color: #1a4a1a;
+}
+.promptor-inline-notice.notice-success .dashicons { color: var(--promptor-success); }
+
+.promptor-inline-notice.notice-warning {
+    background: var(--promptor-warning-light);
+    border-color: var(--promptor-warning);
+    color: #5c4a00;
+}
+.promptor-inline-notice.notice-warning .dashicons { color: var(--promptor-warning); }
+
+.promptor-inline-notice.notice-error {
+    background: var(--promptor-danger-light);
+    border-color: var(--promptor-danger);
+    color: #7a1a1a;
+}
+.promptor-inline-notice.notice-error .dashicons { color: var(--promptor-danger); }
+
+/* --- 28.9 Page Description --- */
+.promptor-page-description {
+    color: var(--promptor-text-light);
+    font-size: var(--promptor-font-base);
+    margin: 0 0 var(--promptor-space-6) 0;
+    max-width: 680px;
+    line-height: 1.6;
+}
+
+/* --- 28.10 Action Bar (above tables/content) --- */
+.promptor-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--promptor-space-3) var(--promptor-space-4);
+    background: var(--promptor-bg-secondary);
+    border: 1px solid var(--promptor-border-light);
+    border-radius: var(--promptor-radius-sm) var(--promptor-radius-sm) 0 0;
+    gap: var(--promptor-space-3);
+    flex-wrap: wrap;
+}
+
+.promptor-action-bar + .widefat {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* --- 28.11 Tab Navigation Enhancement --- */
+.promptor-settings-wrap .nav-tab-wrapper .nav-tab {
+    border-radius: var(--promptor-radius-sm) var(--promptor-radius-sm) 0 0;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.promptor-settings-wrap .nav-tab-wrapper .nav-tab:hover {
+    color: var(--promptor-primary);
+}
+
+.promptor-settings-wrap .nav-tab-wrapper .nav-tab-active {
+    color: var(--promptor-primary);
+    border-bottom-color: var(--promptor-bg);
+    font-weight: 600;
+}
+
+/* --- 28.12 Pro Feature Lock Overlay --- */
+.promptor-pro-locked {
+    position: relative;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.promptor-pro-locked::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255,255,255,0.03) 10px,
+        rgba(255,255,255,0.03) 20px
+    );
+    border-radius: var(--promptor-radius-sm);
+}
+
+.promptor-pro-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    background: var(--promptor-gradient-primary);
+    color: #fff;
+    font-size: var(--promptor-font-xs);
+    font-weight: 700;
+    border-radius: var(--promptor-radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    vertical-align: middle;
+}
+
+/* --- 28.13 Utility Classes --- */
+.promptor-flex { display: flex; }
+.promptor-flex-center { display: flex; align-items: center; }
+.promptor-flex-between { display: flex; align-items: center; justify-content: space-between; }
+.promptor-gap-1 { gap: var(--promptor-space-1); }
+.promptor-gap-2 { gap: var(--promptor-space-2); }
+.promptor-gap-3 { gap: var(--promptor-space-3); }
+.promptor-gap-4 { gap: var(--promptor-space-4); }
+.promptor-mt-0 { margin-top: 0; }
+.promptor-mt-4 { margin-top: var(--promptor-space-4); }
+.promptor-mt-6 { margin-top: var(--promptor-space-6); }
+.promptor-mb-0 { margin-bottom: 0; }
+.promptor-mb-4 { margin-bottom: var(--promptor-space-4); }
+.promptor-mb-6 { margin-bottom: var(--promptor-space-6); }
+.promptor-p-4 { padding: var(--promptor-space-4); }
+.promptor-p-6 { padding: var(--promptor-space-6); }
+.promptor-rounded { border-radius: var(--promptor-radius-sm); }
+.promptor-rounded-lg { border-radius: var(--promptor-radius-lg); }
+.promptor-border { border: 1px solid var(--promptor-border-light); }
+.promptor-shadow-sm { box-shadow: var(--promptor-shadow-sm); }
+.promptor-shadow-md { box-shadow: var(--promptor-shadow-md); }
+.promptor-text-center { text-align: center; }
+.promptor-w-full { width: 100%; }
+.promptor-max-w-md { max-width: 500px; }
+.promptor-max-w-lg { max-width: 680px; }
+.promptor-hidden { display: none !important; }
+
+/* --- 28.14 Postbox Inside Reset (Consistent padding) --- */
+.promptor-settings-wrap .postbox > .inside,
+.promptor-webhooks-wrap .postbox > .inside,
+.promptor-diagnostics-wrap .postbox > .inside {
+    padding: var(--promptor-space-5);
+}
+
+/* --- 28.15 Responsive Design System --- */
+@media screen and (max-width: 782px) {
+    .promptor-settings-wrap .form-table th {
+        width: 100%;
+        padding-bottom: var(--promptor-space-1);
+    }
+    .promptor-action-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .promptor-grid-2-col {
+        grid-template-columns: 1fr;
+    }
+    .promptor-secondary-metrics {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- 28.16 KB Actions Button Group --- */
+.promptor-kb-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.promptor-kb-actions .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    padding: 2px 10px;
+    min-height: 30px;
+    white-space: nowrap;
+}
+
+.promptor-kb-actions .button .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+
+.promptor-kb-actions .button.button-link-delete {
+    color: var(--promptor-danger);
+    border-color: transparent;
+}
+
+.promptor-kb-actions .button.button-link-delete:hover {
+    color: #a00;
+    background: rgba(220, 50, 50, 0.06);
+}
+
+/* --- 28.17 Info Tooltip --- */
+.promptor-info-tooltip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: help;
+    margin-left: 4px;
+}
+
+.promptor-info-tooltip .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: var(--promptor-text-light);
+}
+
+.promptor-info-tooltip .promptor-tooltip-text {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--promptor-gray-900, #1e1e1e);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: var(--promptor-radius-sm);
+    font-size: var(--promptor-font-xs);
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: normal;
+    width: 280px;
+    z-index: 100;
+    box-shadow: var(--promptor-shadow-md);
+    margin-bottom: 8px;
+}
+
+.promptor-info-tooltip:hover .promptor-tooltip-text,
+.promptor-info-tooltip:focus .promptor-tooltip-text {
+    display: block;
+}
+
+.promptor-info-tooltip .promptor-tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--promptor-gray-900, #1e1e1e);
+}
+
+/* === AI Behavior System (v1.3.0) === */
+
+/* -- Field Labels with Icons -- */
+.promptor-field-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.promptor-field-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: var(--promptor-gray-400, #94a3b8);
+}
+
+.promptor-select-full {
+    min-width: 200px;
+}
+
+/* -- Section Icons -- */
+.promptor-section-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: var(--promptor-gray-500, #64748b);
+}
+
+/* -- Preview Card -- */
+.promptor-preview-title {
+    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--promptor-font-base, 14px);
+}
+
+.promptor-preview-card {
+    background: var(--promptor-bg-secondary, #f8fafc);
+    border: 1px solid var(--promptor-border-light, #e2e8f0);
+    border-radius: var(--promptor-radius-md, 8px);
+    padding: 0;
+    overflow: hidden;
+}
+
+.promptor-preview-card--manual {
+    border-color: var(--promptor-warning, #dba617);
+    background: var(--promptor-warning-light, #fff8e1);
+}
+
+.promptor-preview-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--promptor-border-light, #e2e8f0);
+    background: var(--promptor-bg, #ffffff);
+    font-size: var(--promptor-font-sm, 13px);
+    flex-wrap: wrap;
+}
+
+.promptor-preview-card--manual .promptor-preview-meta {
+    border-bottom-color: var(--promptor-warning, #dba617);
+    background: var(--promptor-warning-light, #fff8e1);
+}
+
+.promptor-preview-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--promptor-text-muted, #646970);
+    font-weight: 500;
+}
+
+.promptor-preview-badge .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    color: var(--promptor-gray-400, #94a3b8);
+}
+
+.promptor-preview-badge--manual {
+    color: var(--promptor-warning, #dba617);
+    font-weight: 600;
+}
+
+.promptor-preview-badge--manual .dashicons {
+    color: var(--promptor-warning, #dba617);
+}
+
+.promptor-preview-separator {
+    color: var(--promptor-gray-300, #cbd5e1);
+    font-weight: 700;
+}
+
+.promptor-preview-box {
+    padding: 14px 16px;
+    font-size: var(--promptor-font-sm, 13px);
+    color: var(--promptor-text-muted, #646970);
+    white-space: normal;
+    line-height: 1.6;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+/* -- Behavior Bullets in Preview -- */
+.promptor-preview-behavior-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--promptor-font-xs, 11px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--promptor-gray-500, #64748b);
+    margin-bottom: 6px;
+}
+
+.promptor-preview-behavior-label .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    color: var(--promptor-primary, #15b6ff);
+}
+
+.promptor-preview-behavior-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.promptor-preview-behavior-list li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 3px;
+    font-size: var(--promptor-font-sm, 13px);
+    color: var(--promptor-text-muted, #646970);
+    line-height: 1.5;
+}
+
+.promptor-preview-behavior-list li::before {
+    content: "\2022";
+    position: absolute;
+    left: 4px;
+    color: var(--promptor-primary, #15b6ff);
+    font-weight: 700;
+}
+
+/* -- Collapsible Headers -- */
+.promptor-collapsible-header {
+    user-select: none;
+    border-top: 1px solid var(--promptor-border-light, #e2e8f0);
+    margin-top: 20px;
+    padding: 14px 0 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.15s ease;
+}
+
+.promptor-collapsible-header:hover {
+    color: var(--promptor-primary, #15b6ff);
+}
+
+.promptor-section-icon {
+    color: var(--promptor-primary, #15b6ff);
+}
+
+.promptor-collapsible-content {
+    padding-left: 12px;
+    padding-top: 14px;
+}
+
+.promptor-collapse-icon {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+}
+
+.promptor-collapse-icon.promptor-collapsed-open {
+    transform: rotate(90deg);
+}
+
+/* -- KB Override List -- */
+.promptor-kb-override-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.promptor-kb-override-row {
+    border: 1px solid var(--promptor-border-light, #e2e8f0);
+    border-radius: var(--promptor-radius-sm, 4px);
+    margin-bottom: 8px;
+    background: var(--promptor-bg, #ffffff);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    cursor: pointer;
+}
+
+.promptor-kb-override-row:hover {
+    background: var(--promptor-gray-50, #f8fafc);
+    border-color: var(--promptor-gray-300, #cbd5e1);
+}
+
+.promptor-kb-override-row--active:hover {
+    background: rgba(21, 182, 255, 0.03);
+}
+
+.promptor-kb-override-row--active {
+    border-color: var(--promptor-primary, #667eea);
+    box-shadow: 0 0 0 1px var(--promptor-primary, #667eea) inset;
+}
+
+.promptor-kb-override-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    gap: 12px;
+}
+
+.promptor-kb-override-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    flex: 1;
+    min-width: 0;
+}
+
+.promptor-kb-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    color: var(--promptor-gray-400, #94a3b8);
+}
+
+.promptor-kb-override-row--active .promptor-kb-icon {
+    color: var(--promptor-primary, #667eea);
+}
+
+.promptor-kb-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.promptor-kb-status {
+    font-size: var(--promptor-font-xs, 11px);
+    color: var(--promptor-text-light, #787c82);
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 2px 8px;
+    border-radius: var(--promptor-radius-full, 9999px);
+    background: var(--promptor-bg-secondary, #f8fafc);
+}
+
+.promptor-kb-override-row--active .promptor-kb-status {
+    background: rgba(21, 182, 255, 0.12);
+    color: var(--promptor-primary-dark, #0a8fd4);
+    font-weight: 600;
+}
+
+.promptor-kb-override-fields {
+    padding: 4px 18px 18px 40px;
+}
+
+.promptor-kb-override-controls {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.promptor-kb-control {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 180px;
+}
+
+.promptor-kb-control-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--promptor-font-sm, 13px);
+    color: var(--promptor-text-muted, #646970);
+    font-weight: 400;
+}
+
+.promptor-kb-control select {
+    width: 100%;
+}
+
+/* -- Advanced Manual Prompt -- */
+.promptor-advanced-prompt {
+    margin-top: 0;
+}
+
+.promptor-advanced-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.promptor-custom-prompt-wrapper {
+    margin-top: 4px;
+}
+
+.promptor-advanced-prompt textarea {
+    font-family: monospace;
+    font-size: var(--promptor-font-sm, 13px);
+    border-radius: var(--promptor-radius-sm, 4px);
+    width: 100%;
+    max-width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    resize: vertical;
+}
+
+/* -- Style Label in Preview -- */
+.promptor-preview-style-label {
+    margin-top: 12px;
+}
+
+.promptor-preview-style-label .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    color: var(--promptor-primary, #15b6ff);
+}
+
+/* Pro-only tone option styling */
+.promptor-tone-pro-only {
+    color: var(--promptor-gray-400, #94a3b8);
+    font-style: italic;
+}
+
+/* -- UX Polish: KB Row Hover & Spacing -- */
+.promptor-kb-override-row {
+    cursor: pointer;
+}
+
+.promptor-kb-override-row:hover {
+    background: var(--promptor-gray-50, #f8fafc);
+}
+
+.promptor-kb-override-fields {
+    padding: 8px 18px 20px 40px;
+}
+

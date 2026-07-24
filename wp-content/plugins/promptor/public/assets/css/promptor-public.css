@@ -1,0 +1,1729 @@
+/* ==========================================================================
+   1. GENEL DEĞİŞKENLER VE TEMEL YAPI
+   ========================================================================== */
+
+.promptor-app {
+    /* CSS Değişkenleri PHP tarafından atanacak */
+    font-family: var(--promptor-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+    font-size: var(--promptor-font-size, 16px);
+    background: var(--promptor-widget-bg-color, #ffffff);
+    color: #333;
+    line-height: 1.5;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: var(--promptor-border-radius, 12px);
+    box-sizing: border-box !important;
+}
+
+.promptor-app *, .promptor-app *::before, .promptor-app *::after {
+    box-sizing: border-box !important;
+}
+
+/* Theme CSS Isolation - Minimal reset (don't touch buttons, styled individually below) */
+.promptor-app input:not([type="submit"]):not([type="button"]) {
+    margin: 0 !important;
+    font: inherit !important;
+    color: inherit !important;
+    line-height: normal !important;
+}
+
+.promptor-app img {
+    display: block !important;
+    max-width: none !important;
+    height: auto !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.promptor-app svg {
+    display: block !important;
+    flex-shrink: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: baseline !important;
+    overflow: visible !important;
+}
+
+.promptor-app svg path,
+.promptor-app svg circle,
+.promptor-app svg line,
+.promptor-app svg polyline {
+    vector-effect: non-scaling-stroke !important;
+}
+
+/* ==========================================================================
+   2. INLINE MODU (KISA KOD İLE)
+   ========================================================================== */
+
+.promptor-app-shortcode-wrapper {
+    border: 1px solid #e0e0e0;
+    border-radius: var(--promptor-border-radius, 12px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    height: 75vh;
+    min-height: 500px;
+    max-height: 800px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.promptor-app-shortcode-wrapper .promptor-app {
+    border-radius: 0; /* Wrapper zaten ovalliği sağlıyor */
+}
+
+
+/* ==========================================================================
+   3. POPUP MODU (PRO)
+   ========================================================================== */
+
+.promptor-popup-container {
+    position: fixed;
+    bottom: 20px;
+    z-index: 999999;
+}
+
+.promptor-popup-container.position-bottom_right { right: 20px; }
+.promptor-popup-container.position-bottom_left { left: 20px; }
+
+.promptor-trigger-button {
+    background-color: var(--promptor-primary-color, #0073aa);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out, background-color 0.2s;
+}
+
+.promptor-trigger-button:hover { transform: scale(1.1); }
+.promptor-trigger-button svg { width: 32px; height: 32px; transition: opacity 0.2s ease-in-out; }
+.promptor-trigger-button .promptor-icon-close { display: none; }
+
+.promptor-chat-window {
+    position: absolute;
+    bottom: 80px;
+    width: 380px;
+    height: 70vh;
+    max-height: 650px;
+    overflow: hidden;
+    display: none; /* JS ile yönetilir */
+    flex-direction: column;
+}
+
+.promptor-chat-window .promptor-app {
+    box-shadow: 0 5px 40px rgba(0,0,0,0.16);
+}
+
+.position-bottom_right .promptor-chat-window { right: 0; transform-origin: bottom right; }
+.position-bottom_left .promptor-chat-window { left: 0; transform-origin: bottom left; }
+
+/* Animasyonlar */
+.promptor-chat-window.animation-fade { transition: opacity 0.3s ease; }
+.promptor-chat-window.animation-slide { transition: transform 0.3s ease, opacity 0.3s ease; transform: translateY(20px); }
+.promptor-chat-window.active.animation-slide { transform: translateY(0); }
+
+
+/* ==========================================================================
+   4. ORTAK UI ELEMANLARI (Header, Form, Mesajlar vb.)
+   ========================================================================== */
+
+.promptor-app .promptor-header {
+    flex-shrink: 0 !important;
+    padding: 12px 15px !important;
+    margin: 0 !important;
+    color: white !important;
+    background-color: var(--promptor-primary-color, #0073aa) !important;
+    display: var(--promptor-header-display, flex) !important; /* Dinamik göster/gizle */
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+}
+.promptor-app .promptor-header-avatar {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    background: rgba(255,255,255,0.9) !important;
+    padding: 2px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+}
+.promptor-app .promptor-header-text {
+    line-height: 1.3 !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.promptor-app .promptor-header-title {
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.3 !important;
+}
+.promptor-app .promptor-header-subtitle {
+    font-size: 13px !important;
+    opacity: 0.9 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.3 !important;
+}
+
+/* New Conversation Button - Increased specificity for theme override */
+.promptor-app .promptor-header .promptor-new-conversation-btn {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 8px !important;
+    margin: 0 !important;
+    color: white !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    line-height: 1 !important;
+    font-size: 0 !important;
+}
+.promptor-app .promptor-header .promptor-new-conversation-btn:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: scale(1.05) !important;
+}
+.promptor-app .promptor-header .promptor-new-conversation-btn:active {
+    transform: scale(0.95) !important;
+}
+.promptor-app .promptor-header .promptor-new-conversation-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    max-width: 20px !important;
+    min-height: 20px !important;
+    max-height: 20px !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.promptor-chat-log { flex-grow: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 18px; }
+.promptor-message-wrapper { display: flex; align-items: flex-start; gap: 12px; max-width: 85%; animation: promptor-fade-in 0.4s forwards; opacity: 0; transform: translateY(10px); }
+.promptor-message-wrapper.user-message { align-self: flex-end; flex-direction: row-reverse; }
+.promptor-message-wrapper.ai-message { align-self: flex-start; }
+.promptor-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 5px; background: #f0f0f1; }
+.promptor-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.promptor-message-bubble { padding: 12px 18px; line-height: 1.6; word-wrap: break-word; border-radius: var(--promptor-border-radius, 12px); }
+.user-message .promptor-message-bubble { background-color: var(--promptor-user-bubble-color, #0073aa); color: var(--promptor-user-text-color, #fff); border-bottom-right-radius: 4px; }
+.ai-message .promptor-message-bubble { background-color: var(--promptor-ai-bubble-color, #f0f0f1); color: var(--promptor-ai-text-color, #1d2327); border-bottom-left-radius: 4px; }
+.ai-message .promptor-message-bubble p { margin: 0 0 6px; }
+.ai-message .promptor-message-bubble p:last-child { margin-bottom: 0; }
+
+/* Compact spacing for AI markdown responses */
+.ai-message .promptor-message-bubble ul,
+.ai-message .promptor-message-bubble ol { margin: 4px 0; padding-left: 20px; }
+.ai-message .promptor-message-bubble li { margin-bottom: 2px; }
+.ai-message .promptor-message-bubble li:last-child { margin-bottom: 0; }
+
+.promptor-app .promptor-search-form {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    gap: 10px !important;
+    padding: 15px 20px !important;
+    margin: 0 !important;
+    border-top: 1px solid #e0e0e0 !important;
+    box-sizing: border-box !important;
+}
+.promptor-app .promptor-search-form .promptor-query-input {
+    flex-grow: 1 !important;
+    padding: 12px 18px !important;
+    margin: 0 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 25px !important;
+    transition: all 0.2s ease !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    background: #fff !important;
+    color: #333 !important;
+    line-height: normal !important;
+    box-sizing: border-box !important;
+    width: auto !important;
+    min-width: 0 !important;
+}
+.promptor-app .promptor-search-form .promptor-query-input:focus {
+    border-color: var(--promptor-input-focus-color, #0073aa) !important;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--promptor-input-focus-color, #0073aa) 20%, transparent) !important;
+    outline: none !important;
+}
+.promptor-app .promptor-search-form .promptor-ask-btn {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    color: #fff !important;
+    background-color: var(--promptor-primary-color, #0073aa) !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    line-height: 1 !important;
+    font-size: 0 !important;
+}
+.promptor-app .promptor-search-form .promptor-ask-btn:hover {
+    background-color: color-mix(in srgb, var(--promptor-primary-color, #0073aa) 85%, black) !important;
+}
+.promptor-app .promptor-search-form .promptor-ask-btn:disabled {
+    background-color: #a0a5aa !important;
+    cursor: not-allowed !important;
+}
+.promptor-app .promptor-search-form .promptor-ask-btn svg {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+    min-height: 24px !important;
+    max-height: 24px !important;
+}
+
+/* === İSTENEN DEĞİŞİKLİK BURADA BAŞLIYOR === */
+
+.promptor-session-feedback-bar {
+    margin-top: 15px;
+    padding: 8px 15px; /* İç boşluğu biraz artırdık */
+    background-color: transparent;
+    border: 1px solid color-mix(in srgb, var(--promptor-primary-color, #0073aa) 50%, transparent);
+    border-radius: 25px;
+    display: flex; /* Ana konteyneri flex yaptık */
+    justify-content: center; /* Öğeleri merkezde topladık */
+    align-items: center; /* Öğeleri dikeyde ortaladık */
+    gap: 15px; /* Metin ve buton grubu arasına boşluk ekledik */
+    font-size: 13px;
+    color: #50575e;
+    align-self: center;
+    max-width: 320px;
+    opacity: 0;
+    animation: promptor-fade-in 0.5s ease 0.3s forwards;
+}
+
+.promptor-session-feedback-bar .feedback-actions {
+    display: flex; /* Butonları yan yana getirmek için flex yaptık */
+    align-items: center;
+    gap: 10px; /* Butonların arasına boşluk ekledik */
+}
+
+.promptor-session-feedback-bar .feedback-text {
+    margin: 0; /* Gereksiz boşlukları kaldırdık */
+}
+
+.promptor-session-feedback-bar .feedback-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #888;
+    transition: transform 0.2s ease, color 0.2s ease;
+    padding: 0; /* Butonların iç boşluğunu sıfırladık */
+    line-height: 1; /* Dikey hizalamayı iyileştirdik */
+    margin-left: 0; /* Eski boşluğu kaldırdık */
+}
+
+.promptor-session-feedback-bar .feedback-actions button:hover {
+    transform: scale(1.2);
+    color: var(--promptor-primary-color, #0073aa);
+}
+
+.promptor-session-feedback-bar .feedback-actions button:disabled {
+    cursor: not-allowed;
+    color: #28a745;
+    transform: scale(1.2);
+}
+
+.promptor-session-feedback-bar .feedback-thanks {
+    font-size: 13px;
+    color: #28a745;
+    font-weight: 500;
+}
+
+
+/* === İSTENEN DEĞİŞİKLİK BURADA BİTİYOR === */
+
+
+/* ==========================================================================
+   5. AI CEVAP BİLEŞENLERİ (Kartlar, Formlar vb.)
+   ========================================================================== */
+
+.promptor-app .promptor-example-questions { padding: 0 20px 15px !important; text-align: center !important; }
+.promptor-app .promptor-example-questions-title { font-size: 14px !important; color: #50575e !important; margin-bottom: 12px !important; }
+.promptor-app .button-grid { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; justify-content: center !important; }
+.promptor-app .promptor-example-question-btn {
+    background: #fff !important;
+    border: 1px solid #ccc !important;
+    color: #333 !important;
+    padding: 8px 15px !important;
+    border-radius: 20px !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: inline-block !important;
+    margin: 0 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    line-height: 1.4 !important;
+}
+.promptor-app .promptor-example-question-btn:hover {
+    background-color: #f0f0f1 !important;
+    border-color: #999 !important;
+}
+
+.promptor-actions-wrapper { text-align: left; margin-top: 10px; }
+.promptor-section-title { font-weight: 600; font-size: 1.1em; color: #1d2327; margin: 20px 0 15px; border-bottom: 1px solid #e9e9e9; padding-bottom: 8px; }
+
+/* === ÜRÜN KARTLARI === */
+.promptor-product-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+.promptor-product-card { display: flex; flex-direction: column; background: #fff; border: 1px solid #e9e9e9; border-radius: calc(var(--promptor-border-radius, 12px) * 0.7); overflow: hidden; transition: box-shadow 0.2s; }
+.promptor-product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.promptor-product-image { position: relative; width: 100%; padding-top: 100%; background-color: #f5f5f5; display: block; }
+.promptor-product-image img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Discount Badge - Overlay on product image */
+.promptor-product-discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--promptor-primary-color, #e74c3c);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Stock badges */
+.promptor-product-stock-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    z-index: 1;
+}
+.promptor-stock-out {
+    background-color: #dc3545;
+    color: #fff;
+}
+.promptor-stock-low {
+    background-color: #ff9800;
+    color: #fff;
+}
+.promptor-product-out-of-stock { opacity: 0.7; }
+.promptor-product-action-btn:disabled,
+.promptor-product-action-btn[disabled] {
+    background-color: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.promptor-product-details { display: flex; flex-direction: column; flex-grow: 1; padding: 15px; }
+.promptor-product-title { margin: 0 0 5px; font-size: 1em; font-weight: 600; line-height: 1.4; }
+.promptor-product-title a { text-decoration: none; color: inherit; }
+.promptor-product-title a:hover { color: var(--promptor-primary-color, #0073aa); }
+.promptor-product-description {
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0 10px;
+    line-height: 1.5;
+}
+.promptor-product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 10px; }
+.promptor-product-price { font-size: 1.1em; font-weight: 700; color: var(--promptor-primary-color, #2271b1); }
+
+.promptor-product-action-btn {
+    background-color: var(--promptor-primary-color, #2271b1);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+.promptor-product-action-btn:hover {
+    background-color: color-mix(in srgb, var(--promptor-primary-color, #2271b1) 85%, black);
+}
+.promptor-product-action-btn.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.promptor-product-action-btn.added {
+    background-color: #4CAF50;
+}
+.promptor-product-action-btn.added::after {
+    content: '✔';
+    margin-left: 6px;
+    font-weight: bold;
+}
+
+/* === PRODUCT COMPARISON TABLE === */
+/* All rules use !important to prevent WordPress/WooCommerce theme overrides on table elements */
+.promptor-comparison-wrapper {
+    display: block !important;
+    margin-top: 15px !important;
+    background: #fff !important;
+    border: 1px solid #e9e9e9 !important;
+    border-radius: calc(var(--promptor-border-radius, 12px) * 0.7) !important;
+    overflow: hidden !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    width: 100% !important;
+}
+.promptor-comparison-scroll {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    visibility: visible !important;
+}
+.promptor-comparison-table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 13px !important;
+    background: #fff !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: none !important;
+    table-layout: auto !important;
+}
+.promptor-comparison-table thead {
+    display: table-header-group !important;
+    visibility: visible !important;
+}
+.promptor-comparison-table tbody {
+    display: table-row-group !important;
+    visibility: visible !important;
+}
+.promptor-comparison-table tr {
+    display: table-row !important;
+    visibility: visible !important;
+}
+.promptor-comparison-table th,
+.promptor-comparison-table td {
+    display: table-cell !important;
+    padding: 11px 14px !important;
+    text-align: center !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    visibility: visible !important;
+}
+.promptor-comparison-table thead th {
+    background: #f8f9fa !important;
+    font-weight: 600 !important;
+    vertical-align: bottom !important;
+    padding: 14px !important;
+}
+.promptor-comparison-col { min-width: 140px !important; }
+/* Override global .promptor-app img reset for comparison images */
+.promptor-app .promptor-comparison-col img {
+    width: 72px !important;
+    height: 72px !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+    display: block !important;
+    margin: 0 auto 8px !important;
+    background: #f5f5f5 !important;
+    padding: 4px !important;
+    max-width: 72px !important;
+}
+.promptor-comparison-col span {
+    display: block !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    color: #1d2327 !important;
+}
+.promptor-comparison-col a {
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: color 0.2s !important;
+}
+.promptor-comparison-col a:hover {
+    color: var(--promptor-primary-color, #2271b1) !important;
+}
+.promptor-comparison-label {
+    text-align: left !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    color: #555 !important;
+    background: #fafafa !important;
+    min-width: 100px !important;
+}
+.promptor-comparison-table tbody tr:last-child td,
+.promptor-comparison-table tbody tr:last-child th { border-bottom: none !important; }
+.promptor-comparison-table tbody tr:hover td { background: #f8f9fa !important; }
+
+/* Comparison cell value styling */
+.promptor-comparison-price { font-weight: 700 !important; color: var(--promptor-primary-color, #2271b1) !important; font-size: 14px !important; }
+.promptor-comparison-stock-in { color: #2e7d32 !important; font-weight: 600 !important; }
+.promptor-comparison-stock-low { color: #e65100 !important; font-weight: 600 !important; }
+.promptor-comparison-stock-out { color: #c62828 !important; font-weight: 600 !important; }
+.promptor-comparison-rating { display: inline-flex !important; align-items: center !important; gap: 4px !important; }
+.promptor-comparison-rating-stars { color: #f59e0b !important; letter-spacing: 1px !important; }
+
+.promptor-comparison-actions {
+    display: block !important;
+    text-align: center !important;
+    padding: 14px !important;
+    border-top: 1px solid #f0f0f0 !important;
+    background: #fafafa !important;
+    visibility: visible !important;
+}
+.promptor-add-all-to-cart-btn {
+    background-color: var(--promptor-primary-color, #2271b1);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: calc(var(--promptor-border-radius, 12px) * 0.4);
+    transition: background-color 0.2s, opacity 0.2s, transform 0.15s;
+}
+.promptor-add-all-to-cart-btn:hover {
+    background-color: color-mix(in srgb, var(--promptor-primary-color, #2271b1) 85%, black);
+    transform: translateY(-1px);
+}
+.promptor-add-all-to-cart-btn:active { transform: translateY(0); }
+.promptor-add-all-to-cart-btn.loading { opacity: 0.5; pointer-events: none; }
+.promptor-add-all-to-cart-btn.added { background-color: #4CAF50; }
+
+/* === ABANDONED CART REMINDER === */
+.promptor-cart-reminder {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    background: linear-gradient(135deg, #fffcf0 0%, #fff8e1 100%);
+    border: 1px solid #ffe082;
+    border-left: 4px solid #ff9800;
+    border-radius: calc(var(--promptor-border-radius, 12px) * 0.5);
+    font-size: 13px;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.08);
+}
+.promptor-cart-reminder-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+.promptor-cart-reminder-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+.promptor-cart-reminder-body strong {
+    font-size: 13px;
+    color: #1d2327;
+    font-weight: 700;
+}
+.promptor-cart-reminder-body span {
+    font-size: 12px;
+    color: #555;
+}
+.promptor-cart-reminder-total {
+    font-weight: 700;
+    color: #e65100;
+}
+.promptor-cart-reminder-btn {
+    flex-shrink: 0;
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 9px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: calc(var(--promptor-border-radius, 12px) * 0.4);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s, transform 0.15s;
+}
+.promptor-cart-reminder-btn:hover {
+    background-color: #f57c00;
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+.promptor-cart-reminder-btn:active { transform: translateY(0); }
+
+/* === HİZMET/İLETİŞİM FORMU === */
+.promptor-contact-form-container { margin-top: 20px; }
+.promptor-app .promptor-submit-button {
+    width: 100% !important;
+    padding: 12px 20px !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+    background-color: var(--promptor-primary-color, #0073aa) !important;
+    border: none !important;
+    border-radius: 25px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+    display: block !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    line-height: 1.4 !important;
+}
+.promptor-app .promptor-submit-button:hover {
+    background-color: color-mix(in srgb, var(--promptor-primary-color, #0073aa) 85%, black) !important;
+}
+.promptor-contact-form { margin-top: 15px; padding: 20px; background: color-mix(in srgb, var(--promptor-widget-bg-color, #fff) 95%, #f1f1f1); border-radius: var(--promptor-border-radius, 12px); }
+.promptor-form-field { margin-bottom: 15px; }
+.promptor-form-field label { display: block; font-weight: 500; margin-bottom: 5px; font-size: 14px; }
+.promptor-app .promptor-contact-form input[type="text"],
+.promptor-app .promptor-contact-form input[type="email"],
+.promptor-app .promptor-contact-form input[type="tel"],
+.promptor-app .promptor-contact-form textarea {
+    width: 100% !important;
+    background: var(--promptor-widget-bg-color, #fff) !important;
+    border: 1px solid #ddd !important;
+    border-radius: 5px !important;
+    padding: 12px !important;
+    margin: 0 !important;
+    font-size: 1em !important;
+    font-family: inherit !important;
+    color: #333 !important;
+    line-height: normal !important;
+    box-sizing: border-box !important;
+}
+
+/* Service Cards (Important for theme compatibility) */
+.promptor-service-card {
+    background: #fff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+    transition: all 0.2s ease !important;
+    display: block !important;
+    box-sizing: border-box !important;
+}
+
+.promptor-service-card:hover {
+    border-color: var(--promptor-primary-color, #0073aa) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.promptor-service-card:last-child {
+    margin-bottom: 0 !important;
+}
+
+.promptor-service-label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+}
+
+.promptor-service-label h4 {
+    margin: 0 !important;
+    font-size: 15px !important;
+    color: #1a1a1a !important;
+    line-height: 1.4 !important;
+}
+
+.promptor-service-label input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    accent-color: var(--promptor-primary-color, #0073aa) !important;
+}
+
+.promptor-service-description {
+    margin: 8px 0 0 28px !important;
+    color: #666 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+/* ==========================================================================
+   6. ANİMASYONLAR VE YARDIMCI SINIFLAR
+   ========================================================================== */
+
+@keyframes promptor-fade-in {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Legacy typing indicator (kept for backward compat) */
+.typing-indicator span {
+    height: 8px; width: 8px; float: left; margin: 0 1px;
+    background-color: #9e9e9e;
+    display: block; border-radius: 50%; opacity: 0.4;
+    animation: promptor-typing-bounce 1s infinite ease-in-out;
+}
+.typing-indicator span:nth-of-type(2) { animation-delay: 0.15s; }
+.typing-indicator span:nth-of-type(3) { animation-delay: 0.3s; }
+
+@keyframes promptor-typing-bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
+}
+
+/* === v1.3.5 Modern Thinking Indicator === */
+.promptor-thinking-bubble {
+    background: transparent !important;
+    border: none !important;
+    padding: 8px 0 !important;
+}
+
+.promptor-thinking-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.promptor-thinking-dots {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.promptor-thinking-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--promptor-primary-color, #0073aa);
+    opacity: 0.4;
+    animation: promptor-thinking-pulse 1.4s infinite ease-in-out;
+}
+
+.promptor-thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
+.promptor-thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+.promptor-thinking-text {
+    font-size: 13px;
+    color: #9ca3af;
+    font-style: italic;
+    animation: promptor-thinking-text-pulse 2s infinite ease-in-out;
+}
+
+@keyframes promptor-thinking-pulse {
+    0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+    40% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes promptor-thinking-text-pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.promptor-success-screen { text-align: center; padding: 40px 20px; animation: promptor-fade-in 0.5s ease-in-out; }
+.promptor-success-screen .promptor-success-icon { font-size: 64px; color: #4CAF50; }
+.promptor-success-screen h3 { margin: 20px 0 10px; }
+/* ==========================================================================
+   ARTICLE & FAQ CARDS
+   ========================================================================== */
+
+.promptor-article-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media (min-width: 600px) {
+    .promptor-article-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.promptor-article-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: calc(var(--promptor-border-radius, 12px) * 0.7);
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+    text-decoration: none;
+}
+
+.promptor-article-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.promptor-article-image {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background-color: #f0f0f1;
+}
+
+.promptor-article-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promptor-article-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.promptor-article-title {
+    margin: 0 0 8px;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--promptor-ai-text-color, #1d2327);
+}
+
+.promptor-article-description {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* === DOCUMENT/PDF CARDS === */
+.promptor-document-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: calc(var(--promptor-border-radius, 12px) * 0.7);
+    padding: 16px;
+    transition: box-shadow 0.2s;
+}
+
+.promptor-document-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.promptor-document-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fee;
+    border-radius: 8px;
+    color: #e74c3c;
+}
+
+.promptor-document-details {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.promptor-document-title {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.promptor-document-description {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 6px;
+    display: block;
+}
+
+.promptor-document-size {
+    font-size: 12px;
+    color: #999;
+    display: inline-flex;
+    align-items: center;
+}
+
+.promptor-document-size::before {
+    content: "📄";
+    margin-right: 4px;
+}
+
+.promptor-document-download {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.promptor-document-download:hover {
+    background: #e8e8e8;
+    border-color: #999;
+}
+
+/* === FAQ SECTION === */
+.promptor-faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.promptor-faq-item {
+    border: 1px solid #e9e9e9;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fff;
+    transition: box-shadow 0.2s;
+}
+
+.promptor-faq-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.promptor-faq-item summary {
+    padding: 14px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    list-style: none; /* Remove default arrow */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+}
+
+.promptor-faq-item summary::-webkit-details-marker {
+    display: none; /* Hide default arrow in WebKit */
+}
+
+.promptor-faq-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f39c12; /* Yellow/amber color */
+}
+
+.promptor-faq-question {
+    flex-grow: 1;
+    color: #1d2327;
+}
+
+.promptor-faq-arrow {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    transition: transform 0.3s ease;
+}
+
+.promptor-faq-item[open] .promptor-faq-arrow {
+    transform: rotate(180deg);
+}
+
+.promptor-faq-item[open] summary {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.promptor-faq-content {
+    padding: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.promptor-faq-content a {
+    color: var(--promptor-primary-color, #0073aa);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.promptor-faq-content a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================================================
+   Conversation Summary (Frontend Intelligence - ChatGPT/Gemini Style)
+   ======================================================================== */
+
+/* Full width on desktop - higher specificity to override default 85% */
+.promptor-message-wrapper.ai-message.promptor-conversation-summary {
+    max-width: 100% !important;
+    margin-top: 16px;
+}
+
+.promptor-conversation-summary .promptor-message-bubble {
+    background: #f8f9fa;
+    border-left: 3px solid #15b6ff;
+    padding: 16px;
+}
+
+.promptor-conversation-summary p {
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+}
+
+.promptor-conversation-summary p:last-child {
+    margin-bottom: 0;
+}
+
+.promptor-summary-note {
+    font-size: 14px;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Inline Chips (ChatGPT-style, clickable) */
+.promptor-chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* Increased spacing between chips */
+    margin: 12px 0;
+}
+
+.promptor-inline-chip {
+    display: inline-flex;
+    align-items: center;
+    background: #e8eaf6;
+    color: #3f51b5;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.promptor-inline-chip:hover {
+    background: #c5cae9;
+    border-color: #3f51b5;
+    transform: translateY(-1px);
+}
+
+.promptor-inline-chip.chip-selected {
+    background: #3f51b5;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* CTA Button (Minimal, modern) */
+.promptor-app .promptor-cta-request-quote {
+    width: 100% !important;
+    background: #15b6ff !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 20px !important;
+    margin: 16px 0 0 0 !important;
+    border-radius: 8px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: block !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    line-height: 1.4 !important;
+}
+
+.promptor-app .promptor-cta-request-quote:hover {
+    background: #1d4ed8 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+}
+
+.promptor-app .promptor-cta-request-quote:active {
+    transform: translateY(0) !important;
+}
+
+.promptor-app .promptor-cta-request-quote:disabled {
+    background: #9ca3af !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+    transform: none !important;
+}
+
+.promptor-app .promptor-cta-request-quote:disabled:hover {
+    background: #9ca3af !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Summary instruction text */
+.promptor-summary-instruction {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px !important;
+}
+
+/* Service Description Container (Inline - No scroll issues) */
+.promptor-service-description-container {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.promptor-service-description-content {
+    background: #fff;
+    border: 2px solid #3f51b5;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(63, 81, 181, 0.2);
+    margin-bottom: 12px; /* Space between multiple descriptions */
+}
+
+.promptor-service-description-content:last-child {
+    margin-bottom: 0; /* Remove margin from last description */
+}
+
+.promptor-service-description-content h4 {
+    margin: 0 0 12px 0;
+    color: #3f51b5;
+    font-size: 16px;
+}
+
+.promptor-service-description-content p {
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+    color: #374151;
+}
+
+.promptor-close-description-btn {
+    background: #e8eaf6;
+    color: #3f51b5;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.promptor-close-description-btn:hover {
+    background: #c5cae9;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .promptor-message-wrapper.ai-message.promptor-conversation-summary {
+        max-width: 95% !important; /* Slightly narrower on tablets */
+    }
+
+    /* Quote form responsive on tablets */
+    .promptor-quote-form-fullwidth {
+        width: 100%; /* Full width on tablets too */
+    }
+
+    .promptor-quote-form-container {
+        padding: 20px;
+    }
+
+    .promptor-conversation-summary .promptor-message-bubble {
+        padding: 12px;
+    }
+
+    .promptor-chips-container {
+        gap: 8px; /* Slightly less gap on tablets */
+        margin: 10px 0;
+    }
+
+    .promptor-inline-chip {
+        font-size: 13px;
+        padding: 5px 12px;
+    }
+
+    .promptor-cta-request-quote {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .promptor-service-description-content {
+        padding: 12px;
+    }
+
+    .promptor-service-description-content h4 {
+        font-size: 15px;
+    }
+
+    .promptor-summary-instruction {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .promptor-message-wrapper.ai-message.promptor-conversation-summary {
+        max-width: 90% !important; /* More compact on mobile phones */
+    }
+
+    /* Quote form responsive on mobile */
+    .promptor-quote-form-fullwidth {
+        width: 100%; /* Full width on mobile */
+        margin: 12px 0;
+    }
+
+    .promptor-quote-form-container {
+        padding: 16px;
+    }
+
+    .promptor-conversation-summary .promptor-message-bubble {
+        padding: 10px;
+    }
+
+    .promptor-chips-container {
+        gap: 6px; /* Slightly better spacing on mobile */
+        margin: 8px 0;
+    }
+
+    .promptor-inline-chip {
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 16px;
+        min-height: 44px; /* Touch-friendly minimum */
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .promptor-cta-request-quote {
+        padding: 9px 14px;
+        font-size: 13px;
+        margin-top: 12px;
+        min-height: 44px; /* Touch-friendly minimum */
+    }
+
+    /* Ensure all interactive elements are touch-friendly */
+    .promptor-ask-btn,
+    .promptor-request-quote-btn,
+    .promptor-example-question-btn,
+    .feedback-btn,
+    .promptor-add-to-cart-btn,
+    .promptor-document-download {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .promptor-service-description-content {
+        padding: 10px;
+    }
+
+    .promptor-service-description-content h4 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .promptor-service-description-content p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .promptor-close-description-btn {
+        font-size: 13px;
+        padding: 7px 14px;
+    }
+
+    .promptor-summary-instruction {
+        font-size: 12px;
+    }
+}
+
+/* ========================================================================
+   Service Drawer (Minimal, action-triggered only)
+   ======================================================================== */
+.promptor-service-drawer {
+    display: none; /* Hidden by default */
+    position: sticky;
+    top: 0;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.promptor-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    color: #374151;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.promptor-drawer-header h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.promptor-drawer-header .drawer-count {
+    background: #15b6ff;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.promptor-drawer-collapse-btn {
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    transition: all 0.2s ease;
+}
+
+.promptor-drawer-collapse-btn:hover {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.promptor-drawer-content {
+    padding: 12px 14px;
+    background: white;
+    border-radius: 0 0 8px 8px;
+}
+
+.promptor-service-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.promptor-service-chip {
+    background: #f3f4f6;
+    color: #374151;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #d1d5db;
+}
+
+.promptor-request-quote-btn {
+    width: 100%;
+    background: #15b6ff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.promptor-request-quote-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Quote Form Container - Full width design (no message-wrapper constraints) */
+.promptor-quote-form-fullwidth {
+    width: 100%;
+    margin: 16px 0;
+    animation: promptor-fade-in 0.4s forwards;
+}
+
+.promptor-quote-form-container {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.promptor-quote-form-container h4 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    color: #1f2937;
+}
+
+.promptor-quote-form-container p {
+    margin: 0 0 8px 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.promptor-services-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0 0 16px 0;
+    color: #374151;
+}
+
+.promptor-services-list li {
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+/* Powered by Promptor branding (Free only) */
+.promptor-branding {
+    padding: 8px 12px;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.promptor-branding a {
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.promptor-branding a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   7. v1.3.5 — CHAT UX, ACCESSIBILITY & MOBILE IMPROVEMENTS
+   ========================================================================== */
+
+/* --- Message Timestamps & Copy Button --- */
+.promptor-message-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    padding: 0 4px;
+}
+
+.promptor-message-time {
+    font-size: 11px;
+    color: #9ca3af;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.user-message .promptor-message-meta {
+    justify-content: flex-end;
+}
+
+.ai-message .promptor-message-meta {
+    justify-content: flex-start;
+}
+
+/* Copy button */
+.promptor-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 3px;
+    cursor: pointer;
+    color: #9ca3af;
+    transition: all 0.2s ease;
+    opacity: 0;
+    min-width: 22px;
+    min-height: 22px;
+}
+
+.promptor-message-wrapper:hover .promptor-copy-btn {
+    opacity: 1;
+}
+
+.promptor-copy-btn:hover {
+    color: #374151;
+    background: #f3f4f6;
+    border-color: #e5e7eb;
+}
+
+.promptor-copy-btn.copied {
+    color: #10b981;
+    opacity: 1;
+}
+
+.promptor-copy-btn.copied::after {
+    content: '\2713';
+    font-size: 10px;
+    margin-left: 2px;
+}
+
+/* --- Input Auto-Resize --- */
+.promptor-app .promptor-search-form .promptor-query-input {
+    resize: none !important;
+    overflow-y: auto !important;
+    max-height: 120px !important;
+    transition: all 0.2s ease, height 0s !important;
+}
+
+/* --- Keyboard Focus Styles (Accessibility) --- */
+.promptor-app *:focus-visible {
+    outline: 2px solid var(--promptor-primary-color, #0073aa) !important;
+    outline-offset: 2px !important;
+}
+
+.promptor-example-question-btn:focus-visible {
+    outline: 2px solid var(--promptor-primary-color, #0073aa);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--promptor-primary-color, #0073aa) 15%, transparent);
+}
+
+.promptor-inline-chip:focus-visible {
+    outline: 2px solid var(--promptor-primary-color, #0073aa);
+    outline-offset: 2px;
+}
+
+
+/* --- Touch Target Consistency (44px min) --- */
+.promptor-app .promptor-example-question-btn {
+    min-height: 44px;
+}
+
+.promptor-app .feedback-btn {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.promptor-app .promptor-add-to-cart-btn,
+.promptor-app .promptor-product-action-btn {
+    min-height: 44px;
+}
+
+.promptor-app .promptor-inline-chip {
+    min-height: 36px;
+}
+
+.promptor-app .promptor-new-conversation-btn {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* --- Dark mode adjustments for new elements --- */
+.promptor-app[data-theme="dark"] .promptor-message-time,
+.promptor-app.promptor-dark .promptor-message-time {
+    color: #6b7280;
+}
+
+.promptor-app[data-theme="dark"] .promptor-copy-btn,
+.promptor-app.promptor-dark .promptor-copy-btn {
+    color: #6b7280;
+}
+
+.promptor-app[data-theme="dark"] .promptor-copy-btn:hover,
+.promptor-app.promptor-dark .promptor-copy-btn:hover {
+    color: #d1d5db;
+    background: #374151;
+    border-color: #4b5563;
+}
+
+.promptor-app[data-theme="dark"] .promptor-thinking-text,
+.promptor-app.promptor-dark .promptor-thinking-text {
+    color: #6b7280;
+}
+
+/* --- Mobile-specific: larger touch targets --- */
+@media screen and (max-width: 768px) {
+    .promptor-copy-btn {
+        opacity: 1; /* Always visible on mobile (no hover) */
+    }
+
+    .promptor-message-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .promptor-message-meta {
+        gap: 12px;
+        flex-basis: 100%;
+        padding-left: 52px; /* avatar (40px) + gap (12px) */
+    }
+
+    .promptor-message-wrapper.user-message .promptor-message-meta {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .promptor-app .promptor-example-question-btn,
+    .promptor-app .feedback-btn,
+    .promptor-app .promptor-add-to-cart-btn,
+    .promptor-app .promptor-inline-chip,
+    .promptor-app .promptor-new-conversation-btn,
+    .promptor-app .promptor-drawer-collapse-btn,
+    .promptor-app .promptor-request-quote-btn,
+    .promptor-app .promptor-document-download {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
